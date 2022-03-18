@@ -1,0 +1,1140 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta> <reloc>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$C:\Users\raule\AppData\Local\Temp\xcAsmlc.o
+idloc IDLOC 5 200000 200000 8 1 1
+init CODE 0 0 0 4 1 2
+config CONFIG 4 300000 300000 E 1 1
+$dist/default/production\Thesis_RFID.X.production.o
+cinit CODE 0 1B8E 1B8E 2C 1 2
+idloc IDLOC 5 200000 200000 8 1 1
+text0 CODE 0 F14 F14 14A 1 2
+text1 CODE 0 1916 1916 52 1 2
+text2 CODE 0 17A8 17A8 62 1 2
+text3 CODE 0 D44 D44 1D0 1 2
+text4 CODE 0 812 812 2A4 1 2
+text5 CODE 0 19B4 19B4 44 1 2
+text6 CODE 0 1A78 1A78 38 1 2
+text7 CODE 0 1216 1216 C6 1 2
+text8 CODE 0 1B58 1B58 36 1 2
+text9 CODE 0 19F8 19F8 44 1 2
+text10 CODE 0 114C 114C CA 1 2
+text11 CODE 0 1CFC 1CFC 2 1 2
+text12 CODE 0 1AB0 1AB0 38 1 2
+text13 CODE 0 1A3C 1A3C 3C 1 2
+text14 CODE 0 1CF6 1CF6 6 1 2
+text15 CODE 0 1AE8 1AE8 38 1 2
+text16 CODE 0 144A 144A B4 1 2
+text17 CODE 0 1C10 1C10 28 1 2
+text18 CODE 0 1740 1740 68 1 2
+text19 CODE 0 180A 180A 5C 1 2
+text20 CODE 0 1BE6 1BE6 2A 1 2
+text21 CODE 0 1CD8 1CD8 12 1 2
+text22 CODE 0 1CEA 1CEA C 1 2
+text23 CODE 0 1866 1866 58 1 2
+text24 CODE 0 AB6 AB6 28E 1 2
+text25 CODE 0 15A2 15A2 A0 1 2
+text26 CODE 0 1CC0 1CC0 18 1 2
+text27 CODE 0 1CA6 1CA6 1A 1 2
+text28 CODE 0 1642 1642 94 1 2
+text29 CODE 0 12DC 12DC B8 1 2
+text30 CODE 0 1394 1394 B6 1 2
+text31 CODE 0 16D6 16D6 6A 1 2
+text32 CODE 0 105E 105E EE 1 2
+text33 CODE 0 1968 1968 4C 1 2
+text34 CODE 0 1B20 1B20 38 1 2
+text35 CODE 0 1C88 1C88 1E 1 2
+text36 CODE 0 1BBA 1BBA 2C 1 2
+text37 CODE 0 1C38 1C38 28 1 2
+text38 CODE 0 1C60 1C60 28 1 2
+text39 CODE 0 18BE 18BE 58 1 2
+text40 CODE 0 14FE 14FE A4 1 2
+nvBANK0 BANK0 1 BB BB 1 1 1
+cstackCOMRAM COMRAM 1 1 1 5F 1 1
+cstackBANK0 BANK0 1 AB AB 10 1 1
+bitbssBANK0 BANK0 1 5E0 BC 1 1 1
+bssBANK0 BANK0 1 60 60 4B 1 1
+smallconst SMALLCONST 0 800 800 12 1 2
+idataBANK0 CODE 0 1CFE 1CFE 1 1 1
+dataBANK0 BANK0 1 BD BD 1 1 1
+config CONFIG 4 300000 300000 E 1 1
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM BE-7FF 1
+SFR F60-FFF 1
+BANK0 BE-FF 1
+BANK1 100-1FF 1
+BANK2 200-2FF 1
+BANK3 300-3FF 1
+BANK4 400-4FF 1
+BANK5 500-5FF 1
+BANK6 600-6FF 1
+BANK7 700-7FF 1
+CONST 4-7FF 1
+CONST 1CFF-7FFF 1
+SMALLCONST 1CFF-7FFF 1
+CODE 4-7FF 1
+CODE 1CFF-7FFF 1
+BIGRAM BE-7FF 1
+BIGSFR F60-FFF 1
+EEDATA F00000-F000FF 1
+MEDIUMCONST 1CFF-7FFF 1
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$dist/default/production\Thesis_RFID.X.production.o
+14FE text40 CODE >7:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\__lldiv.c
+14FE text40 CODE >13:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\__lldiv.c
+150E text40 CODE >14:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\__lldiv.c
+1524 text40 CODE >15:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\__lldiv.c
+1528 text40 CODE >16:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\__lldiv.c
+152C text40 CODE >17:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\__lldiv.c
+1536 text40 CODE >18:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\__lldiv.c
+1538 text40 CODE >16:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\__lldiv.c
+1546 text40 CODE >21:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\__lldiv.c
+1550 text40 CODE >22:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\__lldiv.c
+156E text40 CODE >23:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\__lldiv.c
+157E text40 CODE >24:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\__lldiv.c
+1580 text40 CODE >26:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\__lldiv.c
+158A text40 CODE >27:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\__lldiv.c
+1590 text40 CODE >28:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\__lldiv.c
+1590 text40 CODE >29:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\__lldiv.c
+15A0 text40 CODE >30:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\__lldiv.c
+18BE text39 CODE >7:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+18BE text39 CODE >9:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+18C2 text39 CODE >10:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+18C6 text39 CODE >11:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+1910 text39 CODE >12:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+1914 text39 CODE >13:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+1C60 text38 CODE >15:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+1C60 text38 CODE >17:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+1C84 text38 CODE >18:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+1C86 text38 CODE >19:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+1C38 text37 CODE >21:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+1C38 text37 CODE >23:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+1C5C text37 CODE >24:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+1C5E text37 CODE >25:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+1BBA text36 CODE >27:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+1BBC text36 CODE >29:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+1BE0 text36 CODE >30:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+1BE4 text36 CODE >31:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+1C88 text35 CODE >55:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+1C8A text35 CODE >57:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+1C8E text35 CODE >58:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+1C96 text35 CODE >59:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+1CA0 text35 CODE >60:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+1CA4 text35 CODE >61:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+1B20 text34 CODE >63:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+1B22 text34 CODE >65:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+1B2C text34 CODE >66:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+1B34 text34 CODE >67:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+1B3A text34 CODE >68:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+1B42 text34 CODE >69:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+1B48 text34 CODE >70:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+1B50 text34 CODE >71:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+1B56 text34 CODE >72:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+1968 text33 CODE >74:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+196A text33 CODE >76:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+196E text33 CODE >77:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+1976 text33 CODE >78:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+1980 text33 CODE >79:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+19A2 text33 CODE >80:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+19B2 text33 CODE >81:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+105E text32 CODE >120:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+1060 text32 CODE >122:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+1064 text32 CODE >123:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+106A text32 CODE >125:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+1082 text32 CODE >126:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+1088 text32 CODE >127:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+1096 text32 CODE >128:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+109C text32 CODE >129:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+10AA text32 CODE >130:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+10B0 text32 CODE >131:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+10BE text32 CODE >132:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+10C4 text32 CODE >133:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+10D2 text32 CODE >134:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+10D8 text32 CODE >135:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+10F0 text32 CODE >136:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+10F6 text32 CODE >137:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+110E text32 CODE >138:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+1114 text32 CODE >139:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+112C text32 CODE >140:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+1132 text32 CODE >141:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+114A text32 CODE >142:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+16D6 text31 CODE >83:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+16D8 text31 CODE >85:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+16DC text31 CODE >88:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+16E4 text31 CODE >89:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+16E8 text31 CODE >91:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+16F0 text31 CODE >92:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+16F4 text31 CODE >94:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+16FC text31 CODE >95:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+1700 text31 CODE >97:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+1708 text31 CODE >98:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+1716 text31 CODE >98:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+1724 text31 CODE >98:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+172C text31 CODE >98:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+1734 text31 CODE >98:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+173E text31 CODE >100:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+1394 text30 CODE >109:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+1394 text30 CODE >111:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+1398 text30 CODE >112:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+139C text30 CODE >113:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+13A0 text30 CODE >115:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+13D2 text30 CODE >116:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+140C text30 CODE >113:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+1448 text30 CODE >118:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
+12DC text29 CODE >6:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+12DE text29 CODE >9:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+12E6 text29 CODE >10:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+12E8 text29 CODE >11:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+12EA text29 CODE >12:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+12FE text29 CODE >14:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1306 text29 CODE >16:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1328 text29 CODE >17:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+132A text29 CODE >18:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1330 text29 CODE >19:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1332 text29 CODE >20:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+134A text29 CODE >21:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1352 text29 CODE >23:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1354 text29 CODE >24:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+135A text29 CODE >25:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1372 text29 CODE >26:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1374 text29 CODE >27:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+138C text29 CODE >28:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+138E text29 CODE >29:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1390 text29 CODE >30:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1392 text29 CODE >31:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1642 text28 CODE >33:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1644 text28 CODE >36:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1646 text28 CODE >37:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1648 text28 CODE >38:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1650 text28 CODE >40:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1654 text28 CODE >42:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1676 text28 CODE >43:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1678 text28 CODE >44:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+167C text28 CODE >45:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+167E text28 CODE >46:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1690 text28 CODE >47:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1694 text28 CODE >49:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+16B6 text28 CODE >50:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+16B8 text28 CODE >51:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+16BC text28 CODE >52:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+16BE text28 CODE >53:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+16D0 text28 CODE >54:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+16D2 text28 CODE >55:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+16D4 text28 CODE >56:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1CA6 text27 CODE >58:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1CA8 text27 CODE >60:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1CA8 text27 CODE >61:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1CB0 text27 CODE >62:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1CBE text27 CODE >63:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1CC0 text26 CODE >65:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1CC2 text26 CODE >67:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1CC2 text26 CODE >68:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1CCA text26 CODE >69:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1CD6 text26 CODE >70:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+15A2 text25 CODE >222:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+15A2 text25 CODE >225:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+15AC text25 CODE >226:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+15B6 text25 CODE >227:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+15BE text25 CODE >229:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+15D4 text25 CODE >230:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+15E8 text25 CODE >231:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+15F2 text25 CODE >232:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+15F4 text25 CODE >233:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+15F4 text25 CODE >235:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+15FC text25 CODE >236:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+15FE text25 CODE >237:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+161C text25 CODE >239:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+162C text25 CODE >240:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1640 text25 CODE >241:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+AB6 text24 CODE >118:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+AB8 text24 CODE >120:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+ABC text24 CODE >121:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+AC0 text24 CODE >122:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+AC4 text24 CODE >127:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+AC8 text24 CODE >130:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+ACC text24 CODE >131:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+AD0 text24 CODE >132:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+AD4 text24 CODE >135:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+AD8 text24 CODE >136:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+ADC text24 CODE >137:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+AE0 text24 CODE >141:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+AEA text24 CODE >141:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+AF8 text24 CODE >141:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+B00 text24 CODE >141:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+B0A text24 CODE >142:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+B16 text24 CODE >143:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+B20 text24 CODE >144:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+B2A text24 CODE >145:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+B34 text24 CODE >147:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+B40 text24 CODE >149:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+B56 text24 CODE >150:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+B76 text24 CODE >151:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+B80 text24 CODE >152:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+B92 text24 CODE >154:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+B9C text24 CODE >156:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+BA0 text24 CODE >157:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+BA0 text24 CODE >159:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+BA8 text24 CODE >160:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+BAE text24 CODE >161:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+BE2 text24 CODE >163:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+BEC text24 CODE >164:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+BFE text24 CODE >166:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+C18 text24 CODE >168:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+C1C text24 CODE >169:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+C30 text24 CODE >171:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+C34 text24 CODE >173:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+C46 text24 CODE >175:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+C4E text24 CODE >176:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+C58 text24 CODE >177:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+C68 text24 CODE >179:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+CA8 text24 CODE >180:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+CAC text24 CODE >183:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+CC0 text24 CODE >185:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+CD0 text24 CODE >187:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+CD4 text24 CODE >189:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+CE4 text24 CODE >191:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+CE8 text24 CODE >192:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+CE8 text24 CODE >193:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+CF4 text24 CODE >195:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+D08 text24 CODE >196:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+D28 text24 CODE >197:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+D3C text24 CODE >202:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+D40 text24 CODE >204:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+D40 text24 CODE >205:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+D42 text24 CODE >206:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1866 text23 CODE >270:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1866 text23 CODE >274:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+186A text23 CODE >275:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+186E text23 CODE >276:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1886 text23 CODE >277:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1890 text23 CODE >278:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+18B2 text23 CODE >279:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+18BC text23 CODE >280:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1CEA text22 CODE >91:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1CEA text22 CODE >93:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1CF4 text22 CODE >94:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1CD8 text21 CODE >84:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1CD8 text21 CODE >87:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1CDE text21 CODE >88:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1CE8 text21 CODE >89:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1BE6 text20 CODE >72:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1BE6 text20 CODE >74:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1BE8 text20 CODE >75:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1BEE text20 CODE >76:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1BF0 text20 CODE >77:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1BF6 text20 CODE >78:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1BF8 text20 CODE >79:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1BFE text20 CODE >80:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1C08 text20 CODE >81:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1C0E text20 CODE >82:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+180A text19 CODE >96:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+180A text19 CODE >98:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+180C text19 CODE >99:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+180E text19 CODE >100:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1810 text19 CODE >101:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1812 text19 CODE >102:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1814 text19 CODE >103:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1816 text19 CODE >104:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1818 text19 CODE >105:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+181A text19 CODE >106:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+181C text19 CODE >107:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1820 text19 CODE >108:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+182A text19 CODE >109:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1834 text19 CODE >110:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+183E text19 CODE >111:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1848 text19 CODE >112:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1852 text19 CODE >113:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+185C text19 CODE >114:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1860 text19 CODE >115:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1864 text19 CODE >116:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1740 text18 CODE >208:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1742 text18 CODE >212:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+174C text18 CODE >213:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1758 text18 CODE >214:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+177C text18 CODE >215:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+17A0 text18 CODE >217:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+17A4 text18 CODE >218:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+17A4 text18 CODE >219:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+17A6 text18 CODE >220:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1C10 text17 CODE >307:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1C10 text17 CODE >309:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1C2E text17 CODE >310:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1C34 text17 CODE >312:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1C36 text17 CODE >313:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+144A text16 CODE >282:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+144A text16 CODE >286:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+144E text16 CODE >288:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1458 text16 CODE >289:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1464 text16 CODE >290:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1474 text16 CODE >291:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+147E text16 CODE >292:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+14A2 text16 CODE >293:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+14B2 text16 CODE >295:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+14B6 text16 CODE >297:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+14C6 text16 CODE >298:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+14D8 text16 CODE >299:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+14F6 text16 CODE >301:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+14FA text16 CODE >303:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+14FA text16 CODE >304:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+14FC text16 CODE >305:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1AE8 text15 CODE >315:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1AE8 text15 CODE >318:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1AF6 text15 CODE >319:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1B06 text15 CODE >320:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1B16 text15 CODE >321:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1B1C text15 CODE >323:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1B1E text15 CODE >324:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+1CF6 text14 CODE >64:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\main.c
+1CF6 text14 CODE >66:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\main.c
+1CF8 text14 CODE >67:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\main.c
+1CFA text14 CODE >68:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\main.c
+1A3C text13 CODE >5:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\isalpha.c
+1A3C text13 CODE >7:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\isalpha.c
+1A76 text13 CODE >8:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\isalpha.c
+1AB0 text12 CODE >5:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\isupper.c
+1AB0 text12 CODE >7:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\isupper.c
+1AE6 text12 CODE >8:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\isupper.c
+1CFC text11 CODE >7:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\putch.c
+1CFC text11 CODE >9:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\putch.c
+114C text10 CODE >8:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\nf_fputc.c
+114C text10 CODE >12:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\nf_fputc.c
+1170 text10 CODE >13:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\nf_fputc.c
+1176 text10 CODE >14:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\nf_fputc.c
+117A text10 CODE >15:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\nf_fputc.c
+11CE text10 CODE >18:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\nf_fputc.c
+1202 text10 CODE >20:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\nf_fputc.c
+1214 text10 CODE >24:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\nf_fputc.c
+19F8 text9 CODE >8:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\nf_fputs.c
+19F8 text9 CODE >13:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\nf_fputs.c
+1A00 text9 CODE >14:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\nf_fputs.c
+1A04 text9 CODE >15:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\nf_fputs.c
+1A16 text9 CODE >16:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\nf_fputs.c
+1A1A text9 CODE >14:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\nf_fputs.c
+1A3A text9 CODE >19:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\nf_fputs.c
+1B58 text8 CODE >5:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\strlen.c
+1B58 text8 CODE >7:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\strlen.c
+1B60 text8 CODE >8:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\strlen.c
+1B64 text8 CODE >9:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\strlen.c
+1B68 text8 CODE >8:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\strlen.c
+1B80 text8 CODE >11:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\strlen.c
+1B8C text8 CODE >12:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\strlen.c
+1216 text7 CODE >72:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+1216 text7 CODE >77:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+1226 text7 CODE >78:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+123A text7 CODE >82:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+125C text7 CODE >83:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+1264 text7 CODE >84:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+1268 text7 CODE >85:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+127C text7 CODE >86:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+1280 text7 CODE >84:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+129E text7 CODE >90:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+12AE text7 CODE >91:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+12C2 text7 CODE >94:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+12DA text7 CODE >95:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+1A78 text6 CODE >5:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\islower.c
+1A78 text6 CODE >7:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\islower.c
+1AAE text6 CODE >8:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\islower.c
+19B4 text5 CODE >4:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\toupper.c
+19B4 text5 CODE >6:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\toupper.c
+19EE text5 CODE >7:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\toupper.c
+19F6 text5 CODE >8:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\toupper.c
+812 text4 CODE >645:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+812 text4 CODE >651:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+822 text4 CODE >652:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+824 text4 CODE >654:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+852 text4 CODE >655:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+85A text4 CODE >656:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+868 text4 CODE >657:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+870 text4 CODE >661:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+890 text4 CODE >662:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+898 text4 CODE >663:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+89C text4 CODE >664:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+8A0 text4 CODE >665:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+8A6 text4 CODE >666:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+8AE text4 CODE >667:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+8E6 text4 CODE >668:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+944 text4 CODE >669:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+958 text4 CODE >671:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+968 text4 CODE >672:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+96E text4 CODE >673:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+974 text4 CODE >674:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+9D2 text4 CODE >664:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+A50 text4 CODE >678:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+A60 text4 CODE >679:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+A66 text4 CODE >680:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+A76 text4 CODE >681:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+A7C text4 CODE >682:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+A8C text4 CODE >686:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+AB4 text4 CODE >687:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+D44 text3 CODE >692:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+D44 text3 CODE >702:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+D68 text3 CODE >703:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+D76 text3 CODE >705:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+D88 text3 CODE >706:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+D8C text3 CODE >1296:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+DD4 text3 CODE >1298:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+DEA text3 CODE >1299:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+DF8 text3 CODE >1300:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+E34 text3 CODE >1302:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+E70 text3 CODE >1372:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+E94 text3 CODE >1373:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+EA2 text3 CODE >1374:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+EB6 text3 CODE >1375:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+EC2 text3 CODE >1379:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+ED0 text3 CODE >1380:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+EDC text3 CODE >1384:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+F00 text3 CODE >1385:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+F12 text3 CODE >1387:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+17A8 text2 CODE >1390:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+17A8 text2 CODE >1395:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+17B0 text2 CODE >1396:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+17BA text2 CODE >1397:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+17BE text2 CODE >1398:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+17E4 text2 CODE >1397:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+1800 text2 CODE >1400:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+1808 text2 CODE >1404:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+1916 text1 CODE >9:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\nf_sprintf.c
+1916 text1 CODE >15:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\nf_sprintf.c
+1920 text1 CODE >16:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\nf_sprintf.c
+1928 text1 CODE >17:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\nf_sprintf.c
+1930 text1 CODE >18:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\nf_sprintf.c
+1938 text1 CODE >19:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\nf_sprintf.c
+1954 text1 CODE >20:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\nf_sprintf.c
+1966 text1 CODE >23:D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\nf_sprintf.c
+F14 text0 CODE >20:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\main.c
+F14 text0 CODE >21:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\main.c
+F18 text0 CODE >22:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\main.c
+F2C text0 CODE >23:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\main.c
+F32 text0 CODE >24:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\main.c
+F36 text0 CODE >25:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\main.c
+F50 text0 CODE >27:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\main.c
+F5A text0 CODE >28:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\main.c
+F66 text0 CODE >29:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\main.c
+F68 text0 CODE >31:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\main.c
+F82 text0 CODE >32:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\main.c
+F88 text0 CODE >33:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\main.c
+F8A text0 CODE >35:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\main.c
+F94 text0 CODE >36:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\main.c
+FA0 text0 CODE >38:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\main.c
+FBC text0 CODE >39:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\main.c
+FD8 text0 CODE >40:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\main.c
+FE2 text0 CODE >42:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\main.c
+FE8 text0 CODE >44:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\main.c
+1012 text0 CODE >45:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\main.c
+1026 text0 CODE >46:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\main.c
+1032 text0 CODE >57:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\main.c
+104C text0 CODE >58:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\main.c
+1050 text0 CODE >59:E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\main.c
+1B8E cinit CODE >1325:C:\Users\raule\AppData\Local\Temp\xcAsmlc.s
+1B8E cinit CODE >1327:C:\Users\raule\AppData\Local\Temp\xcAsmlc.s
+1B8E cinit CODE >1330:C:\Users\raule\AppData\Local\Temp\xcAsmlc.s
+1B8E cinit CODE >1377:C:\Users\raule\AppData\Local\Temp\xcAsmlc.s
+1B90 cinit CODE >1378:C:\Users\raule\AppData\Local\Temp\xcAsmlc.s
+1B92 cinit CODE >1379:C:\Users\raule\AppData\Local\Temp\xcAsmlc.s
+1B94 cinit CODE >1380:C:\Users\raule\AppData\Local\Temp\xcAsmlc.s
+1B96 cinit CODE >1381:C:\Users\raule\AppData\Local\Temp\xcAsmlc.s
+1B98 cinit CODE >1382:C:\Users\raule\AppData\Local\Temp\xcAsmlc.s
+1B9A cinit CODE >1383:C:\Users\raule\AppData\Local\Temp\xcAsmlc.s
+1B9C cinit CODE >1384:C:\Users\raule\AppData\Local\Temp\xcAsmlc.s
+1BA0 cinit CODE >1388:C:\Users\raule\AppData\Local\Temp\xcAsmlc.s
+1BA2 cinit CODE >1389:C:\Users\raule\AppData\Local\Temp\xcAsmlc.s
+1BA4 cinit CODE >1392:C:\Users\raule\AppData\Local\Temp\xcAsmlc.s
+1BA8 cinit CODE >1393:C:\Users\raule\AppData\Local\Temp\xcAsmlc.s
+1BAA cinit CODE >1394:C:\Users\raule\AppData\Local\Temp\xcAsmlc.s
+1BAA cinit CODE >1395:C:\Users\raule\AppData\Local\Temp\xcAsmlc.s
+1BAC cinit CODE >1396:C:\Users\raule\AppData\Local\Temp\xcAsmlc.s
+1BAE cinit CODE >1397:C:\Users\raule\AppData\Local\Temp\xcAsmlc.s
+1BB0 cinit CODE >1403:C:\Users\raule\AppData\Local\Temp\xcAsmlc.s
+1BB0 cinit CODE >1406:C:\Users\raule\AppData\Local\Temp\xcAsmlc.s
+1BB2 cinit CODE >1407:C:\Users\raule\AppData\Local\Temp\xcAsmlc.s
+1BB4 cinit CODE >1408:C:\Users\raule\AppData\Local\Temp\xcAsmlc.s
+1BB6 cinit CODE >1409:C:\Users\raule\AppData\Local\Temp\xcAsmlc.s
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+__LdataBANK0 0 0 ABS 0 dataBANK0 dist/default/production\Thesis_RFID.X.production.o
+__Lmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\Thesis_RFID.X.production.o
+__Hspace_0 1CFF 0 ABS 0 - dist/default/production\Thesis_RFID.X.production.o
+__Hspace_1 5E1 0 ABS 0 - dist/default/production\Thesis_RFID.X.production.o
+__Hspace_2 0 0 ABS 0 - dist/default/production\Thesis_RFID.X.production.o
+__Hspace_4 60000E 0 ABS 0 - dist/default/production\Thesis_RFID.X.production.o
+MFRC522_Clear_Bit@addr C 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+MFRC522_Clear_Bit@mask A 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+__HidataBANK0 0 0 ABS 0 idataBANK0 dist/default/production\Thesis_RFID.X.production.o
+MFRC522_Wr@address 3 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+MFRC522_Request@TagType 20 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+_MFRC522_Clear_Bit 1CA6 0 CODE 0 text27 dist/default/production\Thesis_RFID.X.production.o
+MFRC522_IsCard@TagType 26 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+__Hibigdata 0 0 CODE 0 ibigdata dist/default/production\Thesis_RFID.X.production.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\raule\AppData\Local\Temp\xcAsmlc.o
+__Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\Thesis_RFID.X.production.o
+isalpha@c 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+_i2c_addr BB 0 BANK0 1 nvBANK0 dist/default/production\Thesis_RFID.X.production.o
+MFRC522_Halt@unLen 24 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+_RS 5E0 -524 BANK0 1 bitbssBANK0 dist/default/production\Thesis_RFID.X.production.o
+?_pad 11 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+__end_of_Expander_Write 1CA6 0 CODE 0 text35 dist/default/production\Thesis_RFID.X.production.o
+main@i BA 0 BANK0 1 cstackBANK0 dist/default/production\Thesis_RFID.X.production.o
+?_vfprintf 52 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+__Lsmallconst 800 0 SMALLCONST 0 smallconst dist/default/production\Thesis_RFID.X.production.o
+_RCEN 7E2B 0 ABS 0 - dist/default/production\Thesis_RFID.X.production.o
+_RSEN 7E29 0 ABS 0 - dist/default/production\Thesis_RFID.X.production.o
+___sp 0 0 STACK 2 stack C:\Users\raule\AppData\Local\Temp\xcAsmlc.o
+_dbuf 6A 0 BANK0 1 bssBANK0 dist/default/production\Thesis_RFID.X.production.o
+_main F14 0 CODE 0 text0 dist/default/production\Thesis_RFID.X.production.o
+_nout 60 0 BANK0 1 bssBANK0 dist/default/production\Thesis_RFID.X.production.o
+_prec 64 0 BANK0 1 bssBANK0 dist/default/production\Thesis_RFID.X.production.o
+_xtoa 812 0 CODE 0 text4 dist/default/production\Thesis_RFID.X.production.o
+MFRC522_CRC@length F 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+pad@i 18 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+pad@p 15 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+pad@w 1A 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+start 0 0 CODE 0 init C:\Users\raule\AppData\Local\Temp\xcAsmlc.o
+LCD_Goto@col A 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+LCD_Goto@row 7 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+pad@fp 11 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+MFRC522_Request@reqMode 22 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+MFRC522_ToCard@lastBits 1A 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+_toupper 19B4 0 CODE 0 text5 dist/default/production\Thesis_RFID.X.production.o
+isupper@c 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+__LidataBANK0 0 0 ABS 0 idataBANK0 dist/default/production\Thesis_RFID.X.production.o
+_LCD_Goto 16D6 0 CODE 0 text31 dist/default/production\Thesis_RFID.X.production.o
+__Hpowerup 0 0 CODE 0 powerup dist/default/production\Thesis_RFID.X.production.o
+__end_of_vfpfcnvrt F14 0 CODE 0 text3 dist/default/production\Thesis_RFID.X.production.o
+__accesstop 60 0 ABS 0 - C:\Users\raule\AppData\Local\Temp\xcAsmlc.o
+__end_of_LCD_Goto 1740 0 CODE 0 text31 dist/default/production\Thesis_RFID.X.production.o
+intlevel0 0 0 CODE 0 text C:\Users\raule\AppData\Local\Temp\xcAsmlc.o
+intlevel1 0 0 CODE 0 text C:\Users\raule\AppData\Local\Temp\xcAsmlc.o
+intlevel2 0 0 CODE 0 text C:\Users\raule\AppData\Local\Temp\xcAsmlc.o
+intlevel3 0 0 CODE 0 text C:\Users\raule\AppData\Local\Temp\xcAsmlc.o
+__end_of_MFRC522_Request 17A8 0 CODE 0 text18 dist/default/production\Thesis_RFID.X.production.o
+__LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\Thesis_RFID.X.production.o
+__end_of_I2CLCD_Init 1916 0 CODE 0 text39 dist/default/production\Thesis_RFID.X.production.o
+__end_of_I2CLCD_Stop 1C60 0 CODE 0 text37 dist/default/production\Thesis_RFID.X.production.o
+MFRC522_Clear_Bit@tmp B 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+MFRC522_Halt@buff 20 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+xtoa@c 3D 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+xtoa@d 1E 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+xtoa@i 3B 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+xtoa@n 33 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+xtoa@p 2F 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+xtoa@w 31 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+xtoa@x 26 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+__Hifardata 0 0 CODE 0 ifardata dist/default/production\Thesis_RFID.X.production.o
+I2CLCD_Write@i2c_data 2 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+__Hclrtext 0 0 ABS 0 clrtext dist/default/production\Thesis_RFID.X.production.o
+_vfpfcnvrt D44 0 CODE 0 text3 dist/default/production\Thesis_RFID.X.production.o
+xtoa@fp 1C 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+MFRC522_Wr@value 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\raule\AppData\Local\Temp\xcAsmlc.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\raule\AppData\Local\Temp\xcAsmlc.o
+LCD_Cmd@Command 6 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+?_toupper 7 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+__Hintcode_body 0 0 ABS 0 intcode_body dist/default/production\Thesis_RFID.X.production.o
+_backlight_val BD 0 BANK0 1 dataBANK0 dist/default/production\Thesis_RFID.X.production.o
+__Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\Thesis_RFID.X.production.o
+Expander_Write@value 3 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+MFRC522_AntiColl@serNum 20 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+__Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\Thesis_RFID.X.production.o
+__LnvBANK0 0 0 ABS 0 nvBANK0 dist/default/production\Thesis_RFID.X.production.o
+__Hintcodelo 0 0 CODE 0 intcodelo dist/default/production\Thesis_RFID.X.production.o
+_MFRC522_Request 1740 0 CODE 0 text18 dist/default/production\Thesis_RFID.X.production.o
+_MFRC522_Reset 1BE6 0 CODE 0 text20 dist/default/production\Thesis_RFID.X.production.o
+__end_of___lldiv 15A2 0 CODE 0 text40 dist/default/production\Thesis_RFID.X.production.o
+MFRC522_Rd@ucAddr 4 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+__end_of_MFRC522_ReadCardSerial 1B20 0 CODE 0 text15 dist/default/production\Thesis_RFID.X.production.o
+?_strlen 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+__end_of_LCD_Cmd 19B4 0 CODE 0 text33 dist/default/production\Thesis_RFID.X.production.o
+_MFRC522_Halt 1866 0 CODE 0 text23 dist/default/production\Thesis_RFID.X.production.o
+_MFRC522_Init 180A 0 CODE 0 text19 dist/default/production\Thesis_RFID.X.production.o
+_MFRC522_CRC 15A2 0 CODE 0 text25 dist/default/production\Thesis_RFID.X.production.o
+_MFRC522_IsCard 1C10 0 CODE 0 text17 dist/default/production\Thesis_RFID.X.production.o
+LCD_Print@i A 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+___lldiv@counter D 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+__Lintcodelo 0 0 CODE 0 intcodelo dist/default/production\Thesis_RFID.X.production.o
+start_initialization 1B8E 0 CODE 0 cinit dist/default/production\Thesis_RFID.X.production.o
+__end_of_MFRC522_AntennaOn 1CEA 0 CODE 0 text21 dist/default/production\Thesis_RFID.X.production.o
+__HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\Thesis_RFID.X.production.o
+_TagType AA 0 BANK0 1 bssBANK0 dist/default/production\Thesis_RFID.X.production.o
+_TRISDbits F95 0 ABS 0 - dist/default/production\Thesis_RFID.X.production.o
+___lldiv@dividend 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+MFRC522_ReadCardSerial@str 28 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+___rparam_used 1 0 ABS 0 - dist/default/production\Thesis_RFID.X.production.o
+__pcstackBANK0 AB 0 BANK0 1 cstackBANK0 dist/default/production\Thesis_RFID.X.production.o
+_SSPADD FC8 0 ABS 0 - dist/default/production\Thesis_RFID.X.production.o
+_SSPBUF FC9 0 ABS 0 - dist/default/production\Thesis_RFID.X.production.o
+_TRISB7 7C9F 0 ABS 0 - dist/default/production\Thesis_RFID.X.production.o
+islower@c 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+_MFRC522_AntiColl 144A 0 CODE 0 text16 dist/default/production\Thesis_RFID.X.production.o
+isa$xinst 0 0 ABS 0 - C:\Users\raule\AppData\Local\Temp\xcAsmlc.o
+_MFRC522_ToCard AB6 0 CODE 0 text24 dist/default/production\Thesis_RFID.X.production.o
+fputc@fp 3 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+fputs@fp C 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+__end_of_LCD_Begin 114C 0 CODE 0 text32 dist/default/production\Thesis_RFID.X.production.o
+toupper@c 7 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+__end_of_LCD_Print 144A 0 CODE 0 text30 dist/default/production\Thesis_RFID.X.production.o
+__Hbank0 0 0 ABS 0 bank0 dist/default/production\Thesis_RFID.X.production.o
+__Hbank1 0 0 ABS 0 bank1 dist/default/production\Thesis_RFID.X.production.o
+__Hbank2 0 0 ABS 0 bank2 dist/default/production\Thesis_RFID.X.production.o
+__Hbank3 0 0 ABS 0 bank3 dist/default/production\Thesis_RFID.X.production.o
+__Hbank4 0 0 ABS 0 bank4 dist/default/production\Thesis_RFID.X.production.o
+__Hbank5 0 0 ABS 0 bank5 dist/default/production\Thesis_RFID.X.production.o
+__Hbank6 0 0 ABS 0 bank6 dist/default/production\Thesis_RFID.X.production.o
+__Hbank7 0 0 ABS 0 bank7 dist/default/production\Thesis_RFID.X.production.o
+__Hcinit 0 0 ABS 0 cinit dist/default/production\Thesis_RFID.X.production.o
+__Hconst 0 0 CONST 0 const dist/default/production\Thesis_RFID.X.production.o
+__end_of_strlen 1B8E 0 CODE 0 text8 dist/default/production\Thesis_RFID.X.production.o
+__Hidata 0 0 CODE 0 idata dist/default/production\Thesis_RFID.X.production.o
+__Hidloc 200008 0 IDLOC 5 idloc dist/default/production\Thesis_RFID.X.production.o
+__Hnvbit 0 0 COMRAM 1 nvbit dist/default/production\Thesis_RFID.X.production.o
+__Hparam 0 0 COMRAM 1 rparam dist/default/production\Thesis_RFID.X.production.o
+__end_of_MFRC522_IsCard 1C38 0 CODE 0 text17 dist/default/production\Thesis_RFID.X.production.o
+__Hrdata 0 0 COMRAM 1 rdata dist/default/production\Thesis_RFID.X.production.o
+__Hstack 0 0 STACK 2 stack dist/default/production\Thesis_RFID.X.production.o
+__Htext0 0 0 ABS 0 text0 dist/default/production\Thesis_RFID.X.production.o
+__Htext1 0 0 ABS 0 text1 dist/default/production\Thesis_RFID.X.production.o
+__Htext2 0 0 ABS 0 text2 dist/default/production\Thesis_RFID.X.production.o
+__Htext3 0 0 ABS 0 text3 dist/default/production\Thesis_RFID.X.production.o
+__Htext4 0 0 ABS 0 text4 dist/default/production\Thesis_RFID.X.production.o
+__Htext5 0 0 ABS 0 text5 dist/default/production\Thesis_RFID.X.production.o
+__Htext6 0 0 ABS 0 text6 dist/default/production\Thesis_RFID.X.production.o
+__Htext7 0 0 ABS 0 text7 dist/default/production\Thesis_RFID.X.production.o
+__Htext8 0 0 ABS 0 text8 dist/default/production\Thesis_RFID.X.production.o
+__Htext9 0 0 ABS 0 text9 dist/default/production\Thesis_RFID.X.production.o
+__end_of_port_Init 1CFC 0 CODE 0 text14 dist/default/production\Thesis_RFID.X.production.o
+__Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\Thesis_RFID.X.production.o
+__Hbigram 0 0 ABS 0 bigram dist/default/production\Thesis_RFID.X.production.o
+__Hbigsfr 0 0 ABS 0 bigsfr dist/default/production\Thesis_RFID.X.production.o
+__smallconst 800 0 SMALLCONST 0 smallconst C:\Users\raule\AppData\Local\Temp\xcAsmlc.o
+__end_of_sprintf 1968 0 CODE 0 text1 dist/default/production\Thesis_RFID.X.production.o
+__Hcomram 0 0 ABS 0 comram dist/default/production\Thesis_RFID.X.production.o
+__Hconfig 30000E 0 CONFIG 4 config dist/default/production\Thesis_RFID.X.production.o
+__end_of_MFRC522_Set_Bit 1CD8 0 CODE 0 text26 dist/default/production\Thesis_RFID.X.production.o
+__end_of_MFRC522_Halt 18BE 0 CODE 0 text23 dist/default/production\Thesis_RFID.X.production.o
+__end_of_MFRC522_Init 1866 0 CODE 0 text19 dist/default/production\Thesis_RFID.X.production.o
+__end_of_isalpha 1A78 0 CODE 0 text13 dist/default/production\Thesis_RFID.X.production.o
+__Lbank0 0 0 ABS 0 bank0 dist/default/production\Thesis_RFID.X.production.o
+__Lbank1 0 0 ABS 0 bank1 dist/default/production\Thesis_RFID.X.production.o
+__Lbank2 0 0 ABS 0 bank2 dist/default/production\Thesis_RFID.X.production.o
+__Lbank3 0 0 ABS 0 bank3 dist/default/production\Thesis_RFID.X.production.o
+__Lbank4 0 0 ABS 0 bank4 dist/default/production\Thesis_RFID.X.production.o
+__Lbank5 0 0 ABS 0 bank5 dist/default/production\Thesis_RFID.X.production.o
+__Lbank6 0 0 ABS 0 bank6 dist/default/production\Thesis_RFID.X.production.o
+__Lbank7 0 0 ABS 0 bank7 dist/default/production\Thesis_RFID.X.production.o
+__Lcinit 0 0 ABS 0 cinit dist/default/production\Thesis_RFID.X.production.o
+__Lconst 0 0 CONST 0 const dist/default/production\Thesis_RFID.X.production.o
+__Lidata 0 0 CODE 0 idata dist/default/production\Thesis_RFID.X.production.o
+__Lidloc 0 0 IDLOC 5 idloc dist/default/production\Thesis_RFID.X.production.o
+LCD_Begin@_i2c_addr 9 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+__end_of_islower 1AB0 0 CODE 0 text6 dist/default/production\Thesis_RFID.X.production.o
+__Lnvbit 0 0 COMRAM 1 nvbit dist/default/production\Thesis_RFID.X.production.o
+__Lparam 0 0 COMRAM 1 rparam dist/default/production\Thesis_RFID.X.production.o
+__Lrdata 0 0 COMRAM 1 rdata dist/default/production\Thesis_RFID.X.production.o
+__Lstack 0 0 STACK 2 stack dist/default/production\Thesis_RFID.X.production.o
+__end_of_isupper 1AE8 0 CODE 0 text12 dist/default/production\Thesis_RFID.X.production.o
+__Ltext0 0 0 ABS 0 text0 dist/default/production\Thesis_RFID.X.production.o
+__Ltext1 0 0 ABS 0 text1 dist/default/production\Thesis_RFID.X.production.o
+__Ltext2 0 0 ABS 0 text2 dist/default/production\Thesis_RFID.X.production.o
+__Ltext3 0 0 ABS 0 text3 dist/default/production\Thesis_RFID.X.production.o
+__Ltext4 0 0 ABS 0 text4 dist/default/production\Thesis_RFID.X.production.o
+__Ltext5 0 0 ABS 0 text5 dist/default/production\Thesis_RFID.X.production.o
+__Ltext6 0 0 ABS 0 text6 dist/default/production\Thesis_RFID.X.production.o
+__Ltext7 0 0 ABS 0 text7 dist/default/production\Thesis_RFID.X.production.o
+__Ltext8 0 0 ABS 0 text8 dist/default/production\Thesis_RFID.X.production.o
+__Ltext9 0 0 ABS 0 text9 dist/default/production\Thesis_RFID.X.production.o
+__Hfarbss 0 0 FARRAM 0 farbss dist/default/production\Thesis_RFID.X.production.o
+MFRC522_Wr@ucAddr 4 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+_LCD_Begin 105E 0 CODE 0 text32 dist/default/production\Thesis_RFID.X.production.o
+__Lintcode_body 0 0 ABS 0 intcode_body dist/default/production\Thesis_RFID.X.production.o
+_LCD_Print 1394 0 CODE 0 text30 dist/default/production\Thesis_RFID.X.production.o
+_PORTDbits F83 0 ABS 0 - dist/default/production\Thesis_RFID.X.production.o
+__Habs1 0 0 ABS 0 abs1 dist/default/production\Thesis_RFID.X.production.o
+__Hdata 0 0 ABS 0 data dist/default/production\Thesis_RFID.X.production.o
+__Hheap 0 0 HEAP 7 heap dist/default/production\Thesis_RFID.X.production.o
+__Hinit 4 0 CODE 0 init dist/default/production\Thesis_RFID.X.production.o
+__Hrbit 0 0 COMRAM 1 rbit dist/default/production\Thesis_RFID.X.production.o
+__Hrbss 0 0 COMRAM 1 rbss dist/default/production\Thesis_RFID.X.production.o
+__Htemp 0 0 COMRAM 1 temp dist/default/production\Thesis_RFID.X.production.o
+__Htext 0 0 ABS 0 text dist/default/production\Thesis_RFID.X.production.o
+__Labs1 0 0 ABS 0 abs1 dist/default/production\Thesis_RFID.X.production.o
+__Ldata 0 0 ABS 0 data dist/default/production\Thesis_RFID.X.production.o
+__Lheap 0 0 HEAP 7 heap dist/default/production\Thesis_RFID.X.production.o
+__Linit 0 0 CODE 0 init dist/default/production\Thesis_RFID.X.production.o
+__Lrbit 0 0 COMRAM 1 rbit dist/default/production\Thesis_RFID.X.production.o
+__Lrbss 0 0 COMRAM 1 rbss dist/default/production\Thesis_RFID.X.production.o
+__Ltemp 0 0 COMRAM 1 temp dist/default/production\Thesis_RFID.X.production.o
+__Ltext 0 0 ABS 0 text dist/default/production\Thesis_RFID.X.production.o
+__pnvBANK0 BB 0 BANK0 1 nvBANK0 dist/default/production\Thesis_RFID.X.production.o
+_port_Init 1CF6 0 CODE 0 text14 dist/default/production\Thesis_RFID.X.production.o
+__LcstackBANK0 0 0 ABS 0 cstackBANK0 dist/default/production\Thesis_RFID.X.production.o
+__HcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+__Hintret 0 0 ABS 0 intret dist/default/production\Thesis_RFID.X.production.o
+__Hirdata 0 0 CODE 0 irdata dist/default/production\Thesis_RFID.X.production.o
+_PEN 7E2A 0 ABS 0 - dist/default/production\Thesis_RFID.X.production.o
+_SEN 7E28 0 ABS 0 - dist/default/production\Thesis_RFID.X.production.o
+_UID 8A 0 BANK0 1 bssBANK0 dist/default/production\Thesis_RFID.X.production.o
+__S0 1CFF 0 ABS 0 - dist/default/production\Thesis_RFID.X.production.o
+__S1 BE 0 ABS 0 - dist/default/production\Thesis_RFID.X.production.o
+__S4 0 0 ABS 0 - dist/default/production\Thesis_RFID.X.production.o
+__S5 0 0 ABS 0 - dist/default/production\Thesis_RFID.X.production.o
+_led 68 0 BANK0 1 bssBANK0 dist/default/production\Thesis_RFID.X.production.o
+_pad 1216 0 CODE 0 text7 dist/default/production\Thesis_RFID.X.production.o
+__pbitbssBANK0 5E0 -524 BANK0 1 bitbssBANK0 dist/default/production\Thesis_RFID.X.production.o
+_LCD_Write_Nibble 1B20 0 CODE 0 text34 dist/default/production\Thesis_RFID.X.production.o
+MFRC522_Request@_status 23 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+_MFRC522_AntennaOn 1CD8 0 CODE 0 text21 dist/default/production\Thesis_RFID.X.production.o
+MFRC522_CRC@dataOut 10 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+__end_of_MFRC522_ToCard D44 0 CODE 0 text24 dist/default/production\Thesis_RFID.X.production.o
+__end_of_MFRC522_AntennaOff 1CF6 0 CODE 0 text22 dist/default/production\Thesis_RFID.X.production.o
+MFRC522_ToCard@irqEn 1B 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+__Lbigdata 0 0 BIGRAM 1 bigdata dist/default/production\Thesis_RFID.X.production.o
+__end_of_MFRC522_Reset 1C10 0 CODE 0 text20 dist/default/production\Thesis_RFID.X.production.o
+__Hnvrram 0 0 COMRAM 1 nvrram dist/default/production\Thesis_RFID.X.production.o
+sprintf@fmt 5C 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+MFRC522_ToCard@backLen 12 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+__end_of_pad 12DC 0 CODE 0 text7 dist/default/production\Thesis_RFID.X.production.o
+MFRC522_ToCard@i 1D 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+MFRC522_ToCard@n 1F 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+_MFRC522_Set_Bit 1CC0 0 CODE 0 text26 dist/default/production\Thesis_RFID.X.production.o
+__HnvBANK0 0 0 ABS 0 nvBANK0 dist/default/production\Thesis_RFID.X.production.o
+__Lintentry 0 0 ABS 0 intentry dist/default/production\Thesis_RFID.X.production.o
+___lldiv@divisor 5 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+__end_of_MFRC522_AntiColl 14FE 0 CODE 0 text16 dist/default/production\Thesis_RFID.X.production.o
+MFRC522_Request@backBits 24 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+__Hramtop 800 0 RAM 0 ramtop dist/default/production\Thesis_RFID.X.production.o
+strlen@a 3 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+strlen@s 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+__Hrparam 0 0 COMRAM 1 rparam dist/default/production\Thesis_RFID.X.production.o
+MFRC522_Rd@address 3 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+__pdataBANK0 BD 0 BANK0 1 dataBANK0 dist/default/production\Thesis_RFID.X.production.o
+__activetblptr 2 0 ABS 0 - dist/default/production\Thesis_RFID.X.production.o
+__Hstruct 0 0 COMRAM 1 struct dist/default/production\Thesis_RFID.X.production.o
+__LbssBANK0 0 0 ABS 0 bssBANK0 dist/default/production\Thesis_RFID.X.production.o
+__Htext10 0 0 ABS 0 text10 dist/default/production\Thesis_RFID.X.production.o
+__Htext11 0 0 ABS 0 text11 dist/default/production\Thesis_RFID.X.production.o
+__Htext12 0 0 ABS 0 text12 dist/default/production\Thesis_RFID.X.production.o
+__Htext13 0 0 ABS 0 text13 dist/default/production\Thesis_RFID.X.production.o
+__Htext14 0 0 ABS 0 text14 dist/default/production\Thesis_RFID.X.production.o
+__Htext15 0 0 ABS 0 text15 dist/default/production\Thesis_RFID.X.production.o
+__Htext16 0 0 ABS 0 text16 dist/default/production\Thesis_RFID.X.production.o
+__Htext17 0 0 ABS 0 text17 dist/default/production\Thesis_RFID.X.production.o
+__Htext18 0 0 ABS 0 text18 dist/default/production\Thesis_RFID.X.production.o
+__Htext19 0 0 ABS 0 text19 dist/default/production\Thesis_RFID.X.production.o
+__Htext20 0 0 ABS 0 text20 dist/default/production\Thesis_RFID.X.production.o
+__Htext21 0 0 ABS 0 text21 dist/default/production\Thesis_RFID.X.production.o
+__Htext22 0 0 ABS 0 text22 dist/default/production\Thesis_RFID.X.production.o
+__Htext23 0 0 ABS 0 text23 dist/default/production\Thesis_RFID.X.production.o
+__Htext24 0 0 ABS 0 text24 dist/default/production\Thesis_RFID.X.production.o
+__Htext25 0 0 ABS 0 text25 dist/default/production\Thesis_RFID.X.production.o
+__Htext26 0 0 ABS 0 text26 dist/default/production\Thesis_RFID.X.production.o
+__Htext27 0 0 ABS 0 text27 dist/default/production\Thesis_RFID.X.production.o
+__Htext28 0 0 ABS 0 text28 dist/default/production\Thesis_RFID.X.production.o
+__Htext29 0 0 ABS 0 text29 dist/default/production\Thesis_RFID.X.production.o
+__Htext30 0 0 ABS 0 text30 dist/default/production\Thesis_RFID.X.production.o
+__Htext31 0 0 ABS 0 text31 dist/default/production\Thesis_RFID.X.production.o
+__Htext32 0 0 ABS 0 text32 dist/default/production\Thesis_RFID.X.production.o
+__Htext33 0 0 ABS 0 text33 dist/default/production\Thesis_RFID.X.production.o
+__Htext34 0 0 ABS 0 text34 dist/default/production\Thesis_RFID.X.production.o
+__Htext35 0 0 ABS 0 text35 dist/default/production\Thesis_RFID.X.production.o
+__Htext36 0 0 ABS 0 text36 dist/default/production\Thesis_RFID.X.production.o
+__Htext37 0 0 ABS 0 text37 dist/default/production\Thesis_RFID.X.production.o
+__Htext38 0 0 ABS 0 text38 dist/default/production\Thesis_RFID.X.production.o
+__Htext39 0 0 ABS 0 text39 dist/default/production\Thesis_RFID.X.production.o
+__Htext40 0 0 ABS 0 text40 dist/default/production\Thesis_RFID.X.production.o
+vfpfcnvrt@fmt 41 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+vfpfcnvrt@llu 49 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+_MFRC522_AntennaOff 1CEA 0 CODE 0 text22 dist/default/production\Thesis_RFID.X.production.o
+__LbitbssBANK0 0 0 ABS 0 bitbssBANK0 dist/default/production\Thesis_RFID.X.production.o
+pad@buf 13 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+LCD_Write_Nibble@n 4 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+__ptext10 114C 0 CODE 0 text10 dist/default/production\Thesis_RFID.X.production.o
+__ptext11 1CFC 0 CODE 0 text11 dist/default/production\Thesis_RFID.X.production.o
+__ptext12 1AB0 0 CODE 0 text12 dist/default/production\Thesis_RFID.X.production.o
+__ptext13 1A3C 0 CODE 0 text13 dist/default/production\Thesis_RFID.X.production.o
+__ptext14 1CF6 0 CODE 0 text14 dist/default/production\Thesis_RFID.X.production.o
+__ptext15 1AE8 0 CODE 0 text15 dist/default/production\Thesis_RFID.X.production.o
+__ptext16 144A 0 CODE 0 text16 dist/default/production\Thesis_RFID.X.production.o
+__ptext17 1C10 0 CODE 0 text17 dist/default/production\Thesis_RFID.X.production.o
+__ptext18 1740 0 CODE 0 text18 dist/default/production\Thesis_RFID.X.production.o
+__ptext19 180A 0 CODE 0 text19 dist/default/production\Thesis_RFID.X.production.o
+__ptext20 1BE6 0 CODE 0 text20 dist/default/production\Thesis_RFID.X.production.o
+__ptext21 1CD8 0 CODE 0 text21 dist/default/production\Thesis_RFID.X.production.o
+__ptext22 1CEA 0 CODE 0 text22 dist/default/production\Thesis_RFID.X.production.o
+__ptext23 1866 0 CODE 0 text23 dist/default/production\Thesis_RFID.X.production.o
+__ptext24 AB6 0 CODE 0 text24 dist/default/production\Thesis_RFID.X.production.o
+__ptext25 15A2 0 CODE 0 text25 dist/default/production\Thesis_RFID.X.production.o
+__ptext26 1CC0 0 CODE 0 text26 dist/default/production\Thesis_RFID.X.production.o
+__ptext27 1CA6 0 CODE 0 text27 dist/default/production\Thesis_RFID.X.production.o
+__ptext28 1642 0 CODE 0 text28 dist/default/production\Thesis_RFID.X.production.o
+__ptext29 12DC 0 CODE 0 text29 dist/default/production\Thesis_RFID.X.production.o
+__ptext30 1394 0 CODE 0 text30 dist/default/production\Thesis_RFID.X.production.o
+__ptext31 16D6 0 CODE 0 text31 dist/default/production\Thesis_RFID.X.production.o
+__ptext32 105E 0 CODE 0 text32 dist/default/production\Thesis_RFID.X.production.o
+__ptext33 1968 0 CODE 0 text33 dist/default/production\Thesis_RFID.X.production.o
+__ptext34 1B20 0 CODE 0 text34 dist/default/production\Thesis_RFID.X.production.o
+__ptext35 1C88 0 CODE 0 text35 dist/default/production\Thesis_RFID.X.production.o
+__ptext36 1BBA 0 CODE 0 text36 dist/default/production\Thesis_RFID.X.production.o
+__ptext37 1C38 0 CODE 0 text37 dist/default/production\Thesis_RFID.X.production.o
+__ptext38 1C60 0 CODE 0 text38 dist/default/production\Thesis_RFID.X.production.o
+__ptext39 18BE 0 CODE 0 text39 dist/default/production\Thesis_RFID.X.production.o
+__ptext40 14FE 0 CODE 0 text40 dist/default/production\Thesis_RFID.X.production.o
+___lldiv 14FE 0 CODE 0 text40 dist/default/production\Thesis_RFID.X.production.o
+__Lbigbss 0 0 BIGRAM 1 bigbss dist/default/production\Thesis_RFID.X.production.o
+__Lbigram 0 0 ABS 0 bigram dist/default/production\Thesis_RFID.X.production.o
+__Lbigsfr 0 0 ABS 0 bigsfr dist/default/production\Thesis_RFID.X.production.o
+MFRC522_ReadCardSerial@_status 2A 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+?_xtoa 1C 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+__Lcomram 0 0 ABS 0 comram dist/default/production\Thesis_RFID.X.production.o
+__Lconfig 0 0 CONFIG 4 config dist/default/production\Thesis_RFID.X.production.o
+MFRC522_CRC@i 13 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+MFRC522_CRC@n 12 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+_LCD_Cmd 1968 0 CODE 0 text33 dist/default/production\Thesis_RFID.X.production.o
+_LATDbits F8C 0 ABS 0 - dist/default/production\Thesis_RFID.X.production.o
+MFRC522_Set_Bit@addr C 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+MFRC522_Set_Bit@mask A 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+__Lfarbss 0 0 FARRAM 0 farbss dist/default/production\Thesis_RFID.X.production.o
+_strlen 1B58 0 CODE 0 text8 dist/default/production\Thesis_RFID.X.production.o
+__Lfardata 0 0 FARRAM 0 fardata dist/default/production\Thesis_RFID.X.production.o
+isa$std 1 0 ABS 0 - C:\Users\raule\AppData\Local\Temp\xcAsmlc.o
+__end_of_LCD_Write_Nibble 1B58 0 CODE 0 text34 dist/default/production\Thesis_RFID.X.production.o
+stackhi 0 0 ABS 0 - C:\Users\raule\AppData\Local\Temp\xcAsmlc.o
+stacklo 0 0 ABS 0 - C:\Users\raule\AppData\Local\Temp\xcAsmlc.o
+__end_of_MFRC522_CRC 1642 0 CODE 0 text25 dist/default/production\Thesis_RFID.X.production.o
+__Lintcode 0 0 CODE 0 intcode dist/default/production\Thesis_RFID.X.production.o
+__Lintret 0 0 ABS 0 intret dist/default/production\Thesis_RFID.X.production.o
+MFRC522_ToCard@sendLen F 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+__Lirdata 0 0 CODE 0 irdata dist/default/production\Thesis_RFID.X.production.o
+MFRC522_ToCard@sendData D 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+_I2CLCD_Start 1C60 0 CODE 0 text38 dist/default/production\Thesis_RFID.X.production.o
+_I2CLCD_Write 1BBA 0 CODE 0 text36 dist/default/production\Thesis_RFID.X.production.o
+?_vfpfcnvrt 3F 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+__Lspace_0 0 0 ABS 0 - dist/default/production\Thesis_RFID.X.production.o
+__Lspace_1 0 0 ABS 0 - dist/default/production\Thesis_RFID.X.production.o
+__Lspace_2 0 0 ABS 0 - dist/default/production\Thesis_RFID.X.production.o
+__Lspace_4 0 0 ABS 0 - dist/default/production\Thesis_RFID.X.production.o
+MFRC522_ToCard@backData 10 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+__HcstackBANK0 0 0 ABS 0 cstackBANK0 dist/default/production\Thesis_RFID.X.production.o
+MFRC522_Rd@ucResult 6 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+__end_of_toupper 19F8 0 CODE 0 text5 dist/default/production\Thesis_RFID.X.production.o
+__LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+end_of_initialization 1BB0 0 CODE 0 cinit dist/default/production\Thesis_RFID.X.production.o
+__Lnvrram 0 0 COMRAM 1 nvrram dist/default/production\Thesis_RFID.X.production.o
+__Hintentry 0 0 ABS 0 intentry dist/default/production\Thesis_RFID.X.production.o
+fputc@c 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+fputs@c E 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+fputs@i F 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+fputs@s A 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+MFRC522_Rd@i 8 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+MFRC522_Wr@i 5 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+?___lldiv 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+_I2CLCD_Init 18BE 0 CODE 0 text39 dist/default/production\Thesis_RFID.X.production.o
+_I2CLCD_Stop 1C38 0 CODE 0 text37 dist/default/production\Thesis_RFID.X.production.o
+vfprintf@fmt 54 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+__Hreset_vec 0 0 CODE 0 reset_vec dist/default/production\Thesis_RFID.X.production.o
+__HbssBANK0 0 0 ABS 0 bssBANK0 dist/default/production\Thesis_RFID.X.production.o
+__Lramtop 800 0 RAM 0 ramtop dist/default/production\Thesis_RFID.X.production.o
+__Lrparam 0 0 COMRAM 1 rparam dist/default/production\Thesis_RFID.X.production.o
+__pcinit 1B8E 0 CODE 0 cinit dist/default/production\Thesis_RFID.X.production.o
+vfpfcnvrt@ap 43 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+vfpfcnvrt@fp 3F 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+__ptext0 F14 0 CODE 0 text0 dist/default/production\Thesis_RFID.X.production.o
+__ptext1 1916 0 CODE 0 text1 dist/default/production\Thesis_RFID.X.production.o
+__ptext2 17A8 0 CODE 0 text2 dist/default/production\Thesis_RFID.X.production.o
+__ptext3 D44 0 CODE 0 text3 dist/default/production\Thesis_RFID.X.production.o
+__ptext4 812 0 CODE 0 text4 dist/default/production\Thesis_RFID.X.production.o
+__ptext5 19B4 0 CODE 0 text5 dist/default/production\Thesis_RFID.X.production.o
+__ptext6 1A78 0 CODE 0 text6 dist/default/production\Thesis_RFID.X.production.o
+__ptext7 1216 0 CODE 0 text7 dist/default/production\Thesis_RFID.X.production.o
+__ptext8 1B58 0 CODE 0 text8 dist/default/production\Thesis_RFID.X.production.o
+__ptext9 19F8 0 CODE 0 text9 dist/default/production\Thesis_RFID.X.production.o
+__Lstruct 0 0 COMRAM 1 struct dist/default/production\Thesis_RFID.X.production.o
+vfprintf@ap 56 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+vfprintf@fp 52 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+vfprintf@cfmt 58 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+__Ltext10 0 0 ABS 0 text10 dist/default/production\Thesis_RFID.X.production.o
+__Ltext11 0 0 ABS 0 text11 dist/default/production\Thesis_RFID.X.production.o
+__Ltext12 0 0 ABS 0 text12 dist/default/production\Thesis_RFID.X.production.o
+__Ltext13 0 0 ABS 0 text13 dist/default/production\Thesis_RFID.X.production.o
+__Ltext14 0 0 ABS 0 text14 dist/default/production\Thesis_RFID.X.production.o
+__Ltext15 0 0 ABS 0 text15 dist/default/production\Thesis_RFID.X.production.o
+__Ltext16 0 0 ABS 0 text16 dist/default/production\Thesis_RFID.X.production.o
+__Ltext17 0 0 ABS 0 text17 dist/default/production\Thesis_RFID.X.production.o
+__Ltext18 0 0 ABS 0 text18 dist/default/production\Thesis_RFID.X.production.o
+__Ltext19 0 0 ABS 0 text19 dist/default/production\Thesis_RFID.X.production.o
+__Ltext20 0 0 ABS 0 text20 dist/default/production\Thesis_RFID.X.production.o
+__Ltext21 0 0 ABS 0 text21 dist/default/production\Thesis_RFID.X.production.o
+__Ltext22 0 0 ABS 0 text22 dist/default/production\Thesis_RFID.X.production.o
+__Ltext23 0 0 ABS 0 text23 dist/default/production\Thesis_RFID.X.production.o
+__Ltext24 0 0 ABS 0 text24 dist/default/production\Thesis_RFID.X.production.o
+__Ltext25 0 0 ABS 0 text25 dist/default/production\Thesis_RFID.X.production.o
+__Ltext26 0 0 ABS 0 text26 dist/default/production\Thesis_RFID.X.production.o
+__Ltext27 0 0 ABS 0 text27 dist/default/production\Thesis_RFID.X.production.o
+__Ltext28 0 0 ABS 0 text28 dist/default/production\Thesis_RFID.X.production.o
+__Ltext29 0 0 ABS 0 text29 dist/default/production\Thesis_RFID.X.production.o
+__Ltext30 0 0 ABS 0 text30 dist/default/production\Thesis_RFID.X.production.o
+__Ltext31 0 0 ABS 0 text31 dist/default/production\Thesis_RFID.X.production.o
+__Ltext32 0 0 ABS 0 text32 dist/default/production\Thesis_RFID.X.production.o
+__Ltext33 0 0 ABS 0 text33 dist/default/production\Thesis_RFID.X.production.o
+__Ltext34 0 0 ABS 0 text34 dist/default/production\Thesis_RFID.X.production.o
+__Ltext35 0 0 ABS 0 text35 dist/default/production\Thesis_RFID.X.production.o
+__Ltext36 0 0 ABS 0 text36 dist/default/production\Thesis_RFID.X.production.o
+__Ltext37 0 0 ABS 0 text37 dist/default/production\Thesis_RFID.X.production.o
+__Ltext38 0 0 ABS 0 text38 dist/default/production\Thesis_RFID.X.production.o
+__Ltext39 0 0 ABS 0 text39 dist/default/production\Thesis_RFID.X.production.o
+__Ltext40 0 0 ABS 0 text40 dist/default/production\Thesis_RFID.X.production.o
+__ramtop 800 0 RAM 0 ramtop C:\Users\raule\AppData\Local\Temp\xcAsmlc.o
+_sprintf 1916 0 CODE 0 text1 dist/default/production\Thesis_RFID.X.production.o
+_MFRC522_Rd 12DC 0 CODE 0 text29 dist/default/production\Thesis_RFID.X.production.o
+_MFRC522_Wr 1642 0 CODE 0 text28 dist/default/production\Thesis_RFID.X.production.o
+_vfprintf 17A8 0 CODE 0 text2 dist/default/production\Thesis_RFID.X.production.o
+__Lpowerup 0 0 CODE 0 powerup dist/default/production\Thesis_RFID.X.production.o
+__Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\Thesis_RFID.X.production.o
+MFRC522_ToCard@_status 19 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+sprintf@ap AB 0 BANK0 1 cstackBANK0 dist/default/production\Thesis_RFID.X.production.o
+_isalpha 1A3C 0 CODE 0 text13 dist/default/production\Thesis_RFID.X.production.o
+_islower 1A78 0 CODE 0 text6 dist/default/production\Thesis_RFID.X.production.o
+__psmallconst 800 0 SMALLCONST 0 smallconst dist/default/production\Thesis_RFID.X.production.o
+_isupper 1AB0 0 CODE 0 text12 dist/default/production\Thesis_RFID.X.production.o
+__Lreset_vec 0 0 CODE 0 reset_vec dist/default/production\Thesis_RFID.X.production.o
+__end_of_vfprintf 180A 0 CODE 0 text2 dist/default/production\Thesis_RFID.X.production.o
+___heap_hi 0 0 ABS 0 - C:\Users\raule\AppData\Local\Temp\xcAsmlc.o
+___heap_lo 0 0 ABS 0 - C:\Users\raule\AppData\Local\Temp\xcAsmlc.o
+I2CLCD_Init@i2c_clk_freq E 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+___param_bank 0 0 ABS 0 - dist/default/production\Thesis_RFID.X.production.o
+__end_of_MFRC522_Clear_Bit 1CC0 0 CODE 0 text27 dist/default/production\Thesis_RFID.X.production.o
+__Hbigdata 0 0 BIGRAM 1 bigdata dist/default/production\Thesis_RFID.X.production.o
+__HbitbssBANK0 0 0 ABS 0 bitbssBANK0 dist/default/production\Thesis_RFID.X.production.o
+__end_of__initialization 1BB0 0 CODE 0 cinit dist/default/production\Thesis_RFID.X.production.o
+MFRC522_AntiColl@serNumCheck 23 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+__Libigdata 0 0 CODE 0 ibigdata dist/default/production\Thesis_RFID.X.production.o
+MFRC522_ToCard@waitIRq 18 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+__pidataBANK0 1CFE 0 CODE 0 idataBANK0 dist/default/production\Thesis_RFID.X.production.o
+__end_of_I2CLCD_Start 1C88 0 CODE 0 text38 dist/default/production\Thesis_RFID.X.production.o
+__end_of_I2CLCD_Write 1BE6 0 CODE 0 text36 dist/default/production\Thesis_RFID.X.production.o
+__Lclrtext 0 0 ABS 0 clrtext dist/default/production\Thesis_RFID.X.production.o
+___lldiv@quotient 9 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+__pcstackCOMRAM 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+_SSPCON1 FC6 0 ABS 0 - dist/default/production\Thesis_RFID.X.production.o
+_SSPCON2 FC5 0 ABS 0 - dist/default/production\Thesis_RFID.X.production.o
+_SSPSTAT FC7 0 ABS 0 - dist/default/production\Thesis_RFID.X.production.o
+MFRC522_Set_Bit@tmp B 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+vfpfcnvrt@c 51 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+sprintf@f AD 0 BANK0 1 cstackBANK0 dist/default/production\Thesis_RFID.X.production.o
+sprintf@s 5A 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+__end_of_main 105E 0 CODE 0 text0 dist/default/production\Thesis_RFID.X.production.o
+__end_of_xtoa AB6 0 CODE 0 text4 dist/default/production\Thesis_RFID.X.production.o
+_ACKDT 7E2D 0 ABS 0 - dist/default/production\Thesis_RFID.X.production.o
+_ACKEN 7E2C 0 ABS 0 - dist/default/production\Thesis_RFID.X.production.o
+__end_of_fputc 1216 0 CODE 0 text10 dist/default/production\Thesis_RFID.X.production.o
+__end_of_fputs 1A3C 0 CODE 0 text9 dist/default/production\Thesis_RFID.X.production.o
+_LATB7 7C57 0 ABS 0 - dist/default/production\Thesis_RFID.X.production.o
+?_sprintf 5A 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+__end_of_putch 1CFE 0 CODE 0 text11 dist/default/production\Thesis_RFID.X.production.o
+__HRAM 0 0 ABS 0 - dist/default/production\Thesis_RFID.X.production.o
+__Hbss 0 0 RAM 1 bss dist/default/production\Thesis_RFID.X.production.o
+__Hram 0 0 ABS 0 ram dist/default/production\Thesis_RFID.X.production.o
+__Hsfr 0 0 ABS 0 sfr dist/default/production\Thesis_RFID.X.production.o
+__LRAM 1 0 ABS 0 - dist/default/production\Thesis_RFID.X.production.o
+__Lbss 0 0 RAM 1 bss dist/default/production\Thesis_RFID.X.production.o
+__Lram 0 0 ABS 0 ram dist/default/production\Thesis_RFID.X.production.o
+__Lsfr 0 0 ABS 0 sfr dist/default/production\Thesis_RFID.X.production.o
+_flags 66 0 BANK0 1 bssBANK0 dist/default/production\Thesis_RFID.X.production.o
+_fputc 114C 0 CODE 0 text10 dist/default/production\Thesis_RFID.X.production.o
+_fputs 19F8 0 CODE 0 text9 dist/default/production\Thesis_RFID.X.production.o
+_putch 1CFC 0 CODE 0 text11 dist/default/production\Thesis_RFID.X.production.o
+__end_of_MFRC522_Rd 1394 0 CODE 0 text29 dist/default/production\Thesis_RFID.X.production.o
+__end_of_MFRC522_Wr 16D6 0 CODE 0 text28 dist/default/production\Thesis_RFID.X.production.o
+_width 62 0 BANK0 1 bssBANK0 dist/default/production\Thesis_RFID.X.production.o
+_data_buffer 9A 0 BANK0 1 bssBANK0 dist/default/production\Thesis_RFID.X.production.o
+_Expander_Write 1C88 0 CODE 0 text35 dist/default/production\Thesis_RFID.X.production.o
+?_isalpha 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+?_islower 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+?_isupper 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+MFRC522_AntiColl@_status 26 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+__HdataBANK0 0 0 ABS 0 dataBANK0 dist/default/production\Thesis_RFID.X.production.o
+MFRC522_AntiColl@i 27 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+MFRC522_AntiColl@unLen 24 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+__initialization 1B8E 0 CODE 0 cinit dist/default/production\Thesis_RFID.X.production.o
+__pbssBANK0 60 0 BANK0 1 bssBANK0 dist/default/production\Thesis_RFID.X.production.o
+_MFRC522_ReadCardSerial 1AE8 0 CODE 0 text15 dist/default/production\Thesis_RFID.X.production.o
+MFRC522_ToCard@command 1C 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+__Hfardata 0 0 FARRAM 0 fardata dist/default/production\Thesis_RFID.X.production.o
+__Hsmallconst 812 0 SMALLCONST 0 smallconst dist/default/production\Thesis_RFID.X.production.o
+__Lifardata 0 0 CODE 0 ifardata dist/default/production\Thesis_RFID.X.production.o
+LCD_Print@LCD_Str 5 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+MFRC522_CRC@dataIn D 0 COMRAM 1 cstackCOMRAM dist/default/production\Thesis_RFID.X.production.o
+__Hintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\Thesis_RFID.X.production.o
+__Hintcode 0 0 CODE 0 intcode dist/default/production\Thesis_RFID.X.production.o
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+text4 0 812 812 14ED 1
+cstackCOMRAM 1 1 1 5F 1
+reset_vec 0 0 0 4 1
+bssBANK0 1 60 60 5E 1
+smallconst 0 800 800 12 1
+# %NOTES Section
+# This section contains data of all the note-psects.  The beginning of the section
+# is indicated by %NOTES. The first line indicates the name and decimal
+# byte-length of the first note-psect, e.g.
+#   $codecov_info_hdr 16
+# Each line that follows contains the byte-data of the psect in hexadecimal as a
+# space-separated list. These lines are limited to 16 bytes of data.
+%NOTES
