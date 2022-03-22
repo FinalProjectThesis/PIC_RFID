@@ -5,8 +5,16 @@
 [d frameptr 4065 ]
 "7 D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\__lldiv.c
 [v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"1 D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\abs.c
+[v _abs abs `(i  1 e 2 0 ]
+"9 D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\aodiv.c
+[v ___aodiv __aodiv `(o  1 e 8 0 ]
+"9 D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\aomod.c
+[v ___aomod __aomod `(o  1 e 8 0 ]
 "72 D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
 [v _pad pad `(i  1 s 2 pad ]
+"287
+[v _dtoa dtoa `(i  1 s 2 dtoa ]
 "645
 [v _xtoa xtoa `(i  1 s 2 xtoa ]
 "692
@@ -75,9 +83,9 @@
 [v _LCD_Print LCD_Print `(v  1 e 1 0 ]
 "120
 [v _LCD_Begin LCD_Begin `(v  1 e 1 0 ]
-"20 E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\main.c
+"23 E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\main.c
 [v _main main `(v  1 e 1 0 ]
-"64
+"75
 [v _port_Init port_Init `(v  1 e 1 0 ]
 "6 E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
 [v _MFRC522_Rd MFRC522_Rd `(uc  1 e 1 0 ]
@@ -114,7 +122,7 @@
 "30
 [v _i2c_addr i2c_addr `uc  1 e 1 0 ]
 [v _backlight_val backlight_val `uc  1 e 1 0 ]
-[s S192 . 1 `uc 1 RD0 1 0 :1:0 
+[s S205 . 1 `uc 1 RD0 1 0 :1:0 
 `uc 1 RD1 1 0 :1:1 
 `uc 1 RD2 1 0 :1:2 
 `uc 1 RD3 1 0 :1:3 
@@ -124,7 +132,7 @@
 `uc 1 RD7 1 0 :1:7 
 ]
 "2737 D:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h
-[s S201 . 1 `uc 1 SPP0 1 0 :1:0 
+[s S214 . 1 `uc 1 SPP0 1 0 :1:0 
 `uc 1 SPP1 1 0 :1:1 
 `uc 1 SPP2 1 0 :1:2 
 `uc 1 SPP3 1 0 :1:3 
@@ -133,12 +141,12 @@
 `uc 1 SPP6 1 0 :1:6 
 `uc 1 SPP7 1 0 :1:7 
 ]
-[s S210 . 1 `uc 1 . 1 0 :7:0 
+[s S223 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 SS2 1 0 :1:7 
 ]
-[u S213 . 1 `S192 1 . 1 0 `S201 1 . 1 0 `S210 1 . 1 0 ]
-[v _PORTDbits PORTDbits `VES213  1 e 1 @3971 ]
-[s S152 . 1 `uc 1 LATD0 1 0 :1:0 
+[u S226 . 1 `S205 1 . 1 0 `S214 1 . 1 0 `S223 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES226  1 e 1 @3971 ]
+[s S165 . 1 `uc 1 LATD0 1 0 :1:0 
 `uc 1 LATD1 1 0 :1:1 
 `uc 1 LATD2 1 0 :1:2 
 `uc 1 LATD3 1 0 :1:3 
@@ -148,7 +156,7 @@
 `uc 1 LATD7 1 0 :1:7 
 ]
 "3291
-[s S161 . 1 `uc 1 LD0 1 0 :1:0 
+[s S174 . 1 `uc 1 LD0 1 0 :1:0 
 `uc 1 LD1 1 0 :1:1 
 `uc 1 LD2 1 0 :1:2 
 `uc 1 LD3 1 0 :1:3 
@@ -157,9 +165,9 @@
 `uc 1 LD6 1 0 :1:6 
 `uc 1 LD7 1 0 :1:7 
 ]
-[u S170 . 1 `S152 1 . 1 0 `S161 1 . 1 0 ]
-[v _LATDbits LATDbits `VES170  1 e 1 @3980 ]
-[s S241 . 1 `uc 1 TRISD0 1 0 :1:0 
+[u S183 . 1 `S165 1 . 1 0 `S174 1 . 1 0 ]
+[v _LATDbits LATDbits `VES183  1 e 1 @3980 ]
+[s S254 . 1 `uc 1 TRISD0 1 0 :1:0 
 `uc 1 TRISD1 1 0 :1:1 
 `uc 1 TRISD2 1 0 :1:2 
 `uc 1 TRISD3 1 0 :1:3 
@@ -169,8 +177,8 @@
 `uc 1 TRISD7 1 0 :1:7 
 ]
 "4034
-[u S259 . 1 `S241 1 . 1 0 `S192 1 . 1 0 ]
-[v _TRISDbits TRISDbits `VES259  1 e 1 @3989 ]
+[u S272 . 1 `S254 1 . 1 0 `S205 1 . 1 0 ]
+[v _TRISDbits TRISDbits `VES272  1 e 1 @3989 ]
 "6807
 [v _SSPCON2 SSPCON2 `VEuc  1 e 1 @4037 ]
 "6869
@@ -209,53 +217,59 @@
 [v _data_buffer data_buffer `[16]uc  1 e 16 0 ]
 "14
 [v _UID UID `[16]uc  1 e 16 0 ]
+"15
+[v _status status `uc  1 e 1 0 ]
 "16
+[v _temp temp `[16]uc  1 e 16 0 ]
+"19
 [v _TagType TagType `uc  1 e 1 0 ]
-"20
+"23
 [v _main main `(v  1 e 1 0 ]
 {
-"42
-[v main@i i `uc  1 a 1 15 ]
-"62
+"59
+[v main@i i `i  1 a 2 27 ]
+"73
 } 0
 "9 D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\nf_sprintf.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
 {
-[u S824 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
+[u S836 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
 "13
-[s S827 _IO_FILE 11 `S824 1 . 3 0 `i 1 count 2 3 `[2]uc 1 ungetbuf 2 5 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
-[v sprintf@f f `S827  1 a 11 2 ]
+[s S839 _IO_FILE 11 `S836 1 . 3 0 `i 1 count 2 3 `[2]uc 1 ungetbuf 2 5 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v sprintf@f f `S839  1 a 11 14 ]
 "12
-[v sprintf@ap ap `[1]*.39v  1 a 2 0 ]
+[v sprintf@ap ap `[1]*.39v  1 a 2 12 ]
 "9
-[v sprintf@s s `*.39uc  1 p 2 89 ]
-[v sprintf@fmt fmt `*.25Cuc  1 p 2 91 ]
+[v sprintf@s s `*.39uc  1 p 2 6 ]
+[v sprintf@fmt fmt `*.25Cuc  1 p 2 8 ]
 "23
 } 0
 "1390 D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
 [v _vfprintf vfprintf `(i  1 e 2 0 ]
 {
 "1393
-[v vfprintf@cfmt cfmt `*.25uc  1 a 2 87 ]
-[s S859 _IO_FILE 0 ]
+[v vfprintf@cfmt cfmt `*.25uc  1 a 2 90 ]
+[s S871 _IO_FILE 0 ]
 "1390
-[v vfprintf@fp fp `*.39S859  1 p 2 81 ]
-[v vfprintf@fmt fmt `*.25Cuc  1 p 2 83 ]
-[v vfprintf@ap ap `*.39*.39v  1 p 2 85 ]
+[v vfprintf@fp fp `*.39S871  1 p 2 0 ]
+[v vfprintf@fmt fmt `*.25Cuc  1 p 2 2 ]
+[v vfprintf@ap ap `*.39*.39v  1 p 2 4 ]
 "1404
 } 0
 "692
 [v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
 {
 "697
-[v vfpfcnvrt@llu llu `uo  1 a 8 72 ]
+[v vfpfcnvrt@llu llu `uo  1 a 8 81 ]
+"696
+[v vfpfcnvrt@ll ll `o  1 a 8 73 ]
 "694
-[v vfpfcnvrt@c c `uc  1 a 1 80 ]
-[s S859 _IO_FILE 0 ]
+[v vfpfcnvrt@c c `uc  1 a 1 89 ]
+[s S871 _IO_FILE 0 ]
 "692
-[v vfpfcnvrt@fp fp `*.39S859  1 p 2 62 ]
-[v vfpfcnvrt@fmt fmt `*.39*.25uc  1 p 2 64 ]
-[v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 66 ]
+[v vfpfcnvrt@fp fp `*.39S871  1 p 2 63 ]
+[v vfpfcnvrt@fmt fmt `*.39*.25uc  1 p 2 65 ]
+[v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 67 ]
 "1387
 } 0
 "645
@@ -268,9 +282,9 @@
 [v xtoa@i i `i  1 a 2 58 ]
 [v xtoa@w w `i  1 a 2 48 ]
 [v xtoa@p p `i  1 a 2 46 ]
-[s S859 _IO_FILE 0 ]
+[s S871 _IO_FILE 0 ]
 "645
-[v xtoa@fp fp `*.39S859  1 p 2 27 ]
+[v xtoa@fp fp `*.39S871  1 p 2 27 ]
 [v xtoa@d d `uo  1 p 8 29 ]
 [v xtoa@x x `uc  1 p 1 37 ]
 "687
@@ -287,15 +301,43 @@
 [v islower@c c `i  1 p 2 0 ]
 "8
 } 0
-"72 D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+"5 D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\isupper.c
+[v _isupper isupper `(i  1 e 2 0 ]
+{
+[v isupper@c c `i  1 p 2 0 ]
+"8
+} 0
+"5 D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\isalpha.c
+[v _isalpha isalpha `(i  1 e 2 0 ]
+{
+[v isalpha@c c `i  1 p 2 0 ]
+"8
+} 0
+"287 D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+[v _dtoa dtoa `(i  1 s 2 dtoa ]
+{
+"290
+[v dtoa@n n `o  1 a 8 53 ]
+"289
+[v dtoa@i i `i  1 a 2 61 ]
+[v dtoa@s s `i  1 a 2 51 ]
+[v dtoa@w w `i  1 a 2 49 ]
+[v dtoa@p p `i  1 a 2 47 ]
+[s S871 _IO_FILE 0 ]
+"287
+[v dtoa@fp fp `*.39S871  1 p 2 27 ]
+[v dtoa@d d `o  1 p 8 29 ]
+"328
+} 0
+"72
 [v _pad pad `(i  1 s 2 pad ]
 {
 "74
 [v pad@w w `i  1 a 2 25 ]
 [v pad@i i `i  1 a 2 23 ]
-[s S859 _IO_FILE 0 ]
+[s S871 _IO_FILE 0 ]
 "72
-[v pad@fp fp `*.39S859  1 p 2 16 ]
+[v pad@fp fp `*.39S871  1 p 2 16 ]
 [v pad@buf buf `*.39uc  1 p 2 18 ]
 [v pad@p p `i  1 p 2 20 ]
 "95
@@ -318,18 +360,18 @@
 [v fputs@c c `uc  1 a 1 13 ]
 "8
 [v fputs@s s `*.39Cuc  1 p 2 9 ]
-[u S824 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
-[s S827 _IO_FILE 11 `S824 1 . 3 0 `i 1 count 2 3 `[2]uc 1 ungetbuf 2 5 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
-[v fputs@fp fp `*.39S827  1 p 2 11 ]
+[u S836 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
+[s S839 _IO_FILE 11 `S836 1 . 3 0 `i 1 count 2 3 `[2]uc 1 ungetbuf 2 5 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v fputs@fp fp `*.39S839  1 p 2 11 ]
 "19
 } 0
 "8 D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\nf_fputc.c
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 0 ]
-[u S824 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
-[s S827 _IO_FILE 11 `S824 1 . 3 0 `i 1 count 2 3 `[2]uc 1 ungetbuf 2 5 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
-[v fputc@fp fp `*.39S827  1 p 2 2 ]
+[u S836 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
+[s S839 _IO_FILE 11 `S836 1 . 3 0 `i 1 count 2 3 `[2]uc 1 ungetbuf 2 5 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v fputc@fp fp `*.39S839  1 p 2 2 ]
 "24
 } 0
 "7 D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\putch.c
@@ -337,29 +379,44 @@
 {
 "9
 } 0
-"5 D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\isupper.c
-[v _isupper isupper `(i  1 e 2 0 ]
+"1 D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\abs.c
+[v _abs abs `(i  1 e 2 0 ]
 {
-[v isupper@c c `i  1 p 2 0 ]
-"8
+[v abs@a a `i  1 p 2 18 ]
+"4
 } 0
-"5 D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\isalpha.c
-[v _isalpha isalpha `(i  1 e 2 0 ]
+"9 D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\aomod.c
+[v ___aomod __aomod `(o  1 e 8 0 ]
 {
-[v isalpha@c c `i  1 p 2 0 ]
-"8
+"12
+[v ___aomod@sign sign `uc  1 a 1 17 ]
+[v ___aomod@counter counter `uc  1 a 1 16 ]
+"9
+[v ___aomod@dividend dividend `o  1 p 8 0 ]
+[v ___aomod@divisor divisor `o  1 p 8 8 ]
+"36
 } 0
-"64 E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\main.c
+"9 D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\aodiv.c
+[v ___aodiv __aodiv `(o  1 e 8 0 ]
+{
+"12
+[v ___aodiv@quotient quotient `o  1 a 8 18 ]
+"13
+[v ___aodiv@sign sign `uc  1 a 1 17 ]
+[v ___aodiv@counter counter `uc  1 a 1 16 ]
+"9
+[v ___aodiv@dividend dividend `o  1 p 8 0 ]
+[v ___aodiv@divisor divisor `o  1 p 8 8 ]
+"43
+} 0
+"75 E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\main.c
 [v _port_Init port_Init `(v  1 e 1 0 ]
 {
-"68
+"79
 } 0
 "315 E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
 [v _MFRC522_ReadCardSerial MFRC522_ReadCardSerial `(uc  1 e 1 0 ]
 {
-"317
-[v MFRC522_ReadCardSerial@_status _status `uc  1 a 1 41 ]
-"315
 [v MFRC522_ReadCardSerial@str str `*.39uc  1 p 2 39 ]
 "324
 } 0

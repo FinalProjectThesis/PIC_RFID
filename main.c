@@ -10,8 +10,11 @@
 #define _XTAL_FREQ 27000000
 #define LENGTH 16
 
-unsigned char data_buffer[LENGTH];                         // Arreglo para mostrar las variabes en la pantalla LCD 2x16.
-uint8_t UID[LENGTH];                                // Arreglo para almacena el c?digo del UID
+unsigned char data_buffer[LENGTH];                         // Fix to display variables on 2x16 LCD screen.
+unsigned char UID[LENGTH];                                // Fix for storing UID code
+unsigned char status;
+char temp[LENGTH] = "\0";
+
 int led = 0;
 unsigned char TagType;
 
@@ -31,31 +34,40 @@ void main(void) {
     __delay_ms(2000);
     LCD_Cmd(LCD_CLEAR);
     LATB7 = 0;
+    
     while (1) {
-        LCD_Goto(1, 1);
-        LCD_Print("ID:");
-      
-        while(!MFRC522_IsCard(&TagType));           // Verifica si hay TAG presente.
-        while(!MFRC522_ReadCardSerial(&UID));      // Lee el c?digo del TAG.
-        LCD_Goto(1, 2);           
- 
-        for(uint8_t i=0; i < 4; i++)                // Imprime el c?digo del UID
-        {
-            sprintf(data_buffer, "%X", UID[i]);
-            LCD_Print(data_buffer);               // Print Buffer
-
-        }    
-        // led operator
-//        if (led == 1)
-//        {
-//            LATB7 = 1;
-//        } else {
-//            LATB7 = 0;
-//        }
-   
-        __delay_ms(1000);
-        MFRC522_Halt();                // Turn off the RFID antenna.
-        LCD_Cmd(LCD_CLEAR);
+        MFRC522_IsCard(&TagType);
+        MFRC522_ReadCardSerial(&UID);
+        status = MFRC522_AntiColl(&UID);
+        
+        if (strlen(UID) == 1){
+            LCD_Cmd(LCD_CLEAR);   
+            LCD_Goto(1, 1);
+            sprintf(temp, "%d", strlen(UID));
+            LCD_Print(temp);
+        } 
+        else {
+            LCD_Cmd(LCD_CLEAR);   
+            LCD_Goto(1, 1);
+            sprintf(temp, "%d", strlen(UID));
+            LCD_Print(temp);
+        }
+        
+        LCD_Goto(1, 2);
+        
+        if(status == MI_OK) {
+            for(int i = 0; i < 5; i++)                // Print the UID code
+            {
+                sprintf(data_buffer, "%X", UID[i]);
+                LCD_Print(data_buffer);               // Print Buffer
+            }
+            LATB7 = 1;
+            __delay_ms(1000);
+        } else {
+            __delay_ms(50);
+            LATB7 = 0;
+            MFRC522_Halt();                // Turn off the RFID antenna.
+        }
     }
     return;
 }

@@ -6240,11 +6240,11 @@ char MFRC522_AntiColl(char *serNum)
     _status = MFRC522_ToCard(0x0C, serNum, 2, serNum, &unLen);
     if(_status == 0)
     {
-        for(i=0; i<4; i++)
+        for(i=0; i<5; i++)
         {
             serNumCheck ^= serNum[i];
         }
-        if(serNumCheck != serNum[4])
+        if(serNumCheck != serNum[5])
         {
             _status = 2;
         }
@@ -6264,7 +6264,7 @@ char MFRC522_ReadCardSerial(char *str)
 {
     char _status;
     _status = MFRC522_AntiColl(str);
-    str[4] = 0;
+    str[5] = 0;
     if(_status == 0)
         return 1;
     else

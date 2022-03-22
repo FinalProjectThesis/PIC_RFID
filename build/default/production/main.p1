@@ -1,7 +1,7 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
-"18 main.c
-[; ;main.c: 18: void port_Init (void);
+"21 main.c
+[; ;main.c: 21: void port_Init (void);
 [v _port_Init `(v ~T0 @X0 0 ef ]
 "32 ./I2C.h
 [; ;./I2C.h: 32: void I2CLCD_Init(uint32_t i2c_clk_freq);
@@ -34,6 +34,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "135
 [; ;./rc522.h: 135: char MFRC522_ReadCardSerial(char *str);
 [v _MFRC522_ReadCardSerial `(uc ~T0 @X0 0 ef1`*uc ]
+"133
+[; ;./rc522.h: 133: char MFRC522_AntiColl(char *serNum);
+[v _MFRC522_AntiColl `(uc ~T0 @X0 0 ef1`*uc ]
+"54 D:\Program Files\Microchip\xc8\v2.36\pic\include\c99\string.h
+[; ;D:\Program Files\Microchip\xc8\v2.36\pic\include\c99\string.h: 54: size_t strlen (const char *);
+[v _strlen `(ui ~T0 @X0 0 ef1`*Cuc ]
 "109 D:\Program Files\Microchip\xc8\v2.36\pic\include\c99\stdio.h
 [; ;D:\Program Files\Microchip\xc8\v2.36\pic\include\c99\stdio.h: 109: int sprintf(char *restrict, const char *restrict, ...);
 [v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
@@ -642,150 +648,212 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 8 `i `uc
 ]
 "13 main.c
-[; ;main.c: 13: uint8_t data_buffer[16];
+[; ;main.c: 13: unsigned char data_buffer[16];
 [v _data_buffer `uc ~T0 @X0 -> 16 `i e ]
 "14
-[; ;main.c: 14: uint8_t UID[16];
+[; ;main.c: 14: unsigned char UID[16];
 [v _UID `uc ~T0 @X0 -> 16 `i e ]
 "15
-[; ;main.c: 15: int led = 0;
+[; ;main.c: 15: unsigned char status;
+[v _status `uc ~T0 @X0 1 e ]
+"16
+[; ;main.c: 16: char temp[16] = "\0";
+[v _temp `uc ~T0 @X0 -> 16 `i e ]
+[i _temp
+:U ..
+-> 0 `c
+-> 0 `c
+..
+]
+"18
+[; ;main.c: 18: int led = 0;
 [v _led `i ~T0 @X0 1 e ]
 [i _led
 -> 0 `i
 ]
-"16
-[; ;main.c: 16: unsigned char TagType;
+"19
+[; ;main.c: 19: unsigned char TagType;
 [v _TagType `uc ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"20
-[; ;main.c: 20: void main(void) {
+"23
+[; ;main.c: 23: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"21
-[; ;main.c: 21:     port_Init();
-[e ( _port_Init ..  ]
-"22
-[; ;main.c: 22:     I2CLCD_Init(100000);
-[e ( _I2CLCD_Init (1 -> -> 100000 `l `ul ]
-"23
-[; ;main.c: 23:     LCD_Begin(0x4E);
-[e ( _LCD_Begin (1 -> -> 78 `i `uc ]
 "24
-[; ;main.c: 24:     MFRC522_Init();
-[e ( _MFRC522_Init ..  ]
+[; ;main.c: 24:     port_Init();
+[e ( _port_Init ..  ]
 "25
-[; ;main.c: 25:     _delay((unsigned long)((500)*(27000000/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 27000000 `l `d .4000.0 `ul ]
+[; ;main.c: 25:     I2CLCD_Init(100000);
+[e ( _I2CLCD_Init (1 -> -> 100000 `l `ul ]
+"26
+[; ;main.c: 26:     LCD_Begin(0x4E);
+[e ( _LCD_Begin (1 -> -> 78 `i `uc ]
 "27
-[; ;main.c: 27:     LCD_Goto(1, 1);
-[e ( _LCD_Goto (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+[; ;main.c: 27:     MFRC522_Init();
+[e ( _MFRC522_Init ..  ]
 "28
-[; ;main.c: 28:     LCD_Print("Welcome");
-[e ( _LCD_Print (1 :s 1C ]
-"29
-[; ;main.c: 29:     LATB7 = 1;
-[e = _LATB7 -> -> 1 `i `b ]
+[; ;main.c: 28:     _delay((unsigned long)((500)*(27000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 27000000 `l `d .4000.0 `ul ]
+"30
+[; ;main.c: 30:     LCD_Goto(1, 1);
+[e ( _LCD_Goto (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
 "31
-[; ;main.c: 31:     _delay((unsigned long)((2000)*(27000000/4000.0)));
-[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 27000000 `l `d .4000.0 `ul ]
+[; ;main.c: 31:     LCD_Print("Welcome");
+[e ( _LCD_Print (1 :s 1C ]
 "32
-[; ;main.c: 32:     LCD_Cmd(0x01);
-[e ( _LCD_Cmd (1 -> -> 1 `i `uc ]
-"33
-[; ;main.c: 33:     LATB7 = 0;
-[e = _LATB7 -> -> 0 `i `b ]
+[; ;main.c: 32:     LATB7 = 1;
+[e = _LATB7 -> -> 1 `i `b ]
 "34
-[; ;main.c: 34:     while (1) {
+[; ;main.c: 34:     _delay((unsigned long)((2000)*(27000000/4000.0)));
+[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 27000000 `l `d .4000.0 `ul ]
+"35
+[; ;main.c: 35:     LCD_Cmd(0x01);
+[e ( _LCD_Cmd (1 -> -> 1 `i `uc ]
+"36
+[; ;main.c: 36:     LATB7 = 0;
+[e = _LATB7 -> -> 0 `i `b ]
+"38
+[; ;main.c: 38:     while (1) {
 [e :U 372 ]
 {
-"35
-[; ;main.c: 35:         LCD_Goto(1, 1);
-[e ( _LCD_Goto (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"36
-[; ;main.c: 36:         LCD_Print("ID:");
-[e ( _LCD_Print (1 :s 2C ]
-"38
-[; ;main.c: 38:         while(!MFRC522_IsCard(&TagType));
-[e $U 374  ]
-[e :U 375 ]
-[e :U 374 ]
-[e $ ! != -> ( _MFRC522_IsCard (1 -> &U _TagType `*uc `i -> 0 `i 375  ]
-[e :U 376 ]
 "39
-[; ;main.c: 39:         while(!MFRC522_ReadCardSerial(&UID));
-[e $U 377  ]
-[e :U 378 ]
-[e :U 377 ]
-[e $ ! != -> ( _MFRC522_ReadCardSerial (1 -> &U _UID `*uc `i -> 0 `i 378  ]
-[e :U 379 ]
+[; ;main.c: 39:         MFRC522_IsCard(&TagType);
+[e ( _MFRC522_IsCard (1 -> &U _TagType `*uc ]
 "40
-[; ;main.c: 40:         LCD_Goto(1, 2);
-[e ( _LCD_Goto (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
-"42
-[; ;main.c: 42:         for(uint8_t i=0; i < 4; i++)
-{
-[v _i `uc ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 4 `i 380  ]
-[e $U 381  ]
-[e :U 380 ]
+[; ;main.c: 40:         MFRC522_ReadCardSerial(&UID);
+[e ( _MFRC522_ReadCardSerial (1 -> &U _UID `*uc ]
+"41
+[; ;main.c: 41:         status = MFRC522_AntiColl(&UID);
+[e = _status -> ( _MFRC522_AntiColl (1 -> &U _UID `*uc `uc ]
 "43
-[; ;main.c: 43:         {
+[; ;main.c: 43:         if (strlen(UID) == 1){
+[e $ ! == ( _strlen (1 -> &U _UID `*Cuc -> -> 1 `i `ui 374  ]
 {
 "44
-[; ;main.c: 44:             sprintf(data_buffer, "%X", UID[i]);
-[e ( _sprintf (1 , (. , -> &U _data_buffer `*uc :s 3C -> *U + &U _UID * -> _i `ux -> -> # *U &U _UID `ui `ux `i ]
-"45
-[; ;main.c: 45:         }
-}
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 4 `i 380  ]
-[e :U 381 ]
-}
-"46
-[; ;main.c: 46:         LCD_Print(data_buffer);
-[e ( _LCD_Print (1 -> &U _data_buffer `*uc ]
-"57
-[; ;main.c: 57:         _delay((unsigned long)((1000)*(27000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 27000000 `l `d .4000.0 `ul ]
-"58
-[; ;main.c: 58:         MFRC522_Halt();
-[e ( _MFRC522_Halt ..  ]
-"59
-[; ;main.c: 59:         LCD_Cmd(0x01);
+[; ;main.c: 44:             LCD_Cmd(0x01);
 [e ( _LCD_Cmd (1 -> -> 1 `i `uc ]
+"45
+[; ;main.c: 45:             LCD_Goto(1, 1);
+[e ( _LCD_Goto (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+"46
+[; ;main.c: 46:             sprintf(temp, "%d", strlen(UID));
+[e ( _sprintf (1 , (. , &U _temp :s 2C ( _strlen (1 -> &U _UID `*Cuc ]
+"47
+[; ;main.c: 47:             LCD_Print(temp);
+[e ( _LCD_Print (1 &U _temp ]
+"48
+[; ;main.c: 48:         }
+}
+[e $U 375  ]
+"49
+[; ;main.c: 49:         else {
+[e :U 374 ]
+{
+"50
+[; ;main.c: 50:             LCD_Cmd(0x01);
+[e ( _LCD_Cmd (1 -> -> 1 `i `uc ]
+"51
+[; ;main.c: 51:             LCD_Goto(1, 1);
+[e ( _LCD_Goto (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+"52
+[; ;main.c: 52:             sprintf(temp, "%d", strlen(UID));
+[e ( _sprintf (1 , (. , &U _temp :s 3C ( _strlen (1 -> &U _UID `*Cuc ]
+"53
+[; ;main.c: 53:             LCD_Print(temp);
+[e ( _LCD_Print (1 &U _temp ]
+"54
+[; ;main.c: 54:         }
+}
+[e :U 375 ]
+"56
+[; ;main.c: 56:         LCD_Goto(1, 2);
+[e ( _LCD_Goto (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
+"58
+[; ;main.c: 58:         if(status == 0) {
+[e $ ! == -> _status `i -> 0 `i 376  ]
+{
+"59
+[; ;main.c: 59:             for(int i = 0; i < 5; i++)
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 5 `i 377  ]
+[e $U 378  ]
+[e :U 377 ]
 "60
-[; ;main.c: 60:     }
+[; ;main.c: 60:             {
+{
+"61
+[; ;main.c: 61:                 sprintf(data_buffer, "%X", UID[i]);
+[e ( _sprintf (1 , (. , -> &U _data_buffer `*uc :s 4C -> *U + &U _UID * -> -> _i `ui `ux -> -> # *U &U _UID `ui `ux `i ]
+"62
+[; ;main.c: 62:                 LCD_Print(data_buffer);
+[e ( _LCD_Print (1 -> &U _data_buffer `*uc ]
+"63
+[; ;main.c: 63:             }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 5 `i 377  ]
+[e :U 378 ]
+}
+"64
+[; ;main.c: 64:             LATB7 = 1;
+[e = _LATB7 -> -> 1 `i `b ]
+"65
+[; ;main.c: 65:             _delay((unsigned long)((1000)*(27000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 27000000 `l `d .4000.0 `ul ]
+"66
+[; ;main.c: 66:         } else {
+}
+[e $U 380  ]
+[e :U 376 ]
+{
+"67
+[; ;main.c: 67:             _delay((unsigned long)((50)*(27000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 27000000 `l `d .4000.0 `ul ]
+"68
+[; ;main.c: 68:             LATB7 = 0;
+[e = _LATB7 -> -> 0 `i `b ]
+"69
+[; ;main.c: 69:             MFRC522_Halt();
+[e ( _MFRC522_Halt ..  ]
+"70
+[; ;main.c: 70:         }
+}
+[e :U 380 ]
+"71
+[; ;main.c: 71:     }
 }
 [e :U 371 ]
 [e $U 372  ]
 [e :U 373 ]
-"61
-[; ;main.c: 61:     return;
+"72
+[; ;main.c: 72:     return;
 [e $UE 370  ]
-"62
-[; ;main.c: 62: }
+"73
+[; ;main.c: 73: }
 [e :UE 370 ]
 }
-"64
-[; ;main.c: 64: void port_Init(void){
+"75
+[; ;main.c: 75: void port_Init(void){
 [v _port_Init `(v ~T0 @X0 1 ef ]
 {
 [e :U _port_Init ]
 [f ]
-"66
-[; ;main.c: 66:     TRISB7 = 0;
+"77
+[; ;main.c: 77:     TRISB7 = 0;
 [e = _TRISB7 -> -> 0 `i `b ]
-"67
-[; ;main.c: 67:     LATB7 = 0;
+"78
+[; ;main.c: 78:     LATB7 = 0;
 [e = _LATB7 -> -> 0 `i `b ]
-"68
-[; ;main.c: 68: }
-[e :UE 383 ]
+"79
+[; ;main.c: 79: }
+[e :UE 381 ]
 }
-[p f _sprintf 10485760 ]
+[p f _sprintf 10485888 ]
 [a 1C 87 101 108 99 111 109 101 0 ]
-[a 3C 37 88 0 ]
-[a 2C 73 68 58 0 ]
+[a 2C 37 100 0 ]
+[a 3C 37 100 0 ]
+[a 4C 37 88 0 ]

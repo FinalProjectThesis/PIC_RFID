@@ -6053,8 +6053,11 @@ char MFRC522_Compare_UID(char *l, char *u);
 
 
 
-uint8_t data_buffer[16];
-uint8_t UID[16];
+unsigned char data_buffer[16];
+unsigned char UID[16];
+unsigned char status;
+char temp[16] = "\0";
+
 int led = 0;
 unsigned char TagType;
 
@@ -6074,23 +6077,40 @@ void main(void) {
     _delay((unsigned long)((2000)*(27000000/4000.0)));
     LCD_Cmd(0x01);
     LATB7 = 0;
-    while (1) {
-        LCD_Goto(1, 1);
-        LCD_Print("ID:");
 
-        while(!MFRC522_IsCard(&TagType));
-        while(!MFRC522_ReadCardSerial(&UID));
+    while (1) {
+        MFRC522_IsCard(&TagType);
+        MFRC522_ReadCardSerial(&UID);
+        status = MFRC522_AntiColl(&UID);
+
+        if (strlen(UID) == 1){
+            LCD_Cmd(0x01);
+            LCD_Goto(1, 1);
+            sprintf(temp, "%d", strlen(UID));
+            LCD_Print(temp);
+        }
+        else {
+            LCD_Cmd(0x01);
+            LCD_Goto(1, 1);
+            sprintf(temp, "%d", strlen(UID));
+            LCD_Print(temp);
+        }
+
         LCD_Goto(1, 2);
 
-        for(uint8_t i=0; i < 4; i++)
-        {
-            sprintf(data_buffer, "%X", UID[i]);
+        if(status == 0) {
+            for(int i = 0; i < 5; i++)
+            {
+                sprintf(data_buffer, "%X", UID[i]);
+                LCD_Print(data_buffer);
+            }
+            LATB7 = 1;
+            _delay((unsigned long)((1000)*(27000000/4000.0)));
+        } else {
+            _delay((unsigned long)((50)*(27000000/4000.0)));
+            LATB7 = 0;
+            MFRC522_Halt();
         }
-        LCD_Print(data_buffer);
-# 57 "main.c"
-        _delay((unsigned long)((1000)*(27000000/4000.0)));
-        MFRC522_Halt();
-        LCD_Cmd(0x01);
     }
     return;
 }

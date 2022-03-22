@@ -1561,10 +1561,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;rc522.c: 294:     {
 {
 "295
-[; ;rc522.c: 295:         for(i=0; i<4; i++)
+[; ;rc522.c: 295:         for(i=0; i<5; i++)
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 4 `i 436  ]
+[e $ < -> _i `i -> 5 `i 436  ]
 [e $U 437  ]
 [e :U 436 ]
 "296
@@ -1577,12 +1577,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;rc522.c: 298:         }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 4 `i 436  ]
+[e $ < -> _i `i -> 5 `i 436  ]
 [e :U 437 ]
 }
 "299
-[; ;rc522.c: 299:         if(serNumCheck != serNum[4])
-[e $ ! != -> _serNumCheck `i -> *U + _serNum * -> -> 4 `i `x -> -> # *U _serNum `i `x `i 439  ]
+[; ;rc522.c: 299:         if(serNumCheck != serNum[5])
+[e $ ! != -> _serNumCheck `i -> *U + _serNum * -> -> 5 `i `x -> -> # *U _serNum `i `x `i 439  ]
 "300
 [; ;rc522.c: 300:         {
 {
@@ -1658,8 +1658,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;rc522.c: 318:     _status = MFRC522_AntiColl(str);
 [e = __status ( _MFRC522_AntiColl (1 _str ]
 "319
-[; ;rc522.c: 319:     str[4] = 0;
-[e = *U + _str * -> -> 4 `i `x -> -> # *U _str `i `x -> -> 0 `i `uc ]
+[; ;rc522.c: 319:     str[5] = 0;
+[e = *U + _str * -> -> 5 `i `x -> -> # *U _str `i `x -> -> 0 `i `uc ]
 "320
 [; ;rc522.c: 320:     if(_status == 0)
 [e $ ! == -> __status `i -> 0 `i 444  ]
