@@ -9,12 +9,17 @@
 
 #define _XTAL_FREQ 27000000      // Oscilador externo de 8MHz.
 
-#define MFRC522_CS_DIR  TRISDbits.RD0          // SDA
+#define MFRC522_CS_DIR  TRISAbits.RA0          // SDA1
+#define MFRC522_CS_DIR2  TRISAbits.RA1         // SDA2
+
 #define MFRC522_CLK_DIR TRISDbits.RD1          // SCK
 #define MFRC522_SDO_DIR TRISDbits.RD2          // MOSI
 #define MFRC522_SDI_DIR TRISDbits.RD3          // MISO
 #define MFRC522_RST_DIR TRISDbits.RD4          // RST
-#define MFRC522_CS_PIN  LATDbits.LD0           // SDA
+
+#define MFRC522_CS_PIN  LATAbits.LA0           // SDA1
+#define MFRC522_CS_PIN2  LATAbits.LA1          // SDA2
+
 #define MFRC522_CLK_PIN LATDbits.LD1           // SCK
 #define MFRC522_SDO_PIN LATDbits.LD2           // MOSI
 #define MFRC522_SDI_PIN PORTDbits.RD3          // MISO

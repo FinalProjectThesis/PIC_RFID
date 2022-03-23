@@ -6030,7 +6030,7 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
 # 8 "./rc522.h" 2
-# 120 "./rc522.h"
+# 125 "./rc522.h"
 unsigned char MFRC522_Rd(unsigned char address);
 void MFRC522_Wr(unsigned char address, unsigned char value);
 static void MFRC522_Clear_Bit(char addr, char mask);

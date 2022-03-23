@@ -89,40 +89,40 @@
 [v _port_Init port_Init `(v  1 e 1 0 ]
 "6 E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
 [v _MFRC522_Rd MFRC522_Rd `(uc  1 e 1 0 ]
-"33
+"35
 [v _MFRC522_Wr MFRC522_Wr `(v  1 e 1 0 ]
-"58
+"62
 [v _MFRC522_Clear_Bit MFRC522_Clear_Bit `(v  1 s 1 MFRC522_Clear_Bit ]
-"65
+"69
 [v _MFRC522_Set_Bit MFRC522_Set_Bit `(v  1 s 1 MFRC522_Set_Bit ]
-"72
+"76
 [v _MFRC522_Reset MFRC522_Reset `(v  1 e 1 0 ]
-"84
+"88
 [v _MFRC522_AntennaOn MFRC522_AntennaOn `(v  1 e 1 0 ]
-"91
+"95
 [v _MFRC522_AntennaOff MFRC522_AntennaOff `(v  1 e 1 0 ]
-"96
+"100
 [v _MFRC522_Init MFRC522_Init `(v  1 e 1 0 ]
-"118
+"124
 [v _MFRC522_ToCard MFRC522_ToCard `(uc  1 e 1 0 ]
-"208
+"214
 [v _MFRC522_Request MFRC522_Request `(uc  1 e 1 0 ]
-"222
+"228
 [v _MFRC522_CRC MFRC522_CRC `(v  1 e 1 0 ]
-"270
+"276
 [v _MFRC522_Halt MFRC522_Halt `(v  1 e 1 0 ]
-"282
+"288
 [v _MFRC522_AntiColl MFRC522_AntiColl `(uc  1 e 1 0 ]
-"307
+"313
 [v _MFRC522_IsCard MFRC522_IsCard `(uc  1 e 1 0 ]
-"315
+"321
 [v _MFRC522_ReadCardSerial MFRC522_ReadCardSerial `(uc  1 e 1 0 ]
 "29 E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X/I2C.h
 [v _RS RS `b  1 e 0 0 ]
 "30
 [v _i2c_addr i2c_addr `uc  1 e 1 0 ]
 [v _backlight_val backlight_val `uc  1 e 1 0 ]
-[s S205 . 1 `uc 1 RD0 1 0 :1:0 
+[s S241 . 1 `uc 1 RD0 1 0 :1:0 
 `uc 1 RD1 1 0 :1:1 
 `uc 1 RD2 1 0 :1:2 
 `uc 1 RD3 1 0 :1:3 
@@ -132,7 +132,7 @@
 `uc 1 RD7 1 0 :1:7 
 ]
 "2737 D:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h
-[s S214 . 1 `uc 1 SPP0 1 0 :1:0 
+[s S250 . 1 `uc 1 SPP0 1 0 :1:0 
 `uc 1 SPP1 1 0 :1:1 
 `uc 1 SPP2 1 0 :1:2 
 `uc 1 SPP3 1 0 :1:3 
@@ -141,11 +141,30 @@
 `uc 1 SPP6 1 0 :1:6 
 `uc 1 SPP7 1 0 :1:7 
 ]
-[s S223 . 1 `uc 1 . 1 0 :7:0 
+[s S259 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 SS2 1 0 :1:7 
 ]
-[u S226 . 1 `S205 1 . 1 0 `S214 1 . 1 0 `S223 1 . 1 0 ]
-[v _PORTDbits PORTDbits `VES226  1 e 1 @3971 ]
+[u S262 . 1 `S241 1 . 1 0 `S250 1 . 1 0 `S259 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES262  1 e 1 @3971 ]
+[s S205 . 1 `uc 1 LATA0 1 0 :1:0 
+`uc 1 LATA1 1 0 :1:1 
+`uc 1 LATA2 1 0 :1:2 
+`uc 1 LATA3 1 0 :1:3 
+`uc 1 LATA4 1 0 :1:4 
+`uc 1 LATA5 1 0 :1:5 
+`uc 1 LATA6 1 0 :1:6 
+]
+"2999
+[s S213 . 1 `uc 1 LA0 1 0 :1:0 
+`uc 1 LA1 1 0 :1:1 
+`uc 1 LA2 1 0 :1:2 
+`uc 1 LA3 1 0 :1:3 
+`uc 1 LA4 1 0 :1:4 
+`uc 1 LA5 1 0 :1:5 
+`uc 1 LA6 1 0 :1:6 
+]
+[u S221 . 1 `S205 1 . 1 0 `S213 1 . 1 0 ]
+[v _LATAbits LATAbits `VES221  1 e 1 @3977 ]
 [s S165 . 1 `uc 1 LATD0 1 0 :1:0 
 `uc 1 LATD1 1 0 :1:1 
 `uc 1 LATD2 1 0 :1:2 
@@ -167,7 +186,26 @@
 ]
 [u S183 . 1 `S165 1 . 1 0 `S174 1 . 1 0 ]
 [v _LATDbits LATDbits `VES183  1 e 1 @3980 ]
-[s S254 . 1 `uc 1 TRISD0 1 0 :1:0 
+[s S330 . 1 `uc 1 TRISA0 1 0 :1:0 
+`uc 1 TRISA1 1 0 :1:1 
+`uc 1 TRISA2 1 0 :1:2 
+`uc 1 TRISA3 1 0 :1:3 
+`uc 1 TRISA4 1 0 :1:4 
+`uc 1 TRISA5 1 0 :1:5 
+`uc 1 TRISA6 1 0 :1:6 
+]
+"3458
+[s S338 . 1 `uc 1 RA0 1 0 :1:0 
+`uc 1 RA1 1 0 :1:1 
+`uc 1 RA2 1 0 :1:2 
+`uc 1 RA3 1 0 :1:3 
+`uc 1 RA4 1 0 :1:4 
+`uc 1 RA5 1 0 :1:5 
+`uc 1 RA6 1 0 :1:6 
+]
+[u S346 . 1 `S330 1 . 1 0 `S338 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES346  1 e 1 @3986 ]
+[s S290 . 1 `uc 1 TRISD0 1 0 :1:0 
 `uc 1 TRISD1 1 0 :1:1 
 `uc 1 TRISD2 1 0 :1:2 
 `uc 1 TRISD3 1 0 :1:3 
@@ -177,8 +215,8 @@
 `uc 1 TRISD7 1 0 :1:7 
 ]
 "4034
-[u S272 . 1 `S254 1 . 1 0 `S205 1 . 1 0 ]
-[v _TRISDbits TRISDbits `VES272  1 e 1 @3989 ]
+[u S308 . 1 `S290 1 . 1 0 `S241 1 . 1 0 ]
+[v _TRISDbits TRISDbits `VES308  1 e 1 @3989 ]
 "6807
 [v _SSPCON2 SSPCON2 `VEuc  1 e 1 @4037 ]
 "6869
@@ -233,10 +271,10 @@
 "9 D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\nf_sprintf.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
 {
-[u S836 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
+[u S922 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
 "13
-[s S839 _IO_FILE 11 `S836 1 . 3 0 `i 1 count 2 3 `[2]uc 1 ungetbuf 2 5 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
-[v sprintf@f f `S839  1 a 11 14 ]
+[s S925 _IO_FILE 11 `S922 1 . 3 0 `i 1 count 2 3 `[2]uc 1 ungetbuf 2 5 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v sprintf@f f `S925  1 a 11 14 ]
 "12
 [v sprintf@ap ap `[1]*.39v  1 a 2 12 ]
 "9
@@ -249,9 +287,9 @@
 {
 "1393
 [v vfprintf@cfmt cfmt `*.25uc  1 a 2 90 ]
-[s S871 _IO_FILE 0 ]
+[s S957 _IO_FILE 0 ]
 "1390
-[v vfprintf@fp fp `*.39S871  1 p 2 0 ]
+[v vfprintf@fp fp `*.39S957  1 p 2 0 ]
 [v vfprintf@fmt fmt `*.25Cuc  1 p 2 2 ]
 [v vfprintf@ap ap `*.39*.39v  1 p 2 4 ]
 "1404
@@ -265,9 +303,9 @@
 [v vfpfcnvrt@ll ll `o  1 a 8 73 ]
 "694
 [v vfpfcnvrt@c c `uc  1 a 1 89 ]
-[s S871 _IO_FILE 0 ]
+[s S957 _IO_FILE 0 ]
 "692
-[v vfpfcnvrt@fp fp `*.39S871  1 p 2 63 ]
+[v vfpfcnvrt@fp fp `*.39S957  1 p 2 63 ]
 [v vfpfcnvrt@fmt fmt `*.39*.25uc  1 p 2 65 ]
 [v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 67 ]
 "1387
@@ -282,9 +320,9 @@
 [v xtoa@i i `i  1 a 2 58 ]
 [v xtoa@w w `i  1 a 2 48 ]
 [v xtoa@p p `i  1 a 2 46 ]
-[s S871 _IO_FILE 0 ]
+[s S957 _IO_FILE 0 ]
 "645
-[v xtoa@fp fp `*.39S871  1 p 2 27 ]
+[v xtoa@fp fp `*.39S957  1 p 2 27 ]
 [v xtoa@d d `uo  1 p 8 29 ]
 [v xtoa@x x `uc  1 p 1 37 ]
 "687
@@ -323,9 +361,9 @@
 [v dtoa@s s `i  1 a 2 51 ]
 [v dtoa@w w `i  1 a 2 49 ]
 [v dtoa@p p `i  1 a 2 47 ]
-[s S871 _IO_FILE 0 ]
+[s S957 _IO_FILE 0 ]
 "287
-[v dtoa@fp fp `*.39S871  1 p 2 27 ]
+[v dtoa@fp fp `*.39S957  1 p 2 27 ]
 [v dtoa@d d `o  1 p 8 29 ]
 "328
 } 0
@@ -335,9 +373,9 @@
 "74
 [v pad@w w `i  1 a 2 25 ]
 [v pad@i i `i  1 a 2 23 ]
-[s S871 _IO_FILE 0 ]
+[s S957 _IO_FILE 0 ]
 "72
-[v pad@fp fp `*.39S871  1 p 2 16 ]
+[v pad@fp fp `*.39S957  1 p 2 16 ]
 [v pad@buf buf `*.39uc  1 p 2 18 ]
 [v pad@p p `i  1 p 2 20 ]
 "95
@@ -360,18 +398,18 @@
 [v fputs@c c `uc  1 a 1 13 ]
 "8
 [v fputs@s s `*.39Cuc  1 p 2 9 ]
-[u S836 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
-[s S839 _IO_FILE 11 `S836 1 . 3 0 `i 1 count 2 3 `[2]uc 1 ungetbuf 2 5 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
-[v fputs@fp fp `*.39S839  1 p 2 11 ]
+[u S922 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
+[s S925 _IO_FILE 11 `S922 1 . 3 0 `i 1 count 2 3 `[2]uc 1 ungetbuf 2 5 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v fputs@fp fp `*.39S925  1 p 2 11 ]
 "19
 } 0
 "8 D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\nf_fputc.c
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 0 ]
-[u S836 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
-[s S839 _IO_FILE 11 `S836 1 . 3 0 `i 1 count 2 3 `[2]uc 1 ungetbuf 2 5 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
-[v fputc@fp fp `*.39S839  1 p 2 2 ]
+[u S922 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
+[s S925 _IO_FILE 11 `S922 1 . 3 0 `i 1 count 2 3 `[2]uc 1 ungetbuf 2 5 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v fputc@fp fp `*.39S925  1 p 2 2 ]
 "24
 } 0
 "7 D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\putch.c
@@ -414,152 +452,152 @@
 {
 "79
 } 0
-"315 E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+"321 E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
 [v _MFRC522_ReadCardSerial MFRC522_ReadCardSerial `(uc  1 e 1 0 ]
 {
 [v MFRC522_ReadCardSerial@str str `*.39uc  1 p 2 39 ]
-"324
+"330
 } 0
-"282
+"288
 [v _MFRC522_AntiColl MFRC522_AntiColl `(uc  1 e 1 0 ]
 {
-"287
+"293
 [v MFRC522_AntiColl@unLen unLen `ui  1 a 2 35 ]
-"285
+"291
 [v MFRC522_AntiColl@i i `uc  1 a 1 38 ]
-"284
+"290
 [v MFRC522_AntiColl@_status _status `uc  1 a 1 37 ]
-"286
+"292
 [v MFRC522_AntiColl@serNumCheck serNumCheck `uc  1 a 1 34 ]
-"282
+"288
 [v MFRC522_AntiColl@serNum serNum `*.39uc  1 p 2 31 ]
-"305
+"311
 } 0
-"307
+"313
 [v _MFRC522_IsCard MFRC522_IsCard `(uc  1 e 1 0 ]
 {
 [v MFRC522_IsCard@TagType TagType `*.39uc  1 p 2 37 ]
-"313
+"319
 } 0
-"208
+"214
 [v _MFRC522_Request MFRC522_Request `(uc  1 e 1 0 ]
 {
 [v MFRC522_Request@reqMode reqMode `uc  1 a 1 wreg ]
-"211
+"217
 [v MFRC522_Request@backBits backBits `ui  1 a 2 35 ]
-"210
+"216
 [v MFRC522_Request@_status _status `uc  1 a 1 34 ]
-"208
+"214
 [v MFRC522_Request@reqMode reqMode `uc  1 a 1 wreg ]
 [v MFRC522_Request@TagType TagType `*.39uc  1 p 2 31 ]
-"212
+"218
 [v MFRC522_Request@reqMode reqMode `uc  1 a 1 33 ]
-"220
+"226
 } 0
-"96
+"100
 [v _MFRC522_Init MFRC522_Init `(v  1 e 1 0 ]
 {
-"116
+"122
 } 0
-"72
+"76
 [v _MFRC522_Reset MFRC522_Reset `(v  1 e 1 0 ]
 {
-"82
+"86
 } 0
-"84
+"88
 [v _MFRC522_AntennaOn MFRC522_AntennaOn `(v  1 e 1 0 ]
 {
-"89
+"93
 } 0
-"91
+"95
 [v _MFRC522_AntennaOff MFRC522_AntennaOff `(v  1 e 1 0 ]
 {
-"94
+"98
 } 0
-"270
+"276
 [v _MFRC522_Halt MFRC522_Halt `(v  1 e 1 0 ]
 {
-"273
+"279
 [v MFRC522_Halt@buff buff `[4]uc  1 a 4 31 ]
-"272
+"278
 [v MFRC522_Halt@unLen unLen `ui  1 a 2 35 ]
-"280
+"286
 } 0
-"118
+"124
 [v _MFRC522_ToCard MFRC522_ToCard `(uc  1 e 1 0 ]
 {
 [v MFRC522_ToCard@command command `uc  1 a 1 wreg ]
-"125
+"131
 [v MFRC522_ToCard@i i `ui  1 a 2 28 ]
-"124
+"130
 [v MFRC522_ToCard@n n `uc  1 a 1 30 ]
-"121
+"127
 [v MFRC522_ToCard@irqEn irqEn `uc  1 a 1 26 ]
-"123
+"129
 [v MFRC522_ToCard@lastBits lastBits `uc  1 a 1 25 ]
-"120
+"126
 [v MFRC522_ToCard@_status _status `uc  1 a 1 24 ]
-"122
+"128
 [v MFRC522_ToCard@waitIRq waitIRq `uc  1 a 1 23 ]
-"118
+"124
 [v MFRC522_ToCard@command command `uc  1 a 1 wreg ]
 [v MFRC522_ToCard@sendData sendData `*.39uc  1 p 2 12 ]
 [v MFRC522_ToCard@sendLen sendLen `uc  1 p 1 14 ]
 [v MFRC522_ToCard@backData backData `*.39uc  1 p 2 15 ]
 [v MFRC522_ToCard@backLen backLen `*.39ui  1 p 2 17 ]
-"120
+"126
 [v MFRC522_ToCard@command command `uc  1 a 1 27 ]
-"206
+"212
 } 0
-"222
+"228
 [v _MFRC522_CRC MFRC522_CRC `(v  1 e 1 0 ]
 {
-"224
+"230
 [v MFRC522_CRC@i i `uc  1 a 1 18 ]
 [v MFRC522_CRC@n n `uc  1 a 1 17 ]
-"222
+"228
 [v MFRC522_CRC@dataIn dataIn `*.39uc  1 p 2 12 ]
 [v MFRC522_CRC@length length `uc  1 p 1 14 ]
 [v MFRC522_CRC@dataOut dataOut `*.39uc  1 p 2 15 ]
-"241
+"247
 } 0
-"65
+"69
 [v _MFRC522_Set_Bit MFRC522_Set_Bit `(v  1 s 1 MFRC522_Set_Bit ]
 {
 [v MFRC522_Set_Bit@addr addr `uc  1 a 1 wreg ]
-"67
+"71
 [v MFRC522_Set_Bit@tmp tmp `uc  1 a 1 10 ]
-"65
+"69
 [v MFRC522_Set_Bit@addr addr `uc  1 a 1 wreg ]
 [v MFRC522_Set_Bit@mask mask `uc  1 p 1 9 ]
 [v MFRC522_Set_Bit@addr addr `uc  1 a 1 11 ]
-"70
+"74
 } 0
-"58
+"62
 [v _MFRC522_Clear_Bit MFRC522_Clear_Bit `(v  1 s 1 MFRC522_Clear_Bit ]
 {
 [v MFRC522_Clear_Bit@addr addr `uc  1 a 1 wreg ]
-"60
+"64
 [v MFRC522_Clear_Bit@tmp tmp `uc  1 a 1 10 ]
-"58
+"62
 [v MFRC522_Clear_Bit@addr addr `uc  1 a 1 wreg ]
 [v MFRC522_Clear_Bit@mask mask `uc  1 p 1 9 ]
 [v MFRC522_Clear_Bit@addr addr `uc  1 a 1 11 ]
-"63
+"67
 } 0
-"33
+"35
 [v _MFRC522_Wr MFRC522_Wr `(v  1 e 1 0 ]
 {
 [v MFRC522_Wr@address address `uc  1 a 1 wreg ]
-"35
+"37
 [v MFRC522_Wr@i i `uc  1 a 1 4 ]
 [v MFRC522_Wr@ucAddr ucAddr `uc  1 a 1 3 ]
-"33
+"35
 [v MFRC522_Wr@address address `uc  1 a 1 wreg ]
 [v MFRC522_Wr@value value `uc  1 p 1 0 ]
-"36
+"38
 [v MFRC522_Wr@address address `uc  1 a 1 2 ]
-"56
+"60
 } 0
 "6
 [v _MFRC522_Rd MFRC522_Rd `(uc  1 e 1 0 ]
@@ -575,7 +613,7 @@
 [v MFRC522_Rd@address address `uc  1 a 1 wreg ]
 "9
 [v MFRC522_Rd@address address `uc  1 a 1 2 ]
-"31
+"33
 } 0
 "109 E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
 [v _LCD_Print LCD_Print `(v  1 e 1 0 ]

@@ -5927,7 +5927,7 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
 # 8 "./rc522.h" 2
-# 120 "./rc522.h"
+# 125 "./rc522.h"
 unsigned char MFRC522_Rd(unsigned char address);
 void MFRC522_Wr(unsigned char address, unsigned char value);
 static void MFRC522_Clear_Bit(char addr, char mask);
@@ -5956,7 +5956,8 @@ unsigned char MFRC522_Rd(unsigned char address)
     unsigned int i, ucAddr;
     unsigned int ucResult = 0;
     LATDbits.LD1 = 0;
-    LATDbits.LD0 = 0;
+    LATAbits.LA0 = 0;
+    LATAbits.LA1 = 0;
     ucAddr = ((address << 1) & 0x7E) | 0x80;
 
     for(i=8; i>0; i--)
@@ -5973,7 +5974,8 @@ unsigned char MFRC522_Rd(unsigned char address)
         ucResult |= (short)PORTDbits.RD3;
         LATDbits.LD1 = 0;
     }
-    LATDbits.LD0 = 1;
+    LATAbits.LA0 = 1;
+    LATAbits.LA1 = 1;
     LATDbits.LD1 = 1;
     return ucResult;
 }
@@ -5982,7 +5984,8 @@ void MFRC522_Wr(unsigned char address, unsigned char value)
 {
     unsigned char i, ucAddr;
     LATDbits.LD1 = 0;
-    LATDbits.LD0 = 0;
+    LATAbits.LA0 = 0;
+    LATAbits.LA1 = 0;
     ucAddr = ((address << 1) & 0x7E);
 
     for(i=8; i>0; i--)
@@ -5999,7 +6002,8 @@ void MFRC522_Wr(unsigned char address, unsigned char value)
         value <<= 1;
         LATDbits.LD1 = 0;
     }
-    LATDbits.LD0 = 1;
+    LATAbits.LA0 = 1;
+    LATAbits.LA1 = 1;
     LATDbits.LD1 = 1;
 }
 
@@ -6045,12 +6049,14 @@ void MFRC522_Init(void)
 {
     TRISDbits.RD2 = 0;
     TRISDbits.RD1 = 0;
-    TRISDbits.RD0 = 0;
+    TRISAbits.RA0 = 0;
+    TRISAbits.RA1 = 0;
     TRISDbits.RD3 = 1;
     TRISDbits.RD4 = 0;
     LATDbits.LD1 = 0;
     LATDbits.LD2 = 0;
-    LATDbits.LD0 = 1;
+    LATAbits.LA0 = 1;
+    LATAbits.LA1 = 1;
     LATDbits.LD4 = 1;
     MFRC522_Reset();
     MFRC522_Wr(0x2A, 0x8D);

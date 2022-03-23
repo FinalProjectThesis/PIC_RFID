@@ -9,6 +9,7 @@ unsigned char MFRC522_Rd(unsigned char address)
     unsigned int ucResult = 0;
     MFRC522_CLK_PIN = 0;
     MFRC522_CS_PIN = 0;
+    MFRC522_CS_PIN2 = 0;
     ucAddr = ((address << 1) & 0x7E) | 0x80;
     
     for(i=8; i>0; i--)
@@ -26,6 +27,7 @@ unsigned char MFRC522_Rd(unsigned char address)
         MFRC522_CLK_PIN = 0;
     }
     MFRC522_CS_PIN = 1;
+    MFRC522_CS_PIN2 = 1;
     MFRC522_CLK_PIN = 1;
     return ucResult;
 }
@@ -35,6 +37,7 @@ void MFRC522_Wr(unsigned char address, unsigned char value)
     unsigned char i, ucAddr;
     MFRC522_CLK_PIN = 0;
     MFRC522_CS_PIN = 0;
+    MFRC522_CS_PIN2 = 0;
     ucAddr = ((address << 1) & 0x7E);
     
     for(i=8; i>0; i--)
@@ -52,6 +55,7 @@ void MFRC522_Wr(unsigned char address, unsigned char value)
         MFRC522_CLK_PIN = 0;
     }
     MFRC522_CS_PIN = 1;
+    MFRC522_CS_PIN2 = 1;
     MFRC522_CLK_PIN = 1;
 }
 
@@ -98,11 +102,13 @@ void MFRC522_Init(void)
     MFRC522_SDO_DIR = 0;
     MFRC522_CLK_DIR = 0;
     MFRC522_CS_DIR = 0;
+    MFRC522_CS_DIR2 = 0;
     MFRC522_SDI_DIR = 1;
     MFRC522_RST_DIR = 0;
     MFRC522_CLK_PIN = 0;
     MFRC522_SDO_PIN = 0;
     MFRC522_CS_PIN = 1;
+    MFRC522_CS_PIN2 = 1;
     MFRC522_RST_PIN = 1;
     MFRC522_Reset();
     MFRC522_Wr(TMODEREG, 0x8D);

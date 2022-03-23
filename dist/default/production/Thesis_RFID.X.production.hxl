@@ -10,12 +10,12 @@
 ### Memory Usage ###
  Intel Hex-file ranges:
   0h - 3h		(dist/default/production\Thesis_RFID.X.production.hex)
-  800h - 246Ah		(dist/default/production\Thesis_RFID.X.production.hex)
+  800h - 2476h		(dist/default/production\Thesis_RFID.X.production.hex)
   200000h - 200007h		(dist/default/production\Thesis_RFID.X.production.hex)
   300000h - 30000Dh		(dist/default/production\Thesis_RFID.X.production.hex)
  Unused ranges:
   4h - 7FFh
-  246Bh - 1FFFFFh
+  2477h - 1FFFFFh
   200008h - 2FFFFFh
 
 ### Hex Memory Map ###
@@ -481,7 +481,8 @@
 00002430 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00002440 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00002450 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00002460 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- -- --
+00002460 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00002470 | H1 H1 H1 H1 H1 H1 H1 -- -- -- -- -- -- -- -- --
 ----------------------------------------------------------
 00200000 | H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- -- -- -- -- --
 ----------------------------------------------------------
