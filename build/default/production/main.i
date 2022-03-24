@@ -6048,65 +6048,114 @@ char MFRC522_AntiColl(char *serNum);
 char MFRC522_IsCard(char *TagType);
 char MFRC522_ReadCardSerial(char *str);
 char MFRC522_Compare_UID(char *l, char *u);
+
+unsigned char MFRC522_Rd2(unsigned char address);
+void MFRC522_Wr2(unsigned char address, unsigned char value);
+static void MFRC522_Clear_Bit2(char addr, char mask);
+static void MFRC522_Set_Bit2(char addr, char mask);
+void MFRC522_AntennaOn2(void);
+void MFRC522_AntennaOff2(void);
+char MFRC522_ToCard2(char command, char *sendData, char sendLen, char *backData, unsigned *backLen);
+char MFRC522_Request2(char reqMode, char *TagType);
+void MFRC522_CRC2(char *dataIn, char length, char *dataOut);
+char MFRC522_SelectTag2(char *serNum);
+char MFRC522_AntiColl2(char *serNum);
+char MFRC522_IsCard2(char *TagType);
+char MFRC522_ReadCardSerial2(char *str);
 # 9 "main.c" 2
 
+# 1 "D:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\stdbool.h" 1 3
+# 10 "main.c" 2
 
 
 
-unsigned char data_buffer[16];
-unsigned char UID[16];
-unsigned char status;
+
+uint8_t data_buffer[16];
+uint8_t UID_1[16], UID_2[16];
+unsigned char status_1, status_2;
 char temp[16] = "\0";
-
 int led = 0;
-unsigned char TagType;
+unsigned char TagType1, TagType2;
 
-void port_Init (void);
+void __attribute__((picinterrupt(("")))) high_isr(void);
+void __attribute__((picinterrupt(("low_priority")))) low_isr(void);
+
+void uart_init(uint16_t gen_reg, unsigned sync, unsigned brgh, unsigned brg16) {
+    TRISCbits.RC7 = 1;
+    TRISCbits.RC6 = 1;
+
+    SPBRGH = (gen_reg & 0xFF00) >> 8;
+    SPBRG = gen_reg * 0x00FF;
+
+    RCSTAbits.CREN = 1;
+    RCSTAbits.SPEN = 1;
+    BAUDCONbits.BRG16 = brg16;
+
+    TXSTAbits.SYNC = sync;
+    TXSTAbits.BRGH = brgh;
+    TXSTAbits.TXEN = 1;
+
+    IPR1bits.RCIP = 1;
+    PIE1bits.RCIE = 1;
+
+
+
+}
+
+void uart_send(uint8_t *c){
+    TXREG = *c;
+    while(TXSTAbits.TRMT == 0){
+        __nop();
+    }
+}
 
 void main(void) {
-    port_Init();
     I2CLCD_Init(100000);
     LCD_Begin(0x4E);
     MFRC522_Init();
+    uart_init(129, 0, 0, 1);
     _delay((unsigned long)((500)*(27000000/4000.0)));
 
     LCD_Goto(1, 1);
     LCD_Print("Welcome");
-    LATB7 = 1;
 
-    _delay((unsigned long)((2000)*(27000000/4000.0)));
+    _delay((unsigned long)((1000)*(27000000/4000.0)));
     LCD_Cmd(0x01);
-    LATB7 = 0;
 
     while (1) {
-        MFRC522_IsCard(&TagType);
-        MFRC522_ReadCardSerial(&UID);
-        status = MFRC522_AntiColl(&UID);
+        MFRC522_IsCard(&TagType1);
+        MFRC522_ReadCardSerial(&UID_1);
+        status_1 = MFRC522_AntiColl(&UID_1);
 
-        if (strlen(UID) == 1){
+        MFRC522_IsCard2(&TagType2);
+        MFRC522_ReadCardSerial2(&UID_2);
+        status_2 = MFRC522_AntiColl2(&UID_2);
+
+        if (strlen(UID_1) == 1 || strlen(UID_2) == 1){
             LCD_Cmd(0x01);
             LCD_Goto(1, 1);
-            sprintf(temp, "%d", strlen(UID));
-            LCD_Print(temp);
-        }
-        else {
-            LCD_Cmd(0x01);
-            LCD_Goto(1, 1);
-            sprintf(temp, "%d", strlen(UID));
-            LCD_Print(temp);
+            LCD_Print("ID:");
         }
 
         LCD_Goto(1, 2);
 
-        if(status == 0) {
+        if(status_1 == 0) {
             for(int i = 0; i < 5; i++)
             {
-                sprintf(data_buffer, "%X", UID[i]);
+                sprintf(data_buffer, "%X", UID_1[i]);
                 LCD_Print(data_buffer);
             }
-            LATB7 = 1;
             _delay((unsigned long)((1000)*(27000000/4000.0)));
-        } else {
+        }
+        else if(status_2 == 0){
+            for(int i = 0; i < 5; i++)
+            {
+                sprintf(data_buffer, "%X", UID_2[i]);
+                LCD_Print(data_buffer);
+            }
+            _delay((unsigned long)((1000)*(27000000/4000.0)));
+        }
+        else {
             _delay((unsigned long)((50)*(27000000/4000.0)));
             LATB7 = 0;
             MFRC522_Halt();
@@ -6115,8 +6164,18 @@ void main(void) {
     return;
 }
 
-void port_Init(void){
+void __attribute__((picinterrupt(("")))) high_isr(void){
+    INTCONbits.GIEH = 0;
+    if(PIR1bits.RCIF) {
+        PIR1bits.RCIF = 0;
+    }
+    INTCONbits.GIEH = 1;
+}
 
-    TRISB7 = 0;
-    LATB7 = 0;
+void __attribute__((picinterrupt(("low_priority")))) low_isr(void){
+    INTCONbits.GIEH = 0;
+    if(PIR1bits.TXIF) {
+        PIR1bits.TXIF = 0;
+    }
+    INTCONbits.GIEH = 1;
 }

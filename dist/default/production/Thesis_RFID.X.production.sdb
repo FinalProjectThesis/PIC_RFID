@@ -5,16 +5,8 @@
 [d frameptr 4065 ]
 "7 D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\__lldiv.c
 [v ___lldiv __lldiv `(ul  1 e 4 0 ]
-"1 D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\abs.c
-[v _abs abs `(i  1 e 2 0 ]
-"9 D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\aodiv.c
-[v ___aodiv __aodiv `(o  1 e 8 0 ]
-"9 D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\aomod.c
-[v ___aomod __aomod `(o  1 e 8 0 ]
 "72 D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
 [v _pad pad `(i  1 s 2 pad ]
-"287
-[v _dtoa dtoa `(i  1 s 2 dtoa ]
 "645
 [v _xtoa xtoa `(i  1 s 2 xtoa ]
 "692
@@ -83,46 +75,74 @@
 [v _LCD_Print LCD_Print `(v  1 e 1 0 ]
 "120
 [v _LCD_Begin LCD_Begin `(v  1 e 1 0 ]
-"23 E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\main.c
+"24 E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\main.c
+[v _uart_init uart_init `(v  1 e 1 0 ]
+"53
 [v _main main `(v  1 e 1 0 ]
-"75
-[v _port_Init port_Init `(v  1 e 1 0 ]
-"6 E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+"108
+[v _high_isr high_isr `IIH(v  1 e 1 0 ]
+"116
+[v _low_isr low_isr `IIL(v  1 e 1 0 ]
+"2 E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
 [v _MFRC522_Rd MFRC522_Rd `(uc  1 e 1 0 ]
-"35
+"29
+[v _MFRC522_Rd2 MFRC522_Rd2 `(uc  1 e 1 0 ]
+"56
 [v _MFRC522_Wr MFRC522_Wr `(v  1 e 1 0 ]
-"62
+"81
+[v _MFRC522_Wr2 MFRC522_Wr2 `(v  1 e 1 0 ]
+"106
 [v _MFRC522_Clear_Bit MFRC522_Clear_Bit `(v  1 s 1 MFRC522_Clear_Bit ]
-"69
+"113
+[v _MFRC522_Clear_Bit2 MFRC522_Clear_Bit2 `(v  1 s 1 MFRC522_Clear_Bit2 ]
+"121
 [v _MFRC522_Set_Bit MFRC522_Set_Bit `(v  1 s 1 MFRC522_Set_Bit ]
-"76
+"128
+[v _MFRC522_Set_Bit2 MFRC522_Set_Bit2 `(v  1 s 1 MFRC522_Set_Bit2 ]
+"135
 [v _MFRC522_Reset MFRC522_Reset `(v  1 e 1 0 ]
-"88
+"147
 [v _MFRC522_AntennaOn MFRC522_AntennaOn `(v  1 e 1 0 ]
-"95
+"154
+[v _MFRC522_AntennaOn2 MFRC522_AntennaOn2 `(v  1 e 1 0 ]
+"161
 [v _MFRC522_AntennaOff MFRC522_AntennaOff `(v  1 e 1 0 ]
-"100
+"166
+[v _MFRC522_AntennaOff2 MFRC522_AntennaOff2 `(v  1 e 1 0 ]
+"171
 [v _MFRC522_Init MFRC522_Init `(v  1 e 1 0 ]
-"124
+"203
 [v _MFRC522_ToCard MFRC522_ToCard `(uc  1 e 1 0 ]
-"214
+"293
+[v _MFRC522_ToCard2 MFRC522_ToCard2 `(uc  1 e 1 0 ]
+"383
 [v _MFRC522_Request MFRC522_Request `(uc  1 e 1 0 ]
-"228
+"397
+[v _MFRC522_Request2 MFRC522_Request2 `(uc  1 e 1 0 ]
+"411
 [v _MFRC522_CRC MFRC522_CRC `(v  1 e 1 0 ]
-"276
+"432
+[v _MFRC522_CRC2 MFRC522_CRC2 `(v  1 e 1 0 ]
+"507
 [v _MFRC522_Halt MFRC522_Halt `(v  1 e 1 0 ]
-"288
+"523
 [v _MFRC522_AntiColl MFRC522_AntiColl `(uc  1 e 1 0 ]
-"313
+"548
+[v _MFRC522_AntiColl2 MFRC522_AntiColl2 `(uc  1 e 1 0 ]
+"573
 [v _MFRC522_IsCard MFRC522_IsCard `(uc  1 e 1 0 ]
-"321
+"581
+[v _MFRC522_IsCard2 MFRC522_IsCard2 `(uc  1 e 1 0 ]
+"589
 [v _MFRC522_ReadCardSerial MFRC522_ReadCardSerial `(uc  1 e 1 0 ]
+"600
+[v _MFRC522_ReadCardSerial2 MFRC522_ReadCardSerial2 `(uc  1 e 1 0 ]
 "29 E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X/I2C.h
 [v _RS RS `b  1 e 0 0 ]
 "30
 [v _i2c_addr i2c_addr `uc  1 e 1 0 ]
 [v _backlight_val backlight_val `uc  1 e 1 0 ]
-[s S241 . 1 `uc 1 RD0 1 0 :1:0 
+[s S671 . 1 `uc 1 RD0 1 0 :1:0 
 `uc 1 RD1 1 0 :1:1 
 `uc 1 RD2 1 0 :1:2 
 `uc 1 RD3 1 0 :1:3 
@@ -132,7 +152,7 @@
 `uc 1 RD7 1 0 :1:7 
 ]
 "2737 D:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h
-[s S250 . 1 `uc 1 SPP0 1 0 :1:0 
+[s S680 . 1 `uc 1 SPP0 1 0 :1:0 
 `uc 1 SPP1 1 0 :1:1 
 `uc 1 SPP2 1 0 :1:2 
 `uc 1 SPP3 1 0 :1:3 
@@ -141,12 +161,12 @@
 `uc 1 SPP6 1 0 :1:6 
 `uc 1 SPP7 1 0 :1:7 
 ]
-[s S259 . 1 `uc 1 . 1 0 :7:0 
+[s S689 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 SS2 1 0 :1:7 
 ]
-[u S262 . 1 `S241 1 . 1 0 `S250 1 . 1 0 `S259 1 . 1 0 ]
-[v _PORTDbits PORTDbits `VES262  1 e 1 @3971 ]
-[s S205 . 1 `uc 1 LATA0 1 0 :1:0 
+[u S692 . 1 `S671 1 . 1 0 `S680 1 . 1 0 `S689 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES692  1 e 1 @3971 ]
+[s S635 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 LATA3 1 0 :1:3 
@@ -155,7 +175,7 @@
 `uc 1 LATA6 1 0 :1:6 
 ]
 "2999
-[s S213 . 1 `uc 1 LA0 1 0 :1:0 
+[s S643 . 1 `uc 1 LA0 1 0 :1:0 
 `uc 1 LA1 1 0 :1:1 
 `uc 1 LA2 1 0 :1:2 
 `uc 1 LA3 1 0 :1:3 
@@ -163,9 +183,9 @@
 `uc 1 LA5 1 0 :1:5 
 `uc 1 LA6 1 0 :1:6 
 ]
-[u S221 . 1 `S205 1 . 1 0 `S213 1 . 1 0 ]
-[v _LATAbits LATAbits `VES221  1 e 1 @3977 ]
-[s S165 . 1 `uc 1 LATD0 1 0 :1:0 
+[u S651 . 1 `S635 1 . 1 0 `S643 1 . 1 0 ]
+[v _LATAbits LATAbits `VES651  1 e 1 @3977 ]
+[s S595 . 1 `uc 1 LATD0 1 0 :1:0 
 `uc 1 LATD1 1 0 :1:1 
 `uc 1 LATD2 1 0 :1:2 
 `uc 1 LATD3 1 0 :1:3 
@@ -175,7 +195,7 @@
 `uc 1 LATD7 1 0 :1:7 
 ]
 "3291
-[s S174 . 1 `uc 1 LD0 1 0 :1:0 
+[s S604 . 1 `uc 1 LD0 1 0 :1:0 
 `uc 1 LD1 1 0 :1:1 
 `uc 1 LD2 1 0 :1:2 
 `uc 1 LD3 1 0 :1:3 
@@ -184,9 +204,9 @@
 `uc 1 LD6 1 0 :1:6 
 `uc 1 LD7 1 0 :1:7 
 ]
-[u S183 . 1 `S165 1 . 1 0 `S174 1 . 1 0 ]
-[v _LATDbits LATDbits `VES183  1 e 1 @3980 ]
-[s S330 . 1 `uc 1 TRISA0 1 0 :1:0 
+[u S613 . 1 `S595 1 . 1 0 `S604 1 . 1 0 ]
+[v _LATDbits LATDbits `VES613  1 e 1 @3980 ]
+[s S760 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
 `uc 1 TRISA3 1 0 :1:3 
@@ -195,7 +215,7 @@
 `uc 1 TRISA6 1 0 :1:6 
 ]
 "3458
-[s S338 . 1 `uc 1 RA0 1 0 :1:0 
+[s S768 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -203,9 +223,26 @@
 `uc 1 RA5 1 0 :1:5 
 `uc 1 RA6 1 0 :1:6 
 ]
-[u S346 . 1 `S330 1 . 1 0 `S338 1 . 1 0 ]
-[v _TRISAbits TRISAbits `VES346  1 e 1 @3986 ]
-[s S290 . 1 `uc 1 TRISD0 1 0 :1:0 
+[u S776 . 1 `S760 1 . 1 0 `S768 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES776  1 e 1 @3986 ]
+[s S24 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 . 1 0 :3:3 
+`uc 1 TRISC6 1 0 :1:6 
+`uc 1 TRISC7 1 0 :1:7 
+]
+"3876
+[s S31 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 . 1 0 :3:3 
+`uc 1 RC6 1 0 :1:6 
+`uc 1 RC7 1 0 :1:7 
+]
+[u S38 . 1 `S24 1 . 1 0 `S31 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES38  1 e 1 @3988 ]
+[s S720 . 1 `uc 1 TRISD0 1 0 :1:0 
 `uc 1 TRISD1 1 0 :1:1 
 `uc 1 TRISD2 1 0 :1:2 
 `uc 1 TRISD3 1 0 :1:3 
@@ -215,8 +252,143 @@
 `uc 1 TRISD7 1 0 :1:7 
 ]
 "4034
-[u S308 . 1 `S290 1 . 1 0 `S241 1 . 1 0 ]
-[v _TRISDbits TRISDbits `VES308  1 e 1 @3989 ]
+[u S738 . 1 `S720 1 . 1 0 `S671 1 . 1 0 ]
+[v _TRISDbits TRISDbits `VES738  1 e 1 @3989 ]
+[s S244 . 1 `uc 1 TMR1IE 1 0 :1:0 
+`uc 1 TMR2IE 1 0 :1:1 
+`uc 1 CCP1IE 1 0 :1:2 
+`uc 1 SSPIE 1 0 :1:3 
+`uc 1 TXIE 1 0 :1:4 
+`uc 1 RCIE 1 0 :1:5 
+`uc 1 ADIE 1 0 :1:6 
+`uc 1 SPPIE 1 0 :1:7 
+]
+"4409
+[s S253 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 TX1IE 1 0 :1:4 
+`uc 1 RC1IE 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 PSPIE 1 0 :1:7 
+]
+[u S259 . 1 `S244 1 . 1 0 `S253 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES259  1 e 1 @3997 ]
+[s S414 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSPIF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+`uc 1 SPPIF 1 0 :1:7 
+]
+"4493
+[s S423 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 TX1IF 1 0 :1:4 
+`uc 1 RC1IF 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 PSPIF 1 0 :1:7 
+]
+[u S429 . 1 `S414 1 . 1 0 `S423 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES429  1 e 1 @3998 ]
+[s S210 . 1 `uc 1 TMR1IP 1 0 :1:0 
+`uc 1 TMR2IP 1 0 :1:1 
+`uc 1 CCP1IP 1 0 :1:2 
+`uc 1 SSPIP 1 0 :1:3 
+`uc 1 TXIP 1 0 :1:4 
+`uc 1 RCIP 1 0 :1:5 
+`uc 1 ADIP 1 0 :1:6 
+`uc 1 SPPIP 1 0 :1:7 
+]
+"4577
+[s S219 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 TX1IP 1 0 :1:4 
+`uc 1 RC1IP 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 PSPIP 1 0 :1:7 
+]
+[u S225 . 1 `S210 1 . 1 0 `S219 1 . 1 0 ]
+[v _IPR1bits IPR1bits `VES225  1 e 1 @3999 ]
+[s S58 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 ADDEN 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+"4978
+[s S67 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 ADEN 1 0 :1:3 
+]
+[s S70 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 SRENA 1 0 :1:5 
+]
+[s S73 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 RC8_9 1 0 :1:6 
+]
+[s S76 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 RC9 1 0 :1:6 
+]
+[s S79 . 1 `uc 1 RCD8 1 0 :1:0 
+]
+[u S81 . 1 `S58 1 . 1 0 `S67 1 . 1 0 `S70 1 . 1 0 `S73 1 . 1 0 `S76 1 . 1 0 `S79 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES81  1 e 1 @4011 ]
+[s S158 . 1 `uc 1 TX9D 1 0 :1:0 
+`uc 1 TRMT 1 0 :1:1 
+`uc 1 BRGH 1 0 :1:2 
+`uc 1 SENDB 1 0 :1:3 
+`uc 1 SYNC 1 0 :1:4 
+`uc 1 TXEN 1 0 :1:5 
+`uc 1 TX9 1 0 :1:6 
+`uc 1 CSRC 1 0 :1:7 
+]
+"5186
+[s S167 . 1 `uc 1 TX9D1 1 0 :1:0 
+`uc 1 TRMT1 1 0 :1:1 
+`uc 1 BRGH1 1 0 :1:2 
+`uc 1 SENDB1 1 0 :1:3 
+`uc 1 SYNC1 1 0 :1:4 
+`uc 1 TXEN1 1 0 :1:5 
+`uc 1 TX91 1 0 :1:6 
+`uc 1 CSRC1 1 0 :1:7 
+]
+[s S176 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 TX8_9 1 0 :1:6 
+]
+[s S179 . 1 `uc 1 TXD8 1 0 :1:0 
+]
+[u S181 . 1 `S158 1 . 1 0 `S167 1 . 1 0 `S176 1 . 1 0 `S179 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES181  1 e 1 @4012 ]
+"5403
+[v _TXREG TXREG `VEuc  1 e 1 @4013 ]
+"5427
+[v _SPBRG SPBRG `VEuc  1 e 1 @4015 ]
+"5439
+[v _SPBRGH SPBRGH `VEuc  1 e 1 @4016 ]
+[s S112 . 1 `uc 1 ABDEN 1 0 :1:0 
+`uc 1 WUE 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 BRG16 1 0 :1:3 
+`uc 1 TXCKP 1 0 :1:4 
+`uc 1 RXDTP 1 0 :1:5 
+`uc 1 RCIDL 1 0 :1:6 
+`uc 1 ABDOVF 1 0 :1:7 
+]
+"6099
+[s S121 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 SCKP 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 RCMT 1 0 :1:6 
+]
+[s S126 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 RXCKP 1 0 :1:5 
+]
+[s S129 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 W4E 1 0 :1:1 
+]
+[u S132 . 1 `S112 1 . 1 0 `S121 1 . 1 0 `S126 1 . 1 0 `S129 1 . 1 0 ]
+[v _BAUDCONbits BAUDCONbits `VES132  1 e 1 @4024 ]
 "6807
 [v _SSPCON2 SSPCON2 `VEuc  1 e 1 @4037 ]
 "6869
@@ -227,6 +399,31 @@
 [v _SSPADD SSPADD `VEuc  1 e 1 @4040 ]
 "7194
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @4041 ]
+[s S365 . 1 `uc 1 RBIF 1 0 :1:0 
+`uc 1 INT0IF 1 0 :1:1 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 RBIE 1 0 :1:3 
+`uc 1 INT0IE 1 0 :1:4 
+`uc 1 TMR0IE 1 0 :1:5 
+`uc 1 PEIE_GIEL 1 0 :1:6 
+`uc 1 GIE_GIEH 1 0 :1:7 
+]
+"8615
+[s S374 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 INT0F 1 0 :1:1 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 INT0E 1 0 :1:4 
+`uc 1 T0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+[s S383 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 GIEL 1 0 :1:6 
+`uc 1 GIEH 1 0 :1:7 
+]
+[u S387 . 1 `S365 1 . 1 0 `S374 1 . 1 0 `S383 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES387  1 e 1 @4082 ]
 "8915
 [v _ACKDT ACKDT `VEb  1 e 0 @32301 ]
 "8918
@@ -241,8 +438,6 @@
 [v _RSEN RSEN `VEb  1 e 0 @32297 ]
 "10565
 [v _SEN SEN `VEb  1 e 0 @32296 ]
-"10928
-[v _TRISB7 TRISB7 `VEb  1 e 0 @31903 ]
 "55 D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
 [v _flags flags `i  1 s 2 flags ]
 [v _prec prec `i  1 s 2 prec ]
@@ -251,61 +446,71 @@
 [v _dbuf dbuf `[32]uc  1 s 32 dbuf ]
 "69
 [v _nout nout `i  1 s 2 nout ]
-"13 E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\main.c
+"14 E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\main.c
 [v _data_buffer data_buffer `[16]uc  1 e 16 0 ]
-"14
-[v _UID UID `[16]uc  1 e 16 0 ]
 "15
-[v _status status `uc  1 e 1 0 ]
+[v _UID_1 UID_1 `[16]uc  1 e 16 0 ]
+[v _UID_2 UID_2 `[16]uc  1 e 16 0 ]
 "16
-[v _temp temp `[16]uc  1 e 16 0 ]
+[v _status_1 status_1 `uc  1 e 1 0 ]
+[v _status_2 status_2 `uc  1 e 1 0 ]
 "19
-[v _TagType TagType `uc  1 e 1 0 ]
-"23
+[v _TagType1 TagType1 `uc  1 e 1 0 ]
+[v _TagType2 TagType2 `uc  1 e 1 0 ]
+"53
 [v _main main `(v  1 e 1 0 ]
 {
-"59
-[v main@i i `i  1 a 2 27 ]
-"73
+"92
+[v main@i_523 i `i  1 a 2 23 ]
+"84
+[v main@i i `i  1 a 2 21 ]
+"106
+} 0
+"24
+[v _uart_init uart_init `(v  1 e 1 0 ]
+{
+[v uart_init@gen_reg gen_reg `us  1 p 2 1 ]
+[v uart_init@sync sync `ui  1 p 2 3 ]
+[v uart_init@brgh brgh `ui  1 p 2 5 ]
+[v uart_init@brg16 brg16 `ui  1 p 2 7 ]
+"44
 } 0
 "9 D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\nf_sprintf.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
 {
-[u S922 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
+[u S1423 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
 "13
-[s S925 _IO_FILE 11 `S922 1 . 3 0 `i 1 count 2 3 `[2]uc 1 ungetbuf 2 5 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
-[v sprintf@f f `S925  1 a 11 14 ]
+[s S1426 _IO_FILE 11 `S1423 1 . 3 0 `i 1 count 2 3 `[2]uc 1 ungetbuf 2 5 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v sprintf@f f `S1426  1 a 11 8 ]
 "12
-[v sprintf@ap ap `[1]*.39v  1 a 2 12 ]
+[v sprintf@ap ap `[1]*.39v  1 a 2 6 ]
 "9
-[v sprintf@s s `*.39uc  1 p 2 6 ]
-[v sprintf@fmt fmt `*.25Cuc  1 p 2 8 ]
+[v sprintf@s s `*.39uc  1 p 2 0 ]
+[v sprintf@fmt fmt `*.25Cuc  1 p 2 2 ]
 "23
 } 0
 "1390 D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
 [v _vfprintf vfprintf `(i  1 e 2 0 ]
 {
 "1393
-[v vfprintf@cfmt cfmt `*.25uc  1 a 2 90 ]
-[s S957 _IO_FILE 0 ]
+[v vfprintf@cfmt cfmt `*.25uc  1 a 2 88 ]
+[s S1458 _IO_FILE 0 ]
 "1390
-[v vfprintf@fp fp `*.39S957  1 p 2 0 ]
-[v vfprintf@fmt fmt `*.25Cuc  1 p 2 2 ]
-[v vfprintf@ap ap `*.39*.39v  1 p 2 4 ]
+[v vfprintf@fp fp `*.39S1458  1 p 2 82 ]
+[v vfprintf@fmt fmt `*.25Cuc  1 p 2 84 ]
+[v vfprintf@ap ap `*.39*.39v  1 p 2 86 ]
 "1404
 } 0
 "692
 [v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
 {
 "697
-[v vfpfcnvrt@llu llu `uo  1 a 8 81 ]
-"696
-[v vfpfcnvrt@ll ll `o  1 a 8 73 ]
+[v vfpfcnvrt@llu llu `uo  1 a 8 73 ]
 "694
-[v vfpfcnvrt@c c `uc  1 a 1 89 ]
-[s S957 _IO_FILE 0 ]
+[v vfpfcnvrt@c c `uc  1 a 1 81 ]
+[s S1458 _IO_FILE 0 ]
 "692
-[v vfpfcnvrt@fp fp `*.39S957  1 p 2 63 ]
+[v vfpfcnvrt@fp fp `*.39S1458  1 p 2 63 ]
 [v vfpfcnvrt@fmt fmt `*.39*.25uc  1 p 2 65 ]
 [v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 67 ]
 "1387
@@ -314,102 +519,74 @@
 [v _xtoa xtoa `(i  1 s 2 xtoa ]
 {
 "648
-[v xtoa@n n `uo  1 a 8 50 ]
+[v xtoa@n n `uo  1 a 8 51 ]
 "647
-[v xtoa@c c `i  1 a 2 60 ]
-[v xtoa@i i `i  1 a 2 58 ]
-[v xtoa@w w `i  1 a 2 48 ]
-[v xtoa@p p `i  1 a 2 46 ]
-[s S957 _IO_FILE 0 ]
+[v xtoa@c c `i  1 a 2 61 ]
+[v xtoa@i i `i  1 a 2 59 ]
+[v xtoa@w w `i  1 a 2 49 ]
+[v xtoa@p p `i  1 a 2 47 ]
+[s S1458 _IO_FILE 0 ]
 "645
-[v xtoa@fp fp `*.39S957  1 p 2 27 ]
-[v xtoa@d d `uo  1 p 8 29 ]
-[v xtoa@x x `uc  1 p 1 37 ]
+[v xtoa@fp fp `*.39S1458  1 p 2 28 ]
+[v xtoa@d d `uo  1 p 8 30 ]
+[v xtoa@x x `uc  1 p 1 38 ]
 "687
 } 0
 "4 D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\toupper.c
 [v _toupper toupper `(i  1 e 2 0 ]
 {
-[v toupper@c c `i  1 p 2 6 ]
+[v toupper@c c `i  1 p 2 7 ]
 "8
 } 0
 "5 D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\islower.c
 [v _islower islower `(i  1 e 2 0 ]
 {
-[v islower@c c `i  1 p 2 0 ]
+[v islower@c c `i  1 p 2 1 ]
 "8
 } 0
-"5 D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\isupper.c
-[v _isupper isupper `(i  1 e 2 0 ]
-{
-[v isupper@c c `i  1 p 2 0 ]
-"8
-} 0
-"5 D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\isalpha.c
-[v _isalpha isalpha `(i  1 e 2 0 ]
-{
-[v isalpha@c c `i  1 p 2 0 ]
-"8
-} 0
-"287 D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
-[v _dtoa dtoa `(i  1 s 2 dtoa ]
-{
-"290
-[v dtoa@n n `o  1 a 8 53 ]
-"289
-[v dtoa@i i `i  1 a 2 61 ]
-[v dtoa@s s `i  1 a 2 51 ]
-[v dtoa@w w `i  1 a 2 49 ]
-[v dtoa@p p `i  1 a 2 47 ]
-[s S957 _IO_FILE 0 ]
-"287
-[v dtoa@fp fp `*.39S957  1 p 2 27 ]
-[v dtoa@d d `o  1 p 8 29 ]
-"328
-} 0
-"72
+"72 D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
 [v _pad pad `(i  1 s 2 pad ]
 {
 "74
-[v pad@w w `i  1 a 2 25 ]
-[v pad@i i `i  1 a 2 23 ]
-[s S957 _IO_FILE 0 ]
+[v pad@w w `i  1 a 2 26 ]
+[v pad@i i `i  1 a 2 24 ]
+[s S1458 _IO_FILE 0 ]
 "72
-[v pad@fp fp `*.39S957  1 p 2 16 ]
-[v pad@buf buf `*.39uc  1 p 2 18 ]
-[v pad@p p `i  1 p 2 20 ]
+[v pad@fp fp `*.39S1458  1 p 2 17 ]
+[v pad@buf buf `*.39uc  1 p 2 19 ]
+[v pad@p p `i  1 p 2 21 ]
 "95
 } 0
 "5 D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\strlen.c
 [v _strlen strlen `(ui  1 e 2 0 ]
 {
 "7
-[v strlen@a a `*.39Cuc  1 a 2 2 ]
+[v strlen@a a `*.39Cuc  1 a 2 3 ]
 "5
-[v strlen@s s `*.39Cuc  1 p 2 0 ]
+[v strlen@s s `*.39Cuc  1 p 2 1 ]
 "12
 } 0
 "8 D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\nf_fputs.c
 [v _fputs fputs `(i  1 e 2 0 ]
 {
 "11
-[v fputs@i i `i  1 a 2 14 ]
+[v fputs@i i `i  1 a 2 15 ]
 "10
-[v fputs@c c `uc  1 a 1 13 ]
+[v fputs@c c `uc  1 a 1 14 ]
 "8
-[v fputs@s s `*.39Cuc  1 p 2 9 ]
-[u S922 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
-[s S925 _IO_FILE 11 `S922 1 . 3 0 `i 1 count 2 3 `[2]uc 1 ungetbuf 2 5 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
-[v fputs@fp fp `*.39S925  1 p 2 11 ]
+[v fputs@s s `*.39Cuc  1 p 2 10 ]
+[u S1423 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
+[s S1426 _IO_FILE 11 `S1423 1 . 3 0 `i 1 count 2 3 `[2]uc 1 ungetbuf 2 5 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v fputs@fp fp `*.39S1426  1 p 2 12 ]
 "19
 } 0
 "8 D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\nf_fputc.c
 [v _fputc fputc `(i  1 e 2 0 ]
 {
-[v fputc@c c `i  1 p 2 0 ]
-[u S922 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
-[s S925 _IO_FILE 11 `S922 1 . 3 0 `i 1 count 2 3 `[2]uc 1 ungetbuf 2 5 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
-[v fputc@fp fp `*.39S925  1 p 2 2 ]
+[v fputc@c c `i  1 p 2 1 ]
+[u S1423 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
+[s S1426 _IO_FILE 11 `S1423 1 . 3 0 `i 1 count 2 3 `[2]uc 1 ungetbuf 2 5 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v fputc@fp fp `*.39S1426  1 p 2 3 ]
 "24
 } 0
 "7 D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\putch.c
@@ -417,211 +594,332 @@
 {
 "9
 } 0
-"1 D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\abs.c
-[v _abs abs `(i  1 e 2 0 ]
+"5 D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\isupper.c
+[v _isupper isupper `(i  1 e 2 0 ]
 {
-[v abs@a a `i  1 p 2 18 ]
-"4
+[v isupper@c c `i  1 p 2 1 ]
+"8
 } 0
-"9 D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\aomod.c
-[v ___aomod __aomod `(o  1 e 8 0 ]
+"5 D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\isalpha.c
+[v _isalpha isalpha `(i  1 e 2 0 ]
 {
-"12
-[v ___aomod@sign sign `uc  1 a 1 17 ]
-[v ___aomod@counter counter `uc  1 a 1 16 ]
-"9
-[v ___aomod@dividend dividend `o  1 p 8 0 ]
-[v ___aomod@divisor divisor `o  1 p 8 8 ]
-"36
+[v isalpha@c c `i  1 p 2 1 ]
+"8
 } 0
-"9 D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\aodiv.c
-[v ___aodiv __aodiv `(o  1 e 8 0 ]
+"600 E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+[v _MFRC522_ReadCardSerial2 MFRC522_ReadCardSerial2 `(uc  1 e 1 0 ]
 {
-"12
-[v ___aodiv@quotient quotient `o  1 a 8 18 ]
-"13
-[v ___aodiv@sign sign `uc  1 a 1 17 ]
-[v ___aodiv@counter counter `uc  1 a 1 16 ]
-"9
-[v ___aodiv@dividend dividend `o  1 p 8 0 ]
-[v ___aodiv@divisor divisor `o  1 p 8 8 ]
-"43
+[v MFRC522_ReadCardSerial2@str str `*.39uc  1 p 2 40 ]
+"609
 } 0
-"75 E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\main.c
-[v _port_Init port_Init `(v  1 e 1 0 ]
+"548
+[v _MFRC522_AntiColl2 MFRC522_AntiColl2 `(uc  1 e 1 0 ]
 {
-"79
+"553
+[v MFRC522_AntiColl2@unLen unLen `ui  1 a 2 36 ]
+"551
+[v MFRC522_AntiColl2@i i `uc  1 a 1 39 ]
+"550
+[v MFRC522_AntiColl2@_status _status `uc  1 a 1 38 ]
+"552
+[v MFRC522_AntiColl2@serNumCheck serNumCheck `uc  1 a 1 35 ]
+"548
+[v MFRC522_AntiColl2@serNum serNum `*.39uc  1 p 2 32 ]
+"571
 } 0
-"321 E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\rc522.c
+"589
 [v _MFRC522_ReadCardSerial MFRC522_ReadCardSerial `(uc  1 e 1 0 ]
 {
-[v MFRC522_ReadCardSerial@str str `*.39uc  1 p 2 39 ]
-"330
+[v MFRC522_ReadCardSerial@str str `*.39uc  1 p 2 40 ]
+"598
 } 0
-"288
+"523
 [v _MFRC522_AntiColl MFRC522_AntiColl `(uc  1 e 1 0 ]
 {
-"293
-[v MFRC522_AntiColl@unLen unLen `ui  1 a 2 35 ]
-"291
-[v MFRC522_AntiColl@i i `uc  1 a 1 38 ]
-"290
-[v MFRC522_AntiColl@_status _status `uc  1 a 1 37 ]
-"292
-[v MFRC522_AntiColl@serNumCheck serNumCheck `uc  1 a 1 34 ]
-"288
-[v MFRC522_AntiColl@serNum serNum `*.39uc  1 p 2 31 ]
-"311
+"528
+[v MFRC522_AntiColl@unLen unLen `ui  1 a 2 36 ]
+"526
+[v MFRC522_AntiColl@i i `uc  1 a 1 39 ]
+"525
+[v MFRC522_AntiColl@_status _status `uc  1 a 1 38 ]
+"527
+[v MFRC522_AntiColl@serNumCheck serNumCheck `uc  1 a 1 35 ]
+"523
+[v MFRC522_AntiColl@serNum serNum `*.39uc  1 p 2 32 ]
+"546
 } 0
-"313
+"581
+[v _MFRC522_IsCard2 MFRC522_IsCard2 `(uc  1 e 1 0 ]
+{
+[v MFRC522_IsCard2@TagType TagType `*.39uc  1 p 2 38 ]
+"587
+} 0
+"397
+[v _MFRC522_Request2 MFRC522_Request2 `(uc  1 e 1 0 ]
+{
+[v MFRC522_Request2@reqMode reqMode `uc  1 a 1 wreg ]
+"400
+[v MFRC522_Request2@backBits backBits `ui  1 a 2 36 ]
+"399
+[v MFRC522_Request2@_status _status `uc  1 a 1 35 ]
+"397
+[v MFRC522_Request2@reqMode reqMode `uc  1 a 1 wreg ]
+[v MFRC522_Request2@TagType TagType `*.39uc  1 p 2 32 ]
+"401
+[v MFRC522_Request2@reqMode reqMode `uc  1 a 1 34 ]
+"409
+} 0
+"573
 [v _MFRC522_IsCard MFRC522_IsCard `(uc  1 e 1 0 ]
 {
-[v MFRC522_IsCard@TagType TagType `*.39uc  1 p 2 37 ]
-"319
+[v MFRC522_IsCard@TagType TagType `*.39uc  1 p 2 38 ]
+"579
 } 0
-"214
+"383
 [v _MFRC522_Request MFRC522_Request `(uc  1 e 1 0 ]
 {
 [v MFRC522_Request@reqMode reqMode `uc  1 a 1 wreg ]
-"217
-[v MFRC522_Request@backBits backBits `ui  1 a 2 35 ]
-"216
-[v MFRC522_Request@_status _status `uc  1 a 1 34 ]
-"214
+"386
+[v MFRC522_Request@backBits backBits `ui  1 a 2 36 ]
+"385
+[v MFRC522_Request@_status _status `uc  1 a 1 35 ]
+"383
 [v MFRC522_Request@reqMode reqMode `uc  1 a 1 wreg ]
-[v MFRC522_Request@TagType TagType `*.39uc  1 p 2 31 ]
-"218
-[v MFRC522_Request@reqMode reqMode `uc  1 a 1 33 ]
-"226
+[v MFRC522_Request@TagType TagType `*.39uc  1 p 2 32 ]
+"387
+[v MFRC522_Request@reqMode reqMode `uc  1 a 1 34 ]
+"395
 } 0
-"100
+"171
 [v _MFRC522_Init MFRC522_Init `(v  1 e 1 0 ]
 {
-"122
+"201
 } 0
-"76
+"135
 [v _MFRC522_Reset MFRC522_Reset `(v  1 e 1 0 ]
 {
-"86
+"145
 } 0
-"88
+"154
+[v _MFRC522_AntennaOn2 MFRC522_AntennaOn2 `(v  1 e 1 0 ]
+{
+"159
+} 0
+"147
 [v _MFRC522_AntennaOn MFRC522_AntennaOn `(v  1 e 1 0 ]
 {
-"93
+"152
 } 0
-"95
+"166
+[v _MFRC522_AntennaOff2 MFRC522_AntennaOff2 `(v  1 e 1 0 ]
+{
+"169
+} 0
+"161
 [v _MFRC522_AntennaOff MFRC522_AntennaOff `(v  1 e 1 0 ]
 {
-"98
+"164
 } 0
-"276
+"507
 [v _MFRC522_Halt MFRC522_Halt `(v  1 e 1 0 ]
 {
-"279
-[v MFRC522_Halt@buff buff `[4]uc  1 a 4 31 ]
-"278
-[v MFRC522_Halt@unLen unLen `ui  1 a 2 35 ]
-"286
+"510
+[v MFRC522_Halt@buff buff `[4]uc  1 a 4 32 ]
+"509
+[v MFRC522_Halt@unLen unLen `ui  1 a 2 36 ]
+"521
 } 0
-"124
+"293
+[v _MFRC522_ToCard2 MFRC522_ToCard2 `(uc  1 e 1 0 ]
+{
+[v MFRC522_ToCard2@command command `uc  1 a 1 wreg ]
+"300
+[v MFRC522_ToCard2@i i `ui  1 a 2 29 ]
+"299
+[v MFRC522_ToCard2@n n `uc  1 a 1 31 ]
+"296
+[v MFRC522_ToCard2@irqEn irqEn `uc  1 a 1 27 ]
+"298
+[v MFRC522_ToCard2@lastBits lastBits `uc  1 a 1 26 ]
+"295
+[v MFRC522_ToCard2@_status _status `uc  1 a 1 25 ]
+"297
+[v MFRC522_ToCard2@waitIRq waitIRq `uc  1 a 1 24 ]
+"293
+[v MFRC522_ToCard2@command command `uc  1 a 1 wreg ]
+[v MFRC522_ToCard2@sendData sendData `*.39uc  1 p 2 13 ]
+[v MFRC522_ToCard2@sendLen sendLen `uc  1 p 1 15 ]
+[v MFRC522_ToCard2@backData backData `*.39uc  1 p 2 16 ]
+[v MFRC522_ToCard2@backLen backLen `*.39ui  1 p 2 18 ]
+"295
+[v MFRC522_ToCard2@command command `uc  1 a 1 28 ]
+"381
+} 0
+"203
 [v _MFRC522_ToCard MFRC522_ToCard `(uc  1 e 1 0 ]
 {
 [v MFRC522_ToCard@command command `uc  1 a 1 wreg ]
-"131
-[v MFRC522_ToCard@i i `ui  1 a 2 28 ]
-"130
-[v MFRC522_ToCard@n n `uc  1 a 1 30 ]
-"127
-[v MFRC522_ToCard@irqEn irqEn `uc  1 a 1 26 ]
-"129
-[v MFRC522_ToCard@lastBits lastBits `uc  1 a 1 25 ]
-"126
-[v MFRC522_ToCard@_status _status `uc  1 a 1 24 ]
-"128
-[v MFRC522_ToCard@waitIRq waitIRq `uc  1 a 1 23 ]
-"124
+"210
+[v MFRC522_ToCard@i i `ui  1 a 2 29 ]
+"209
+[v MFRC522_ToCard@n n `uc  1 a 1 31 ]
+"206
+[v MFRC522_ToCard@irqEn irqEn `uc  1 a 1 27 ]
+"208
+[v MFRC522_ToCard@lastBits lastBits `uc  1 a 1 26 ]
+"205
+[v MFRC522_ToCard@_status _status `uc  1 a 1 25 ]
+"207
+[v MFRC522_ToCard@waitIRq waitIRq `uc  1 a 1 24 ]
+"203
 [v MFRC522_ToCard@command command `uc  1 a 1 wreg ]
-[v MFRC522_ToCard@sendData sendData `*.39uc  1 p 2 12 ]
-[v MFRC522_ToCard@sendLen sendLen `uc  1 p 1 14 ]
-[v MFRC522_ToCard@backData backData `*.39uc  1 p 2 15 ]
-[v MFRC522_ToCard@backLen backLen `*.39ui  1 p 2 17 ]
-"126
-[v MFRC522_ToCard@command command `uc  1 a 1 27 ]
-"212
+[v MFRC522_ToCard@sendData sendData `*.39uc  1 p 2 13 ]
+[v MFRC522_ToCard@sendLen sendLen `uc  1 p 1 15 ]
+[v MFRC522_ToCard@backData backData `*.39uc  1 p 2 16 ]
+[v MFRC522_ToCard@backLen backLen `*.39ui  1 p 2 18 ]
+"205
+[v MFRC522_ToCard@command command `uc  1 a 1 28 ]
+"291
 } 0
-"228
+"432
+[v _MFRC522_CRC2 MFRC522_CRC2 `(v  1 e 1 0 ]
+{
+"434
+[v MFRC522_CRC2@i i `uc  1 a 1 19 ]
+[v MFRC522_CRC2@n n `uc  1 a 1 18 ]
+"432
+[v MFRC522_CRC2@dataIn dataIn `*.39uc  1 p 2 13 ]
+[v MFRC522_CRC2@length length `uc  1 p 1 15 ]
+[v MFRC522_CRC2@dataOut dataOut `*.39uc  1 p 2 16 ]
+"451
+} 0
+"128
+[v _MFRC522_Set_Bit2 MFRC522_Set_Bit2 `(v  1 s 1 MFRC522_Set_Bit2 ]
+{
+[v MFRC522_Set_Bit2@addr addr `uc  1 a 1 wreg ]
+"130
+[v MFRC522_Set_Bit2@tmp tmp `uc  1 a 1 11 ]
+"128
+[v MFRC522_Set_Bit2@addr addr `uc  1 a 1 wreg ]
+[v MFRC522_Set_Bit2@mask mask `uc  1 p 1 10 ]
+[v MFRC522_Set_Bit2@addr addr `uc  1 a 1 12 ]
+"133
+} 0
+"113
+[v _MFRC522_Clear_Bit2 MFRC522_Clear_Bit2 `(v  1 s 1 MFRC522_Clear_Bit2 ]
+{
+[v MFRC522_Clear_Bit2@addr addr `uc  1 a 1 wreg ]
+"115
+[v MFRC522_Clear_Bit2@tmp tmp `uc  1 a 1 11 ]
+"113
+[v MFRC522_Clear_Bit2@addr addr `uc  1 a 1 wreg ]
+[v MFRC522_Clear_Bit2@mask mask `uc  1 p 1 10 ]
+[v MFRC522_Clear_Bit2@addr addr `uc  1 a 1 12 ]
+"118
+} 0
+"81
+[v _MFRC522_Wr2 MFRC522_Wr2 `(v  1 e 1 0 ]
+{
+[v MFRC522_Wr2@address address `uc  1 a 1 wreg ]
+"83
+[v MFRC522_Wr2@i i `uc  1 a 1 5 ]
+[v MFRC522_Wr2@ucAddr ucAddr `uc  1 a 1 4 ]
+"81
+[v MFRC522_Wr2@address address `uc  1 a 1 wreg ]
+[v MFRC522_Wr2@value value `uc  1 p 1 1 ]
+"84
+[v MFRC522_Wr2@address address `uc  1 a 1 3 ]
+"104
+} 0
+"29
+[v _MFRC522_Rd2 MFRC522_Rd2 `(uc  1 e 1 0 ]
+{
+[v MFRC522_Rd2@address address `uc  1 a 1 wreg ]
+"31
+[v MFRC522_Rd2@i i `ui  1 a 2 8 ]
+"32
+[v MFRC522_Rd2@ucResult ucResult `ui  1 a 2 6 ]
+"31
+[v MFRC522_Rd2@ucAddr ucAddr `ui  1 a 2 4 ]
+"29
+[v MFRC522_Rd2@address address `uc  1 a 1 wreg ]
+"32
+[v MFRC522_Rd2@address address `uc  1 a 1 3 ]
+"54
+} 0
+"411
 [v _MFRC522_CRC MFRC522_CRC `(v  1 e 1 0 ]
 {
-"230
-[v MFRC522_CRC@i i `uc  1 a 1 18 ]
-[v MFRC522_CRC@n n `uc  1 a 1 17 ]
-"228
-[v MFRC522_CRC@dataIn dataIn `*.39uc  1 p 2 12 ]
-[v MFRC522_CRC@length length `uc  1 p 1 14 ]
-[v MFRC522_CRC@dataOut dataOut `*.39uc  1 p 2 15 ]
-"247
+"413
+[v MFRC522_CRC@i i `uc  1 a 1 19 ]
+[v MFRC522_CRC@n n `uc  1 a 1 18 ]
+"411
+[v MFRC522_CRC@dataIn dataIn `*.39uc  1 p 2 13 ]
+[v MFRC522_CRC@length length `uc  1 p 1 15 ]
+[v MFRC522_CRC@dataOut dataOut `*.39uc  1 p 2 16 ]
+"430
 } 0
-"69
+"121
 [v _MFRC522_Set_Bit MFRC522_Set_Bit `(v  1 s 1 MFRC522_Set_Bit ]
 {
 [v MFRC522_Set_Bit@addr addr `uc  1 a 1 wreg ]
-"71
-[v MFRC522_Set_Bit@tmp tmp `uc  1 a 1 10 ]
-"69
+"123
+[v MFRC522_Set_Bit@tmp tmp `uc  1 a 1 11 ]
+"121
 [v MFRC522_Set_Bit@addr addr `uc  1 a 1 wreg ]
-[v MFRC522_Set_Bit@mask mask `uc  1 p 1 9 ]
-[v MFRC522_Set_Bit@addr addr `uc  1 a 1 11 ]
-"74
+[v MFRC522_Set_Bit@mask mask `uc  1 p 1 10 ]
+[v MFRC522_Set_Bit@addr addr `uc  1 a 1 12 ]
+"126
 } 0
-"62
+"106
 [v _MFRC522_Clear_Bit MFRC522_Clear_Bit `(v  1 s 1 MFRC522_Clear_Bit ]
 {
 [v MFRC522_Clear_Bit@addr addr `uc  1 a 1 wreg ]
-"64
-[v MFRC522_Clear_Bit@tmp tmp `uc  1 a 1 10 ]
-"62
+"108
+[v MFRC522_Clear_Bit@tmp tmp `uc  1 a 1 11 ]
+"106
 [v MFRC522_Clear_Bit@addr addr `uc  1 a 1 wreg ]
-[v MFRC522_Clear_Bit@mask mask `uc  1 p 1 9 ]
-[v MFRC522_Clear_Bit@addr addr `uc  1 a 1 11 ]
-"67
+[v MFRC522_Clear_Bit@mask mask `uc  1 p 1 10 ]
+[v MFRC522_Clear_Bit@addr addr `uc  1 a 1 12 ]
+"111
 } 0
-"35
+"56
 [v _MFRC522_Wr MFRC522_Wr `(v  1 e 1 0 ]
 {
 [v MFRC522_Wr@address address `uc  1 a 1 wreg ]
-"37
-[v MFRC522_Wr@i i `uc  1 a 1 4 ]
-[v MFRC522_Wr@ucAddr ucAddr `uc  1 a 1 3 ]
-"35
+"58
+[v MFRC522_Wr@i i `uc  1 a 1 5 ]
+[v MFRC522_Wr@ucAddr ucAddr `uc  1 a 1 4 ]
+"56
 [v MFRC522_Wr@address address `uc  1 a 1 wreg ]
-[v MFRC522_Wr@value value `uc  1 p 1 0 ]
-"38
-[v MFRC522_Wr@address address `uc  1 a 1 2 ]
-"60
+[v MFRC522_Wr@value value `uc  1 p 1 1 ]
+"59
+[v MFRC522_Wr@address address `uc  1 a 1 3 ]
+"79
 } 0
-"6
+"2
 [v _MFRC522_Rd MFRC522_Rd `(uc  1 e 1 0 ]
 {
 [v MFRC522_Rd@address address `uc  1 a 1 wreg ]
-"8
-[v MFRC522_Rd@i i `ui  1 a 2 7 ]
-"9
-[v MFRC522_Rd@ucResult ucResult `ui  1 a 2 5 ]
-"8
-[v MFRC522_Rd@ucAddr ucAddr `ui  1 a 2 3 ]
-"6
+"4
+[v MFRC522_Rd@i i `ui  1 a 2 8 ]
+"5
+[v MFRC522_Rd@ucResult ucResult `ui  1 a 2 6 ]
+"4
+[v MFRC522_Rd@ucAddr ucAddr `ui  1 a 2 4 ]
+"2
 [v MFRC522_Rd@address address `uc  1 a 1 wreg ]
-"9
-[v MFRC522_Rd@address address `uc  1 a 1 2 ]
-"33
+"5
+[v MFRC522_Rd@address address `uc  1 a 1 3 ]
+"27
 } 0
 "109 E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\I2C.c
 [v _LCD_Print LCD_Print `(v  1 e 1 0 ]
 {
 "111
-[v LCD_Print@i i `uc  1 a 1 9 ]
+[v LCD_Print@i i `uc  1 a 1 10 ]
 "109
-[v LCD_Print@LCD_Str LCD_Str `*.35uc  1 p 2 4 ]
+[v LCD_Print@LCD_Str LCD_Str `*.35uc  1 p 2 5 ]
 "118
 } 0
 "83
@@ -629,8 +927,8 @@
 {
 [v LCD_Goto@col col `uc  1 a 1 wreg ]
 [v LCD_Goto@col col `uc  1 a 1 wreg ]
-[v LCD_Goto@row row `uc  1 p 1 6 ]
-[v LCD_Goto@col col `uc  1 a 1 9 ]
+[v LCD_Goto@row row `uc  1 p 1 7 ]
+[v LCD_Goto@col col `uc  1 a 1 10 ]
 "100
 } 0
 "120
@@ -639,7 +937,7 @@
 [v LCD_Begin@_i2c_addr _i2c_addr `uc  1 a 1 wreg ]
 [v LCD_Begin@_i2c_addr _i2c_addr `uc  1 a 1 wreg ]
 "122
-[v LCD_Begin@_i2c_addr _i2c_addr `uc  1 a 1 8 ]
+[v LCD_Begin@_i2c_addr _i2c_addr `uc  1 a 1 9 ]
 "142
 } 0
 "74
@@ -648,7 +946,7 @@
 [v LCD_Cmd@Command Command `uc  1 a 1 wreg ]
 [v LCD_Cmd@Command Command `uc  1 a 1 wreg ]
 "76
-[v LCD_Cmd@Command Command `uc  1 a 1 5 ]
+[v LCD_Cmd@Command Command `uc  1 a 1 6 ]
 "81
 } 0
 "63
@@ -657,7 +955,7 @@
 [v LCD_Write_Nibble@n n `uc  1 a 1 wreg ]
 [v LCD_Write_Nibble@n n `uc  1 a 1 wreg ]
 "65
-[v LCD_Write_Nibble@n n `uc  1 a 1 3 ]
+[v LCD_Write_Nibble@n n `uc  1 a 1 4 ]
 "72
 } 0
 "55
@@ -666,7 +964,7 @@
 [v Expander_Write@value value `uc  1 a 1 wreg ]
 [v Expander_Write@value value `uc  1 a 1 wreg ]
 "57
-[v Expander_Write@value value `uc  1 a 1 2 ]
+[v Expander_Write@value value `uc  1 a 1 3 ]
 "61
 } 0
 "27
@@ -674,7 +972,7 @@
 {
 [v I2CLCD_Write@i2c_data i2c_data `uc  1 a 1 wreg ]
 [v I2CLCD_Write@i2c_data i2c_data `uc  1 a 1 wreg ]
-[v I2CLCD_Write@i2c_data i2c_data `uc  1 a 1 1 ]
+[v I2CLCD_Write@i2c_data i2c_data `uc  1 a 1 2 ]
 "31
 } 0
 "21
@@ -690,18 +988,28 @@
 "7
 [v _I2CLCD_Init I2CLCD_Init `(v  1 e 1 0 ]
 {
-[v I2CLCD_Init@i2c_clk_freq i2c_clk_freq `ul  1 p 4 13 ]
+[v I2CLCD_Init@i2c_clk_freq i2c_clk_freq `ul  1 p 4 14 ]
 "13
 } 0
 "7 D:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\__lldiv.c
 [v ___lldiv __lldiv `(ul  1 e 4 0 ]
 {
 "10
-[v ___lldiv@quotient quotient `ul  1 a 4 8 ]
+[v ___lldiv@quotient quotient `ul  1 a 4 9 ]
 "11
-[v ___lldiv@counter counter `uc  1 a 1 12 ]
+[v ___lldiv@counter counter `uc  1 a 1 13 ]
 "7
-[v ___lldiv@dividend dividend `ul  1 p 4 0 ]
-[v ___lldiv@divisor divisor `ul  1 p 4 4 ]
+[v ___lldiv@dividend dividend `ul  1 p 4 1 ]
+[v ___lldiv@divisor divisor `ul  1 p 4 5 ]
 "30
+} 0
+"116 E:\Program Files (x86)\MPLABXProjects\Thesis_RFID.X\main.c
+[v _low_isr low_isr `IIL(v  1 e 1 0 ]
+{
+"122
+} 0
+"108
+[v _high_isr high_isr `IIH(v  1 e 1 0 ]
+{
+"114
 } 0

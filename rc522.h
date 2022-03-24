@@ -121,7 +121,7 @@
 #define     RESERVED32          0x3D
 #define     RESERVED33          0x3E
 #define     RESERVED34          0x3F
-
+// RFID 1
 unsigned char MFRC522_Rd(unsigned char address);
 void MFRC522_Wr(unsigned char address, unsigned char value);
 static void MFRC522_Clear_Bit(char addr, char mask);
@@ -139,7 +139,20 @@ char MFRC522_AntiColl(char *serNum);
 char MFRC522_IsCard(char *TagType);
 char MFRC522_ReadCardSerial(char *str);
 char MFRC522_Compare_UID(char *l, char *u);
-
+// RFID 2
+unsigned char MFRC522_Rd2(unsigned char address);
+void MFRC522_Wr2(unsigned char address, unsigned char value);
+static void MFRC522_Clear_Bit2(char addr, char mask);
+static void MFRC522_Set_Bit2(char addr, char mask);
+void MFRC522_AntennaOn2(void);
+void MFRC522_AntennaOff2(void);
+char MFRC522_ToCard2(char command, char *sendData, char sendLen, char *backData, unsigned *backLen);
+char MFRC522_Request2(char reqMode, char *TagType);
+void MFRC522_CRC2(char *dataIn, char length, char *dataOut);
+char MFRC522_SelectTag2(char *serNum);
+char MFRC522_AntiColl2(char *serNum);
+char MFRC522_IsCard2(char *TagType);
+char MFRC522_ReadCardSerial2(char *str);
 
 #endif	/* XC_RFID_MFRC522_LIBRARY_H */
 
