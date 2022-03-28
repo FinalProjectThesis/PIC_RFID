@@ -6070,58 +6070,27 @@ char MFRC522_ReadCardSerial2(char *str);
 
 
 
-uint8_t data_buffer[16];
-uint8_t UID_1[16], UID_2[16];
+
+
+uint8_t data[20] = "hello";
+uint8_t data_buffer[20];
+uint8_t UID_1[20], UID_2[20];
 unsigned char status_1, status_2;
-char temp[16] = "\0";
+char temp[20] = "\0";
 int led = 0;
 unsigned char TagType1, TagType2;
 
-void __attribute__((picinterrupt(("")))) high_isr(void);
-void __attribute__((picinterrupt(("low_priority")))) low_isr(void);
-
-void uart_init(uint16_t gen_reg, unsigned sync, unsigned brgh, unsigned brg16) {
-    TRISCbits.RC7 = 1;
-    TRISCbits.RC6 = 1;
-
-    SPBRGH = (gen_reg & 0xFF00) >> 8;
-    SPBRG = gen_reg * 0x00FF;
-
-    RCSTAbits.CREN = 1;
-    RCSTAbits.SPEN = 1;
-    BAUDCONbits.BRG16 = brg16;
-
-    TXSTAbits.SYNC = sync;
-    TXSTAbits.BRGH = brgh;
-    TXSTAbits.TXEN = 1;
-
-    IPR1bits.RCIP = 1;
-    PIE1bits.RCIE = 1;
-
-
-
-}
-
-void uart_send(uint8_t *c){
-    TXREG = *c;
-    while(TXSTAbits.TRMT == 0){
-        __nop();
-    }
-}
+void USART_Init(long);
+void USART_TxChar(char*);
+char USART_RxChar();
 
 void main(void) {
     I2CLCD_Init(100000);
     LCD_Begin(0x4E);
     MFRC522_Init();
-    uart_init(129, 0, 0, 1);
+    USART_Init(9600);
+
     _delay((unsigned long)((500)*(27000000/4000.0)));
-
-    LCD_Goto(1, 1);
-    LCD_Print("Welcome");
-
-    _delay((unsigned long)((1000)*(27000000/4000.0)));
-    LCD_Cmd(0x01);
-
     while (1) {
         MFRC522_IsCard(&TagType1);
         MFRC522_ReadCardSerial(&UID_1);
@@ -6131,51 +6100,73 @@ void main(void) {
         MFRC522_ReadCardSerial2(&UID_2);
         status_2 = MFRC522_AntiColl2(&UID_2);
 
-        if (strlen(UID_1) == 1 || strlen(UID_2) == 1){
+        if(strlen(UID_1) == 1 || strlen(UID_2) == 1){
             LCD_Cmd(0x01);
-            LCD_Goto(1, 1);
-            LCD_Print("ID:");
         }
 
         LCD_Goto(1, 2);
 
         if(status_1 == 0) {
-            for(int i = 0; i < 5; i++)
+            USART_TxChar("P1");
+            for(uint8_t i = 0; i < 5; i++)
             {
                 sprintf(data_buffer, "%X", UID_1[i]);
                 LCD_Print(data_buffer);
+                USART_TxChar(data_buffer);
             }
-            _delay((unsigned long)((1000)*(27000000/4000.0)));
+            LCD_Goto(1, 1);
+            LCD_Print("Position 1");
+            _delay((unsigned long)((500)*(27000000/4000.0)));
         }
-        else if(status_2 == 0){
-            for(int i = 0; i < 5; i++)
+
+        if(status_2 == 0){
+            USART_TxChar("P2");
+            for(uint8_t i = 0; i < 5; i++)
             {
                 sprintf(data_buffer, "%X", UID_2[i]);
                 LCD_Print(data_buffer);
+
+                USART_TxChar(data_buffer);
             }
-            _delay((unsigned long)((1000)*(27000000/4000.0)));
+            LCD_Goto(1, 1);
+            LCD_Print("Position 2");
+            _delay((unsigned long)((500)*(27000000/4000.0)));
         }
-        else {
-            _delay((unsigned long)((50)*(27000000/4000.0)));
-            LATB7 = 0;
-            MFRC522_Halt();
-        }
+
+        _delay((unsigned long)((50)*(27000000/4000.0)));
+        MFRC522_Halt();
     }
-    return;
 }
 
-void __attribute__((picinterrupt(("")))) high_isr(void){
-    INTCONbits.GIEH = 0;
-    if(PIR1bits.RCIF) {
-        PIR1bits.RCIF = 0;
-    }
-    INTCONbits.GIEH = 1;
+void USART_Init(long baud_rate){
+    float temp;
+    TRISC6 = 0;
+    TRISC7 = 1;
+    temp = (((float)(27000000/64)/(float)baud_rate)-1);
+    SPBRG=(int)temp;
+    TXSTA = 0x20;
+    RCSTA = 0x90;
+    INTCONbits.GIE = 1;
+    INTCONbits.PEIE = 1;
+    PIE1bits.RCIE = 1;
+    PIE1bits.TXIE = 1;
 }
 
-void __attribute__((picinterrupt(("low_priority")))) low_isr(void){
-    INTCONbits.GIEH = 0;
-    if(PIR1bits.TXIF) {
-        PIR1bits.TXIF = 0;
-    }
-    INTCONbits.GIEH = 1;
+void USART_TxChar(char* out){
+        while(TXIF == 0);
+        for (uint8_t i = 0; i < strlen(out); i++) {
+            TXREG = out[i];
+        }
+
+}
+
+char USART_RxChar(){
+    while(RCIF==0);
+        if(RCSTAbits.OERR)
+        {
+            CREN = 0;
+            __nop();
+            CREN=1;
+        }
+        return(RCREG);
 }

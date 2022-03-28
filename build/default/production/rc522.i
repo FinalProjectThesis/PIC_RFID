@@ -6142,6 +6142,8 @@ void MFRC522_Init(void)
     LATDbits.LD2 = 0;
     LATAbits.LA0 = 1;
     LATAbits.LA1 = 1;
+
+
     LATDbits.LD4 = 1;
     MFRC522_Reset();
     MFRC522_Wr(0x2A, 0x8D);

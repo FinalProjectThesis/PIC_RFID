@@ -180,6 +180,8 @@ void MFRC522_Init(void)
     MFRC522_SDO_PIN = 0;
     MFRC522_CS_PIN = 1;         // Chip Select 1
     MFRC522_CS_PIN2 = 1;        // Chip Select 2
+//    MFRC522_CS_PIN3 = 1;        // Chip Select 3
+//    MFRC522_CS_PIN4 = 1;        // Chip Select 4
     MFRC522_RST_PIN = 1;
     MFRC522_Reset();
     MFRC522_Wr(TMODEREG, 0x8D);
