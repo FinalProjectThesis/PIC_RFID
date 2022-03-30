@@ -15,11 +15,9 @@
 
 uint8_t data[LENGTH] = "hello";
 uint8_t data_buffer[LENGTH];                         // Fix to display variables on 2x16 LCD screen.
-uint8_t UID_1[LENGTH], UID_2[LENGTH];                                // Fix for storing UID code
-unsigned char status_1, status_2;
-char temp[LENGTH] = "\0";
-int led = 0;
-unsigned char TagType1, TagType2;
+uint8_t UID_1[LENGTH], UID_2[LENGTH], UID_3[LENGTH], UID_4[LENGTH];                                // Fix for storing UID code
+unsigned char status_1, status_2, status_3, status_4;
+unsigned char TagType1, TagType2, TagType3, TagType4;
 
 void USART_Init(long);
 void USART_TxChar(char*);
@@ -28,7 +26,7 @@ char USART_RxChar();
 void main(void) {
     I2CLCD_Init(100000);                            // initialize I2C bus with clock frequency of 100kHz
     LCD_Begin(0x4E);                                // Initialize LCD module with I2C address = 0x4E
-    MFRC522_Init();                                 // MFRC522.
+    MFRC522_Init();                                 
     USART_Init(9600);
     
     __delay_ms(500);
@@ -39,27 +37,39 @@ void main(void) {
         
         MFRC522_IsCard2(&TagType2);
         MFRC522_ReadCardSerial2(&UID_2);
-        status_2 = MFRC522_AntiColl2(&UID_2);  
+        status_2 = MFRC522_AntiColl2(&UID_2);
+
+        MFRC522_IsCard3(&TagType3);
+        MFRC522_ReadCardSerial3(&UID_3);
+        status_3 = MFRC522_AntiColl3(&UID_3);
+        
+//        MFRC522_IsCard_4(&TagType4);
+//        MFRC522_ReadCardSerial_4(&UID_4);
+//        status_4 = MFRC522_AntiColl_4(&UID_4);
        
-        if(strlen(UID_1) == 1 || strlen(UID_2) == 1){
+        if(strlen(UID_1) == 1 || strlen(UID_2) == 1 || strlen(UID_3) == 1){
             LCD_Cmd(LCD_CLEAR);   
         }
 
         LCD_Goto(1, 2);
-        
-        if(status_1 == MI_OK) {
+        if(status_1 == MI_OK){
             USART_TxChar("P1");
             for(uint8_t i = 0; i < 5; i++)                // Print the UID code
             {
                 sprintf(data_buffer, "%X", UID_1[i]);
                 LCD_Print(data_buffer);               // Print Buffer
+                
                 USART_TxChar(data_buffer);
             }
             LCD_Goto(1, 1);
-            LCD_Print("Position 1");
+            LCD_Print("Pos1");
             __delay_ms(500);
-        } 
+        } else {
+            __delay_ms(50);
+            MFRC522_Halt();
+        }
         
+        LCD_Goto(1, 2);
         if(status_2 == MI_OK){
             USART_TxChar("P2");
             for(uint8_t i = 0; i < 5; i++)                // Print the UID code
@@ -70,12 +80,43 @@ void main(void) {
                 USART_TxChar(data_buffer);
             }
             LCD_Goto(1, 1);
-            LCD_Print("Position 2");
+            LCD_Print("Pos2");
             __delay_ms(500);
+        } else {
+            __delay_ms(50);
+            MFRC522_Halt2();
         }
         
-        __delay_ms(50);
-        MFRC522_Halt();                // Turn off the RFID antenna.
+        LCD_Goto(1, 2);
+        if(status_3 == MI_OK) {
+            USART_TxChar("P3");
+            for(uint8_t i = 0; i < 5; i++)                // Print the UID code
+            {
+                sprintf(data_buffer, "%X", UID_3[i]);
+                LCD_Print(data_buffer);               // Print Buffer
+                USART_TxChar(data_buffer);
+            }
+            LCD_Goto(1, 1);
+            LCD_Print("Pos3");
+            __delay_ms(500);
+        } else {
+            __delay_ms(50);
+            MFRC522_Halt3();
+        }
+        
+//        LCD_Goto(1, 2);
+//        if(status_4 == MI_OK) {
+//            USART_TxChar("P4");
+//            for(uint8_t i = 0; i < 5; i++)                // Print the UID code
+//            {
+//                sprintf(data_buffer, "%X", UID_4[i]);
+//                LCD_Print(data_buffer);               // Print Buffer
+//                USART_TxChar(data_buffer);
+//            }
+//            LCD_Goto(1, 1);
+//            LCD_Print("Pos4");
+//            __delay_ms(500);
+//        } 
     }
 }
 

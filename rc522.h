@@ -7,22 +7,26 @@
 #include <stdlib.h>
 #include <string.h>             // Incluimos esta librer?a para trabajar con cadenas de caracteres.
 
-#define _XTAL_FREQ 27000000      // Oscilador externo de 8MHz.
+#define _XTAL_FREQ 27000000     
 
 #define MFRC522_CS_DIR  TRISAbits.RA0          // SDA1
 #define MFRC522_CS_DIR2  TRISAbits.RA1         // SDA2
+#define MFRC522_CS_DIR3  TRISAbits.RA2         // SDA3
+#define MFRC522_CS_DIR4  TRISAbits.RA3         // SDA4
 
 #define MFRC522_CLK_DIR TRISDbits.RD1          // SCK
-#define MFRC522_SDO_DIR TRISDbits.RD2          // MOSI
-#define MFRC522_SDI_DIR TRISDbits.RD3          // MISO
+#define MFRC522_SDI_DIR TRISDbits.RD2          // MISO
+#define MFRC522_SDO_DIR TRISDbits.RD3          // MOSI
 #define MFRC522_RST_DIR TRISDbits.RD4          // RST
 
 #define MFRC522_CS_PIN  LATAbits.LA0           // SDA1
 #define MFRC522_CS_PIN2  LATAbits.LA1          // SDA2
+#define MFRC522_CS_PIN3  LATAbits.LA2          // SDA3
+#define MFRC522_CS_PIN4  LATAbits.LA3          // SDA4
 
 #define MFRC522_CLK_PIN LATDbits.LD1           // SCK
-#define MFRC522_SDO_PIN LATDbits.LD2           // MOSI
-#define MFRC522_SDI_PIN PORTDbits.RD3          // MISO
+#define MFRC522_SDI_PIN PORTDbits.RD2          // MISO
+#define MFRC522_SDO_PIN LATDbits.LD3           // MOSI
 #define MFRC522_RST_PIN LATDbits.LD4           // RST
 
 #define PCD_IDLE            0x00               // NO action; Cancel the current command
@@ -150,9 +154,25 @@ char MFRC522_ToCard2(char command, char *sendData, char sendLen, char *backData,
 char MFRC522_Request2(char reqMode, char *TagType);
 void MFRC522_CRC2(char *dataIn, char length, char *dataOut);
 char MFRC522_SelectTag2(char *serNum);
+void MFRC522_Halt2(void);
 char MFRC522_AntiColl2(char *serNum);
 char MFRC522_IsCard2(char *TagType);
 char MFRC522_ReadCardSerial2(char *str);
+// RFID 3
+unsigned char MFRC522_Rd3(unsigned char address);
+void MFRC522_Wr3(unsigned char address, unsigned char value);
+static void MFRC522_Clear_Bit3(char addr, char mask);
+static void MFRC522_Set_Bit3(char addr, char mask);
+void MFRC522_AntennaOn3(void);
+void MFRC522_AntennaOff3(void);
+char MFRC522_ToCard3(char command, char *sendData, char sendLen, char *backData, unsigned *backLen);
+char MFRC522_Request3(char reqMode, char *TagType);
+void MFRC522_CRC3(char *dataIn, char length, char *dataOut);
+char MFRC522_SelectTag3(char *serNum);
+void MFRC522_Halt3(void);
+char MFRC522_AntiColl3(char *serNum);
+char MFRC522_IsCard3(char *TagType);
+char MFRC522_ReadCardSerial3(char *str);
 
 #endif	/* XC_RFID_MFRC522_LIBRARY_H */
 

@@ -6030,7 +6030,7 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
 # 8 "./rc522.h" 2
-# 125 "./rc522.h"
+# 129 "./rc522.h"
 unsigned char MFRC522_Rd(unsigned char address);
 void MFRC522_Wr(unsigned char address, unsigned char value);
 static void MFRC522_Clear_Bit(char addr, char mask);
@@ -6059,9 +6059,25 @@ char MFRC522_ToCard2(char command, char *sendData, char sendLen, char *backData,
 char MFRC522_Request2(char reqMode, char *TagType);
 void MFRC522_CRC2(char *dataIn, char length, char *dataOut);
 char MFRC522_SelectTag2(char *serNum);
+void MFRC522_Halt2(void);
 char MFRC522_AntiColl2(char *serNum);
 char MFRC522_IsCard2(char *TagType);
 char MFRC522_ReadCardSerial2(char *str);
+
+unsigned char MFRC522_Rd3(unsigned char address);
+void MFRC522_Wr3(unsigned char address, unsigned char value);
+static void MFRC522_Clear_Bit3(char addr, char mask);
+static void MFRC522_Set_Bit3(char addr, char mask);
+void MFRC522_AntennaOn3(void);
+void MFRC522_AntennaOff3(void);
+char MFRC522_ToCard3(char command, char *sendData, char sendLen, char *backData, unsigned *backLen);
+char MFRC522_Request3(char reqMode, char *TagType);
+void MFRC522_CRC3(char *dataIn, char length, char *dataOut);
+char MFRC522_SelectTag3(char *serNum);
+void MFRC522_Halt3(void);
+char MFRC522_AntiColl3(char *serNum);
+char MFRC522_IsCard3(char *TagType);
+char MFRC522_ReadCardSerial3(char *str);
 # 9 "main.c" 2
 
 # 1 "D:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\stdbool.h" 1 3
@@ -6074,11 +6090,9 @@ char MFRC522_ReadCardSerial2(char *str);
 
 uint8_t data[20] = "hello";
 uint8_t data_buffer[20];
-uint8_t UID_1[20], UID_2[20];
-unsigned char status_1, status_2;
-char temp[20] = "\0";
-int led = 0;
-unsigned char TagType1, TagType2;
+uint8_t UID_1[20], UID_2[20], UID_3[20], UID_4[20];
+unsigned char status_1, status_2, status_3, status_4;
+unsigned char TagType1, TagType2, TagType3, TagType4;
 
 void USART_Init(long);
 void USART_TxChar(char*);
@@ -6100,25 +6114,37 @@ void main(void) {
         MFRC522_ReadCardSerial2(&UID_2);
         status_2 = MFRC522_AntiColl2(&UID_2);
 
-        if(strlen(UID_1) == 1 || strlen(UID_2) == 1){
+        MFRC522_IsCard3(&TagType3);
+        MFRC522_ReadCardSerial3(&UID_3);
+        status_3 = MFRC522_AntiColl3(&UID_3);
+
+
+
+
+
+        if(strlen(UID_1) == 1 || strlen(UID_2) == 1 || strlen(UID_3) == 1){
             LCD_Cmd(0x01);
         }
 
         LCD_Goto(1, 2);
-
-        if(status_1 == 0) {
+        if(status_1 == 0){
             USART_TxChar("P1");
             for(uint8_t i = 0; i < 5; i++)
             {
                 sprintf(data_buffer, "%X", UID_1[i]);
                 LCD_Print(data_buffer);
+
                 USART_TxChar(data_buffer);
             }
             LCD_Goto(1, 1);
-            LCD_Print("Position 1");
+            LCD_Print("Pos1");
             _delay((unsigned long)((500)*(27000000/4000.0)));
+        } else {
+            _delay((unsigned long)((50)*(27000000/4000.0)));
+            MFRC522_Halt();
         }
 
+        LCD_Goto(1, 2);
         if(status_2 == 0){
             USART_TxChar("P2");
             for(uint8_t i = 0; i < 5; i++)
@@ -6129,12 +6155,30 @@ void main(void) {
                 USART_TxChar(data_buffer);
             }
             LCD_Goto(1, 1);
-            LCD_Print("Position 2");
+            LCD_Print("Pos2");
             _delay((unsigned long)((500)*(27000000/4000.0)));
+        } else {
+            _delay((unsigned long)((50)*(27000000/4000.0)));
+            MFRC522_Halt2();
         }
 
-        _delay((unsigned long)((50)*(27000000/4000.0)));
-        MFRC522_Halt();
+        LCD_Goto(1, 2);
+        if(status_3 == 0) {
+            USART_TxChar("P3");
+            for(uint8_t i = 0; i < 5; i++)
+            {
+                sprintf(data_buffer, "%X", UID_3[i]);
+                LCD_Print(data_buffer);
+                USART_TxChar(data_buffer);
+            }
+            LCD_Goto(1, 1);
+            LCD_Print("Pos3");
+            _delay((unsigned long)((500)*(27000000/4000.0)));
+        } else {
+            _delay((unsigned long)((50)*(27000000/4000.0)));
+            MFRC522_Halt3();
+        }
+# 120 "main.c"
     }
 }
 
