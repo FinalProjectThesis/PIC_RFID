@@ -6078,6 +6078,21 @@ void MFRC522_Halt3(void);
 char MFRC522_AntiColl3(char *serNum);
 char MFRC522_IsCard3(char *TagType);
 char MFRC522_ReadCardSerial3(char *str);
+
+unsigned char MFRC522_Rd4(unsigned char address);
+void MFRC522_Wr4(unsigned char address, unsigned char value);
+static void MFRC522_Clear_Bit4(char addr, char mask);
+static void MFRC522_Set_Bit4(char addr, char mask);
+void MFRC522_AntennaOn4(void);
+void MFRC522_AntennaOff4(void);
+char MFRC522_ToCard4(char command, char *sendData, char sendLen, char *backData, unsigned *backLen);
+char MFRC522_Request4(char reqMode, char *TagType);
+void MFRC522_CRC4(char *dataIn, char length, char *dataOut);
+char MFRC522_SelectTag4(char *serNum);
+void MFRC522_Halt4(void);
+char MFRC522_AntiColl4(char *serNum);
+char MFRC522_IsCard4(char *TagType);
+char MFRC522_ReadCardSerial4(char *str);
 # 9 "main.c" 2
 
 # 1 "D:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\stdbool.h" 1 3
@@ -6104,7 +6119,10 @@ void main(void) {
     MFRC522_Init();
     USART_Init(9600);
 
-    _delay((unsigned long)((500)*(27000000/4000.0)));
+    LCD_Goto(1, 1);
+    LCD_Print("Loading..");
+    _delay((unsigned long)((1000)*(27000000/4000.0)));
+    LCD_Cmd(0x01);
     while (1) {
         MFRC522_IsCard(&TagType1);
         MFRC522_ReadCardSerial(&UID_1);
@@ -6169,6 +6187,7 @@ void main(void) {
             {
                 sprintf(data_buffer, "%X", UID_3[i]);
                 LCD_Print(data_buffer);
+
                 USART_TxChar(data_buffer);
             }
             LCD_Goto(1, 1);
@@ -6178,7 +6197,7 @@ void main(void) {
             _delay((unsigned long)((50)*(27000000/4000.0)));
             MFRC522_Halt3();
         }
-# 120 "main.c"
+# 128 "main.c"
     }
 }
 

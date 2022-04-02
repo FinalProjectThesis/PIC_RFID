@@ -29,7 +29,10 @@ void main(void) {
     MFRC522_Init();                                 
     USART_Init(9600);
     
-    __delay_ms(500);
+    LCD_Goto(1, 1);
+    LCD_Print("Loading..");
+    __delay_ms(1000);
+    LCD_Cmd(LCD_CLEAR);
     while (1) {
         MFRC522_IsCard(&TagType1);
         MFRC522_ReadCardSerial(&UID_1);
@@ -43,21 +46,21 @@ void main(void) {
         MFRC522_ReadCardSerial3(&UID_3);
         status_3 = MFRC522_AntiColl3(&UID_3);
         
-//        MFRC522_IsCard_4(&TagType4);
-//        MFRC522_ReadCardSerial_4(&UID_4);
-//        status_4 = MFRC522_AntiColl_4(&UID_4);
-       
+    //    MFRC522_IsCard4(&TagType4);
+    //    MFRC522_ReadCardSerial4(&UID_4);
+    //    status_4 = MFRC522_AntiColl4(&UID_4);
+      
         if(strlen(UID_1) == 1 || strlen(UID_2) == 1 || strlen(UID_3) == 1){
             LCD_Cmd(LCD_CLEAR);   
         }
-
+        
         LCD_Goto(1, 2);
         if(status_1 == MI_OK){
             USART_TxChar("P1");
             for(uint8_t i = 0; i < 5; i++)                // Print the UID code
             {
                 sprintf(data_buffer, "%X", UID_1[i]);
-                LCD_Print(data_buffer);               // Print Buffer
+                LCD_Print(data_buffer);               
                 
                 USART_TxChar(data_buffer);
             }
@@ -75,7 +78,7 @@ void main(void) {
             for(uint8_t i = 0; i < 5; i++)                // Print the UID code
             {
                 sprintf(data_buffer, "%X", UID_2[i]);
-                LCD_Print(data_buffer);               // Print Buffer
+                LCD_Print(data_buffer);              
                 
                 USART_TxChar(data_buffer);
             }
@@ -93,7 +96,8 @@ void main(void) {
             for(uint8_t i = 0; i < 5; i++)                // Print the UID code
             {
                 sprintf(data_buffer, "%X", UID_3[i]);
-                LCD_Print(data_buffer);               // Print Buffer
+                LCD_Print(data_buffer);   
+                
                 USART_TxChar(data_buffer);
             }
             LCD_Goto(1, 1);
@@ -110,13 +114,17 @@ void main(void) {
 //            for(uint8_t i = 0; i < 5; i++)                // Print the UID code
 //            {
 //                sprintf(data_buffer, "%X", UID_4[i]);
-//                LCD_Print(data_buffer);               // Print Buffer
+//                LCD_Print(data_buffer);      
+//                
 //                USART_TxChar(data_buffer);
 //            }
 //            LCD_Goto(1, 1);
 //            LCD_Print("Pos4");
 //            __delay_ms(500);
-//        } 
+//        } else {
+//            __delay_ms(50);
+//            MFRC522_Halt4();
+//        }
     }
 }
 

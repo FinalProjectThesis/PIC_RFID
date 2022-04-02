@@ -12,10 +12,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 "22 main.c
 [; ;main.c: 22: void USART_Init(long);
 [v _USART_Init `(v ~T0 @X0 0 ef1`l ]
+"38 ./I2C.h
+[; ;./I2C.h: 38: void LCD_Goto(uint8_t col, uint8_t row);
+[v _LCD_Goto `(v ~T0 @X0 0 ef2`uc`uc ]
+"40
+[; ;./I2C.h: 40: void LCD_Print(char* LCD_Str);
+[v _LCD_Print `(v ~T0 @X0 0 ef1`*uc ]
 [v F192 `(v ~T0 @X0 1 tf1`ul ]
 "12 D:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\builtins.h
 [v __delay `JF192 ~T0 @X0 0 e ]
 [p i __delay ]
+"37 ./I2C.h
+[; ;./I2C.h: 37: void LCD_Cmd(uint8_t Command);
+[v _LCD_Cmd `(v ~T0 @X0 0 ef1`uc ]
 "143 ./rc522.h
 [; ;./rc522.h: 143: char MFRC522_IsCard(char *TagType);
 [v _MFRC522_IsCard `(uc ~T0 @X0 0 ef1`*uc ]
@@ -46,21 +55,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "54 D:\Program Files\Microchip\xc8\v2.36\pic\include\c99\string.h
 [; ;D:\Program Files\Microchip\xc8\v2.36\pic\include\c99\string.h: 54: size_t strlen (const char *);
 [v _strlen `(ui ~T0 @X0 0 ef1`*Cuc ]
-"37 ./I2C.h
-[; ;./I2C.h: 37: void LCD_Cmd(uint8_t Command);
-[v _LCD_Cmd `(v ~T0 @X0 0 ef1`uc ]
-"38
-[; ;./I2C.h: 38: void LCD_Goto(uint8_t col, uint8_t row);
-[v _LCD_Goto `(v ~T0 @X0 0 ef2`uc`uc ]
 "23 main.c
 [; ;main.c: 23: void USART_TxChar(char*);
 [v _USART_TxChar `(v ~T0 @X0 0 ef1`*uc ]
 "109 D:\Program Files\Microchip\xc8\v2.36\pic\include\c99\stdio.h
 [; ;D:\Program Files\Microchip\xc8\v2.36\pic\include\c99\stdio.h: 109: int sprintf(char *restrict, const char *restrict, ...);
 [v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
-"40 ./I2C.h
-[; ;./I2C.h: 40: void LCD_Print(char* LCD_Str);
-[v _LCD_Print `(v ~T0 @X0 0 ef1`*uc ]
 "141 ./rc522.h
 [; ;./rc522.h: 141: void MFRC522_Halt(void);
 [v _MFRC522_Halt `(v ~T0 @X0 0 ef ]
@@ -820,374 +820,384 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 30:     USART_Init(9600);
 [e ( _USART_Init (1 -> -> 9600 `i `l ]
 "32
-[; ;main.c: 32:     _delay((unsigned long)((500)*(27000000/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 27000000 `l `d .4000.0 `ul ]
+[; ;main.c: 32:     LCD_Goto(1, 1);
+[e ( _LCD_Goto (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
 "33
-[; ;main.c: 33:     while (1) {
+[; ;main.c: 33:     LCD_Print("Loading..");
+[e ( _LCD_Print (1 :s 1C ]
+"34
+[; ;main.c: 34:     _delay((unsigned long)((1000)*(27000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 27000000 `l `d .4000.0 `ul ]
+"35
+[; ;main.c: 35:     LCD_Cmd(0x01);
+[e ( _LCD_Cmd (1 -> -> 1 `i `uc ]
+"36
+[; ;main.c: 36:     while (1) {
 [e :U 372 ]
 {
-"34
-[; ;main.c: 34:         MFRC522_IsCard(&TagType1);
+"37
+[; ;main.c: 37:         MFRC522_IsCard(&TagType1);
 [e ( _MFRC522_IsCard (1 -> &U _TagType1 `*uc ]
-"35
-[; ;main.c: 35:         MFRC522_ReadCardSerial(&UID_1);
-[e ( _MFRC522_ReadCardSerial (1 -> &U _UID_1 `*uc ]
-"36
-[; ;main.c: 36:         status_1 = MFRC522_AntiColl(&UID_1);
-[e = _status_1 -> ( _MFRC522_AntiColl (1 -> &U _UID_1 `*uc `uc ]
 "38
-[; ;main.c: 38:         MFRC522_IsCard2(&TagType2);
-[e ( _MFRC522_IsCard2 (1 -> &U _TagType2 `*uc ]
+[; ;main.c: 38:         MFRC522_ReadCardSerial(&UID_1);
+[e ( _MFRC522_ReadCardSerial (1 -> &U _UID_1 `*uc ]
 "39
-[; ;main.c: 39:         MFRC522_ReadCardSerial2(&UID_2);
-[e ( _MFRC522_ReadCardSerial2 (1 -> &U _UID_2 `*uc ]
-"40
-[; ;main.c: 40:         status_2 = MFRC522_AntiColl2(&UID_2);
-[e = _status_2 -> ( _MFRC522_AntiColl2 (1 -> &U _UID_2 `*uc `uc ]
+[; ;main.c: 39:         status_1 = MFRC522_AntiColl(&UID_1);
+[e = _status_1 -> ( _MFRC522_AntiColl (1 -> &U _UID_1 `*uc `uc ]
+"41
+[; ;main.c: 41:         MFRC522_IsCard2(&TagType2);
+[e ( _MFRC522_IsCard2 (1 -> &U _TagType2 `*uc ]
 "42
-[; ;main.c: 42:         MFRC522_IsCard3(&TagType3);
-[e ( _MFRC522_IsCard3 (1 -> &U _TagType3 `*uc ]
+[; ;main.c: 42:         MFRC522_ReadCardSerial2(&UID_2);
+[e ( _MFRC522_ReadCardSerial2 (1 -> &U _UID_2 `*uc ]
 "43
-[; ;main.c: 43:         MFRC522_ReadCardSerial3(&UID_3);
+[; ;main.c: 43:         status_2 = MFRC522_AntiColl2(&UID_2);
+[e = _status_2 -> ( _MFRC522_AntiColl2 (1 -> &U _UID_2 `*uc `uc ]
+"45
+[; ;main.c: 45:         MFRC522_IsCard3(&TagType3);
+[e ( _MFRC522_IsCard3 (1 -> &U _TagType3 `*uc ]
+"46
+[; ;main.c: 46:         MFRC522_ReadCardSerial3(&UID_3);
 [e ( _MFRC522_ReadCardSerial3 (1 -> &U _UID_3 `*uc ]
-"44
-[; ;main.c: 44:         status_3 = MFRC522_AntiColl3(&UID_3);
+"47
+[; ;main.c: 47:         status_3 = MFRC522_AntiColl3(&UID_3);
 [e = _status_3 -> ( _MFRC522_AntiColl3 (1 -> &U _UID_3 `*uc `uc ]
-"50
-[; ;main.c: 50:         if(strlen(UID_1) == 1 || strlen(UID_2) == 1 || strlen(UID_3) == 1){
+"53
+[; ;main.c: 53:         if(strlen(UID_1) == 1 || strlen(UID_2) == 1 || strlen(UID_3) == 1){
 [e $ ! || || == ( _strlen (1 -> &U _UID_1 `*Cuc -> -> 1 `i `ui == ( _strlen (1 -> &U _UID_2 `*Cuc -> -> 1 `i `ui == ( _strlen (1 -> &U _UID_3 `*Cuc -> -> 1 `i `ui 374  ]
 {
-"51
-[; ;main.c: 51:             LCD_Cmd(0x01);
+"54
+[; ;main.c: 54:             LCD_Cmd(0x01);
 [e ( _LCD_Cmd (1 -> -> 1 `i `uc ]
-"52
-[; ;main.c: 52:         }
+"55
+[; ;main.c: 55:         }
 }
 [e :U 374 ]
-"54
-[; ;main.c: 54:         LCD_Goto(1, 2);
+"57
+[; ;main.c: 57:         LCD_Goto(1, 2);
 [e ( _LCD_Goto (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
-"55
-[; ;main.c: 55:         if(status_1 == 0){
+"58
+[; ;main.c: 58:         if(status_1 == 0){
 [e $ ! == -> _status_1 `i -> 0 `i 375  ]
 {
-"56
-[; ;main.c: 56:             USART_TxChar("P1");
-[e ( _USART_TxChar (1 :s 1C ]
-"57
-[; ;main.c: 57:             for(uint8_t i = 0; i < 5; i++)
+"59
+[; ;main.c: 59:             USART_TxChar("P1");
+[e ( _USART_TxChar (1 :s 2C ]
+"60
+[; ;main.c: 60:             for(uint8_t i = 0; i < 5; i++)
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
 [e $ < -> _i `i -> 5 `i 376  ]
 [e $U 377  ]
 [e :U 376 ]
-"58
-[; ;main.c: 58:             {
+"61
+[; ;main.c: 61:             {
 {
-"59
-[; ;main.c: 59:                 sprintf(data_buffer, "%X", UID_1[i]);
-[e ( _sprintf (1 , (. , -> &U _data_buffer `*uc :s 2C -> *U + &U _UID_1 * -> _i `ux -> -> # *U &U _UID_1 `ui `ux `i ]
-"60
-[; ;main.c: 60:                 LCD_Print(data_buffer);
-[e ( _LCD_Print (1 -> &U _data_buffer `*uc ]
 "62
-[; ;main.c: 62:                 USART_TxChar(data_buffer);
-[e ( _USART_TxChar (1 -> &U _data_buffer `*uc ]
+[; ;main.c: 62:                 sprintf(data_buffer, "%X", UID_1[i]);
+[e ( _sprintf (1 , (. , -> &U _data_buffer `*uc :s 3C -> *U + &U _UID_1 * -> _i `ux -> -> # *U &U _UID_1 `ui `ux `i ]
 "63
-[; ;main.c: 63:             }
+[; ;main.c: 63:                 LCD_Print(data_buffer);
+[e ( _LCD_Print (1 -> &U _data_buffer `*uc ]
+"65
+[; ;main.c: 65:                 USART_TxChar(data_buffer);
+[e ( _USART_TxChar (1 -> &U _data_buffer `*uc ]
+"66
+[; ;main.c: 66:             }
 }
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 5 `i 376  ]
 [e :U 377 ]
 }
-"64
-[; ;main.c: 64:             LCD_Goto(1, 1);
-[e ( _LCD_Goto (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"65
-[; ;main.c: 65:             LCD_Print("Pos1");
-[e ( _LCD_Print (1 :s 3C ]
-"66
-[; ;main.c: 66:             _delay((unsigned long)((500)*(27000000/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 27000000 `l `d .4000.0 `ul ]
 "67
-[; ;main.c: 67:         } else {
+[; ;main.c: 67:             LCD_Goto(1, 1);
+[e ( _LCD_Goto (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+"68
+[; ;main.c: 68:             LCD_Print("Pos1");
+[e ( _LCD_Print (1 :s 4C ]
+"69
+[; ;main.c: 69:             _delay((unsigned long)((500)*(27000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 27000000 `l `d .4000.0 `ul ]
+"70
+[; ;main.c: 70:         } else {
 }
 [e $U 379  ]
 [e :U 375 ]
 {
-"68
-[; ;main.c: 68:             _delay((unsigned long)((50)*(27000000/4000.0)));
+"71
+[; ;main.c: 71:             _delay((unsigned long)((50)*(27000000/4000.0)));
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 27000000 `l `d .4000.0 `ul ]
-"69
-[; ;main.c: 69:             MFRC522_Halt();
+"72
+[; ;main.c: 72:             MFRC522_Halt();
 [e ( _MFRC522_Halt ..  ]
-"70
-[; ;main.c: 70:         }
+"73
+[; ;main.c: 73:         }
 }
 [e :U 379 ]
-"72
-[; ;main.c: 72:         LCD_Goto(1, 2);
+"75
+[; ;main.c: 75:         LCD_Goto(1, 2);
 [e ( _LCD_Goto (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
-"73
-[; ;main.c: 73:         if(status_2 == 0){
+"76
+[; ;main.c: 76:         if(status_2 == 0){
 [e $ ! == -> _status_2 `i -> 0 `i 380  ]
 {
-"74
-[; ;main.c: 74:             USART_TxChar("P2");
-[e ( _USART_TxChar (1 :s 4C ]
-"75
-[; ;main.c: 75:             for(uint8_t i = 0; i < 5; i++)
+"77
+[; ;main.c: 77:             USART_TxChar("P2");
+[e ( _USART_TxChar (1 :s 5C ]
+"78
+[; ;main.c: 78:             for(uint8_t i = 0; i < 5; i++)
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
 [e $ < -> _i `i -> 5 `i 381  ]
 [e $U 382  ]
 [e :U 381 ]
-"76
-[; ;main.c: 76:             {
+"79
+[; ;main.c: 79:             {
 {
-"77
-[; ;main.c: 77:                 sprintf(data_buffer, "%X", UID_2[i]);
-[e ( _sprintf (1 , (. , -> &U _data_buffer `*uc :s 5C -> *U + &U _UID_2 * -> _i `ux -> -> # *U &U _UID_2 `ui `ux `i ]
-"78
-[; ;main.c: 78:                 LCD_Print(data_buffer);
-[e ( _LCD_Print (1 -> &U _data_buffer `*uc ]
 "80
-[; ;main.c: 80:                 USART_TxChar(data_buffer);
-[e ( _USART_TxChar (1 -> &U _data_buffer `*uc ]
+[; ;main.c: 80:                 sprintf(data_buffer, "%X", UID_2[i]);
+[e ( _sprintf (1 , (. , -> &U _data_buffer `*uc :s 6C -> *U + &U _UID_2 * -> _i `ux -> -> # *U &U _UID_2 `ui `ux `i ]
 "81
-[; ;main.c: 81:             }
+[; ;main.c: 81:                 LCD_Print(data_buffer);
+[e ( _LCD_Print (1 -> &U _data_buffer `*uc ]
+"83
+[; ;main.c: 83:                 USART_TxChar(data_buffer);
+[e ( _USART_TxChar (1 -> &U _data_buffer `*uc ]
+"84
+[; ;main.c: 84:             }
 }
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 5 `i 381  ]
 [e :U 382 ]
 }
-"82
-[; ;main.c: 82:             LCD_Goto(1, 1);
-[e ( _LCD_Goto (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"83
-[; ;main.c: 83:             LCD_Print("Pos2");
-[e ( _LCD_Print (1 :s 6C ]
-"84
-[; ;main.c: 84:             _delay((unsigned long)((500)*(27000000/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 27000000 `l `d .4000.0 `ul ]
 "85
-[; ;main.c: 85:         } else {
+[; ;main.c: 85:             LCD_Goto(1, 1);
+[e ( _LCD_Goto (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+"86
+[; ;main.c: 86:             LCD_Print("Pos2");
+[e ( _LCD_Print (1 :s 7C ]
+"87
+[; ;main.c: 87:             _delay((unsigned long)((500)*(27000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 27000000 `l `d .4000.0 `ul ]
+"88
+[; ;main.c: 88:         } else {
 }
 [e $U 384  ]
 [e :U 380 ]
 {
-"86
-[; ;main.c: 86:             _delay((unsigned long)((50)*(27000000/4000.0)));
+"89
+[; ;main.c: 89:             _delay((unsigned long)((50)*(27000000/4000.0)));
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 27000000 `l `d .4000.0 `ul ]
-"87
-[; ;main.c: 87:             MFRC522_Halt2();
+"90
+[; ;main.c: 90:             MFRC522_Halt2();
 [e ( _MFRC522_Halt2 ..  ]
-"88
-[; ;main.c: 88:         }
+"91
+[; ;main.c: 91:         }
 }
 [e :U 384 ]
-"90
-[; ;main.c: 90:         LCD_Goto(1, 2);
+"93
+[; ;main.c: 93:         LCD_Goto(1, 2);
 [e ( _LCD_Goto (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
-"91
-[; ;main.c: 91:         if(status_3 == 0) {
+"94
+[; ;main.c: 94:         if(status_3 == 0) {
 [e $ ! == -> _status_3 `i -> 0 `i 385  ]
 {
-"92
-[; ;main.c: 92:             USART_TxChar("P3");
-[e ( _USART_TxChar (1 :s 7C ]
-"93
-[; ;main.c: 93:             for(uint8_t i = 0; i < 5; i++)
+"95
+[; ;main.c: 95:             USART_TxChar("P3");
+[e ( _USART_TxChar (1 :s 8C ]
+"96
+[; ;main.c: 96:             for(uint8_t i = 0; i < 5; i++)
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
 [e $ < -> _i `i -> 5 `i 386  ]
 [e $U 387  ]
 [e :U 386 ]
-"94
-[; ;main.c: 94:             {
-{
-"95
-[; ;main.c: 95:                 sprintf(data_buffer, "%X", UID_3[i]);
-[e ( _sprintf (1 , (. , -> &U _data_buffer `*uc :s 8C -> *U + &U _UID_3 * -> _i `ux -> -> # *U &U _UID_3 `ui `ux `i ]
-"96
-[; ;main.c: 96:                 LCD_Print(data_buffer);
-[e ( _LCD_Print (1 -> &U _data_buffer `*uc ]
 "97
-[; ;main.c: 97:                 USART_TxChar(data_buffer);
-[e ( _USART_TxChar (1 -> &U _data_buffer `*uc ]
+[; ;main.c: 97:             {
+{
 "98
-[; ;main.c: 98:             }
+[; ;main.c: 98:                 sprintf(data_buffer, "%X", UID_3[i]);
+[e ( _sprintf (1 , (. , -> &U _data_buffer `*uc :s 9C -> *U + &U _UID_3 * -> _i `ux -> -> # *U &U _UID_3 `ui `ux `i ]
+"99
+[; ;main.c: 99:                 LCD_Print(data_buffer);
+[e ( _LCD_Print (1 -> &U _data_buffer `*uc ]
+"101
+[; ;main.c: 101:                 USART_TxChar(data_buffer);
+[e ( _USART_TxChar (1 -> &U _data_buffer `*uc ]
+"102
+[; ;main.c: 102:             }
 }
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 5 `i 386  ]
 [e :U 387 ]
 }
-"99
-[; ;main.c: 99:             LCD_Goto(1, 1);
+"103
+[; ;main.c: 103:             LCD_Goto(1, 1);
 [e ( _LCD_Goto (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"100
-[; ;main.c: 100:             LCD_Print("Pos3");
-[e ( _LCD_Print (1 :s 9C ]
-"101
-[; ;main.c: 101:             _delay((unsigned long)((500)*(27000000/4000.0)));
+"104
+[; ;main.c: 104:             LCD_Print("Pos3");
+[e ( _LCD_Print (1 :s 10C ]
+"105
+[; ;main.c: 105:             _delay((unsigned long)((500)*(27000000/4000.0)));
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 27000000 `l `d .4000.0 `ul ]
-"102
-[; ;main.c: 102:         } else {
+"106
+[; ;main.c: 106:         } else {
 }
 [e $U 389  ]
 [e :U 385 ]
 {
-"103
-[; ;main.c: 103:             _delay((unsigned long)((50)*(27000000/4000.0)));
+"107
+[; ;main.c: 107:             _delay((unsigned long)((50)*(27000000/4000.0)));
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 27000000 `l `d .4000.0 `ul ]
-"104
-[; ;main.c: 104:             MFRC522_Halt3();
+"108
+[; ;main.c: 108:             MFRC522_Halt3();
 [e ( _MFRC522_Halt3 ..  ]
-"105
-[; ;main.c: 105:         }
+"109
+[; ;main.c: 109:         }
 }
 [e :U 389 ]
-"120
-[; ;main.c: 120:     }
+"128
+[; ;main.c: 128:     }
 }
 [e :U 371 ]
 [e $U 372  ]
 [e :U 373 ]
-"121
-[; ;main.c: 121: }
+"129
+[; ;main.c: 129: }
 [e :UE 370 ]
 }
-"123
-[; ;main.c: 123: void USART_Init(long baud_rate){
+"131
+[; ;main.c: 131: void USART_Init(long baud_rate){
 [v _USART_Init `(v ~T0 @X0 1 ef1`l ]
 {
 [e :U _USART_Init ]
 [v _baud_rate `l ~T0 @X0 1 r1 ]
 [f ]
-"124
-[; ;main.c: 124:     float temp;
-[v _temp `f ~T0 @X0 1 a ]
-"125
-[; ;main.c: 125:     TRISC6 = 0;
-[e = _TRISC6 -> -> 0 `i `b ]
-"126
-[; ;main.c: 126:     TRISC7 = 1;
-[e = _TRISC7 -> -> 1 `i `b ]
-"127
-[; ;main.c: 127:     temp = (((float)(27000000/64)/(float)baud_rate)-1);
-[e = _temp - / -> / -> 27000000 `l -> -> 64 `i `l `f -> _baud_rate `f -> -> 1 `i `f ]
-"128
-[; ;main.c: 128:     SPBRG=(int)temp;
-[e = _SPBRG -> -> _temp `i `uc ]
-"129
-[; ;main.c: 129:     TXSTA = 0x20;
-[e = _TXSTA -> -> 32 `i `uc ]
-"130
-[; ;main.c: 130:     RCSTA = 0x90;
-[e = _RCSTA -> -> 144 `i `uc ]
-"131
-[; ;main.c: 131:     INTCONbits.GIE = 1;
-[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
 "132
-[; ;main.c: 132:     INTCONbits.PEIE = 1;
-[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
+[; ;main.c: 132:     float temp;
+[v _temp `f ~T0 @X0 1 a ]
 "133
-[; ;main.c: 133:     PIE1bits.RCIE = 1;
-[e = . . _PIE1bits 0 5 -> -> 1 `i `uc ]
+[; ;main.c: 133:     TRISC6 = 0;
+[e = _TRISC6 -> -> 0 `i `b ]
 "134
-[; ;main.c: 134:     PIE1bits.TXIE = 1;
-[e = . . _PIE1bits 0 4 -> -> 1 `i `uc ]
+[; ;main.c: 134:     TRISC7 = 1;
+[e = _TRISC7 -> -> 1 `i `b ]
 "135
-[; ;main.c: 135: }
+[; ;main.c: 135:     temp = (((float)(27000000/64)/(float)baud_rate)-1);
+[e = _temp - / -> / -> 27000000 `l -> -> 64 `i `l `f -> _baud_rate `f -> -> 1 `i `f ]
+"136
+[; ;main.c: 136:     SPBRG=(int)temp;
+[e = _SPBRG -> -> _temp `i `uc ]
+"137
+[; ;main.c: 137:     TXSTA = 0x20;
+[e = _TXSTA -> -> 32 `i `uc ]
+"138
+[; ;main.c: 138:     RCSTA = 0x90;
+[e = _RCSTA -> -> 144 `i `uc ]
+"139
+[; ;main.c: 139:     INTCONbits.GIE = 1;
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+"140
+[; ;main.c: 140:     INTCONbits.PEIE = 1;
+[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
+"141
+[; ;main.c: 141:     PIE1bits.RCIE = 1;
+[e = . . _PIE1bits 0 5 -> -> 1 `i `uc ]
+"142
+[; ;main.c: 142:     PIE1bits.TXIE = 1;
+[e = . . _PIE1bits 0 4 -> -> 1 `i `uc ]
+"143
+[; ;main.c: 143: }
 [e :UE 390 ]
 }
-"137
-[; ;main.c: 137: void USART_TxChar(char* out){
+"145
+[; ;main.c: 145: void USART_TxChar(char* out){
 [v _USART_TxChar `(v ~T0 @X0 1 ef1`*uc ]
 {
 [e :U _USART_TxChar ]
 [v _out `*uc ~T0 @X0 1 r1 ]
 [f ]
-"138
-[; ;main.c: 138:         while(TXIF == 0);
+"146
+[; ;main.c: 146:         while(TXIF == 0);
 [e $U 392  ]
 [e :U 393 ]
 [e :U 392 ]
 [e $ == -> _TXIF `i -> 0 `i 393  ]
 [e :U 394 ]
-"139
-[; ;main.c: 139:         for (uint8_t i = 0; i < strlen(out); i++) {
+"147
+[; ;main.c: 147:         for (uint8_t i = 0; i < strlen(out); i++) {
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
 [e $U 398  ]
 [e :U 395 ]
 {
-"140
-[; ;main.c: 140:             TXREG = out[i];
+"148
+[; ;main.c: 148:             TXREG = out[i];
 [e = _TXREG -> *U + _out * -> _i `ux -> -> # *U _out `ui `ux `uc ]
-"141
-[; ;main.c: 141:         }
+"149
+[; ;main.c: 149:         }
 }
 [e ++ _i -> -> 1 `i `uc ]
 [e :U 398 ]
 [e $ < -> _i `ui ( _strlen (1 -> _out `*Cuc 395  ]
 [e :U 396 ]
 }
-"143
-[; ;main.c: 143: }
+"151
+[; ;main.c: 151: }
 [e :UE 391 ]
 }
-"145
-[; ;main.c: 145: char USART_RxChar(){
+"153
+[; ;main.c: 153: char USART_RxChar(){
 [v _USART_RxChar `(uc ~T0 @X0 1 ef ]
 {
 [e :U _USART_RxChar ]
 [f ]
-"146
-[; ;main.c: 146:     while(RCIF==0);
+"154
+[; ;main.c: 154:     while(RCIF==0);
 [e $U 400  ]
 [e :U 401 ]
 [e :U 400 ]
 [e $ == -> _RCIF `i -> 0 `i 401  ]
 [e :U 402 ]
-"147
-[; ;main.c: 147:         if(RCSTAbits.OERR)
+"155
+[; ;main.c: 155:         if(RCSTAbits.OERR)
 [e $ ! != -> . . _RCSTAbits 0 1 `i -> 0 `i 403  ]
-"148
-[; ;main.c: 148:         {
+"156
+[; ;main.c: 156:         {
 {
-"149
-[; ;main.c: 149:             CREN = 0;
+"157
+[; ;main.c: 157:             CREN = 0;
 [e = _CREN -> -> 0 `i `b ]
-"150
-[; ;main.c: 150:             __nop();
+"158
+[; ;main.c: 158:             __nop();
 [e ( ___nop ..  ]
-"151
-[; ;main.c: 151:             CREN=1;
+"159
+[; ;main.c: 159:             CREN=1;
 [e = _CREN -> -> 1 `i `b ]
-"152
-[; ;main.c: 152:         }
+"160
+[; ;main.c: 160:         }
 }
 [e :U 403 ]
-"153
-[; ;main.c: 153:         return(RCREG);
+"161
+[; ;main.c: 161:         return(RCREG);
 [e ) -> _RCREG `uc ]
 [e $UE 399  ]
-"154
-[; ;main.c: 154: }
+"162
+[; ;main.c: 162: }
 [e :UE 399 ]
 }
 [p f _sprintf 10485760 ]
-[a 2C 37 88 0 ]
-[a 5C 37 88 0 ]
-[a 8C 37 88 0 ]
-[a 9C 80 111 115 51 0 ]
-[a 7C 80 51 0 ]
-[a 6C 80 111 115 50 0 ]
-[a 4C 80 50 0 ]
-[a 3C 80 111 115 49 0 ]
-[a 1C 80 49 0 ]
+[a 3C 37 88 0 ]
+[a 6C 37 88 0 ]
+[a 9C 37 88 0 ]
+[a 10C 80 111 115 51 0 ]
+[a 8C 80 51 0 ]
+[a 7C 80 111 115 50 0 ]
+[a 5C 80 50 0 ]
+[a 4C 80 111 115 49 0 ]
+[a 2C 80 49 0 ]
+[a 1C 76 111 97 100 105 110 103 46 46 0 ]

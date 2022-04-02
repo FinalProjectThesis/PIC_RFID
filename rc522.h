@@ -9,20 +9,20 @@
 
 #define _XTAL_FREQ 27000000     
 
-#define MFRC522_CS_DIR  TRISAbits.RA0          // SDA1
-#define MFRC522_CS_DIR2  TRISAbits.RA1         // SDA2
-#define MFRC522_CS_DIR3  TRISAbits.RA2         // SDA3
-#define MFRC522_CS_DIR4  TRISAbits.RA3         // SDA4
+#define MFRC522_CS_DIR  TRISAbits.RA3          // SDA1
+#define MFRC522_CS_DIR2  TRISAbits.RA2         // SDA2
+#define MFRC522_CS_DIR3  TRISAbits.RA1         // SDA3
+#define MFRC522_CS_DIR4  TRISAbits.RA0         // SDA4
 
 #define MFRC522_CLK_DIR TRISDbits.RD1          // SCK
 #define MFRC522_SDI_DIR TRISDbits.RD2          // MISO
 #define MFRC522_SDO_DIR TRISDbits.RD3          // MOSI
 #define MFRC522_RST_DIR TRISDbits.RD4          // RST
 
-#define MFRC522_CS_PIN  LATAbits.LA0           // SDA1
-#define MFRC522_CS_PIN2  LATAbits.LA1          // SDA2
-#define MFRC522_CS_PIN3  LATAbits.LA2          // SDA3
-#define MFRC522_CS_PIN4  LATAbits.LA3          // SDA4
+#define MFRC522_CS_PIN  LATAbits.LA3           // SDA1
+#define MFRC522_CS_PIN2  LATAbits.LA2          // SDA2
+#define MFRC522_CS_PIN3  LATAbits.LA1          // SDA3
+#define MFRC522_CS_PIN4  LATAbits.LA0          // SDA4
 
 #define MFRC522_CLK_PIN LATDbits.LD1           // SCK
 #define MFRC522_SDI_PIN PORTDbits.RD2          // MISO
@@ -173,6 +173,21 @@ void MFRC522_Halt3(void);
 char MFRC522_AntiColl3(char *serNum);
 char MFRC522_IsCard3(char *TagType);
 char MFRC522_ReadCardSerial3(char *str);
+// RFID 4
+unsigned char MFRC522_Rd4(unsigned char address);
+void MFRC522_Wr4(unsigned char address, unsigned char value);
+static void MFRC522_Clear_Bit4(char addr, char mask);
+static void MFRC522_Set_Bit4(char addr, char mask);
+void MFRC522_AntennaOn4(void);
+void MFRC522_AntennaOff4(void);
+char MFRC522_ToCard4(char command, char *sendData, char sendLen, char *backData, unsigned *backLen);
+char MFRC522_Request4(char reqMode, char *TagType);
+void MFRC522_CRC4(char *dataIn, char length, char *dataOut);
+char MFRC522_SelectTag4(char *serNum);
+void MFRC522_Halt4(void);
+char MFRC522_AntiColl4(char *serNum);
+char MFRC522_IsCard4(char *TagType);
+char MFRC522_ReadCardSerial4(char *str);
 
 #endif	/* XC_RFID_MFRC522_LIBRARY_H */
 
